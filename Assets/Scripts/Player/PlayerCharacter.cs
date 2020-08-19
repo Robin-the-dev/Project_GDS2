@@ -91,10 +91,12 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
     public void MoveRight(bool active) {
+        if (active) GetComponent<SpriteRenderer>().flipX = !active;
         moveRight = active;
     }
 
     public void MoveLeft(bool active) {
+        if (active) GetComponent<SpriteRenderer>().flipX = active;
         moveLeft = active;
     }
 
@@ -140,8 +142,6 @@ public class PlayerCharacter : MonoBehaviour {
         Vector2 currentVelocity = rigid.velocity;
 
         Vector2 movement = new Vector2(moveX, 0);
-
-        GetComponent<SpriteRenderer>().flipX = moveX <= 0;
 
         if (moveX != 0) {
             rigid.velocity = movement * walkSpeed * runMultiplier;
