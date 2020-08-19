@@ -7,6 +7,7 @@ public class PlayerControls : MonoBehaviour{
 
     public bool SoloMode;
     public PlayerCharacter activeCharacter;
+    public PixieCharacter pixieCharacter;
     public Vector3 mousePosition = Vector3.zero;
     private Camera mainCamera;
 
@@ -28,6 +29,7 @@ public class PlayerControls : MonoBehaviour{
 
     private void Update() {
         updateMousePos();
+        pixieCharacter.UpdatePosition(mousePosition);
         if (Time.timeScale > 0) {
             HandleControls();
             // HandleCoolDowns();
@@ -148,10 +150,8 @@ public class PlayerControls : MonoBehaviour{
     }
 
     private void updateMousePos() {
-        if (activeCharacter == null || Camera.main == null) return;
-        Vector3 tempPos = Input.mousePosition;
-        tempPos.z = activeCharacter.transform.position.z - Camera.main.transform.position.z;
-        tempPos = Camera.main.ScreenToWorldPoint(tempPos, Camera.MonoOrStereoscopicEye.Mono);
-        mousePosition = new Vector3(tempPos.x, tempPos.y, activeCharacter.transform.position.z);
+        Vector3 tempPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(tempPos);
+        mousePosition = new Vector3(worldPosition.x, worldPosition.y, 0);
     }
 }

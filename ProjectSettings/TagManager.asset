@@ -56,3 +56,6 @@ TagManager:
   - name: Background
     uniqueID: 1481723917
     locked: 0
+  - name: Light Enitiy
+    uniqueID: 2479925771
+    locked: 0
