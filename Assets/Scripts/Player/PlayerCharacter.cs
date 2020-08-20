@@ -132,7 +132,7 @@ public class PlayerCharacter : MonoBehaviour {
     public virtual void HandleMovement() {
         // setAnimation Triggers
         anim.SetBool("OnGround", IsGrounded());
-        anim.SetBool("Moving", moveRight || moveLeft);
+        anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 3);
 
         if (moveRight){
             moveX += 1;
