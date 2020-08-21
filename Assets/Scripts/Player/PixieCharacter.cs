@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PixieCharacter : MonoBehaviour {
+public class PixieCharacter : AnimatedCharacter {
     // Start is called before the first frame update
 
     private Rigidbody2D rigid;
@@ -14,14 +14,11 @@ public class PixieCharacter : MonoBehaviour {
     public float maxForce = 10f;
     public float flightGain = 20f;
 
-    private void Start(){
+
+    public override void Start(){
+        base.Start();
         rigid = GetComponent<Rigidbody2D>();
     }
-
-
-
-    // perform force
-
 
     public void UpdatePosition(Vector3 mousePosition) {
         // flip sprite to face mouse

@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942442c8f94343440ae003355fbed717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   recording: 0
   currentTime: 0
   moveX: 0
@@ -290,7 +291,6 @@ MonoBehaviour:
   jumpHeight: 11
   walkSpeed: 7
   rigid: {fileID: 0}
-  anim: {fileID: 0}
   onLadder: 0
 --- !u!1 &377961444
 GameObject:
@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08674ba7e355b8479c0e8f6a411c687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   distanceToStop: 1
   maxDistance: 10
   minDistance: 1
