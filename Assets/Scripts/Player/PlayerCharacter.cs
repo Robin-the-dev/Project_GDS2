@@ -24,6 +24,11 @@ public class PlayerCharacter : MonoBehaviour {
     [HideInInspector]
     public bool climbDown = false;
 
+    private int blinkWaitTime = 90;
+    private int maxBlinkWaitTime = 80;
+    private int minBlinkWaitTime = 200;
+    private int blinkTime = 0;
+
     public float jumpHeight = 14f;
     public float walkSpeed = 7;
 
@@ -153,6 +158,26 @@ public class PlayerCharacter : MonoBehaviour {
         moveX = 0;
     }
 
+    public void HandleBlink() {
+        // enable blink layer
+        if (blinkTime > 0) {
+            Debug.Log("Blink");
+            anim.SetLayerWeight(anim.GetLayerIndex("Blinking"),1);
+        } else {
+            anim.SetLayerWeight(anim.GetLayerIndex("Blinking"),0);
+        }
+        // do blink cooldown
+        if (blinkWaitTime <= 0 && blinkTime <= 0) {
+            // get new cooldown
+            blinkWaitTime = Random.Range(minBlinkWaitTime, maxBlinkWaitTime);
+            blinkTime = 8;
+        } else if (blinkTime > 0){
+            blinkTime--;
+        } else {
+            blinkWaitTime--;
+        }
+    }
+
     // public virtual void PreventWallHanging() {
     //     // Check if the body's current velocity will result in a collision
     //     Vector3 direction = Vector3.up;
@@ -197,6 +222,7 @@ public class PlayerCharacter : MonoBehaviour {
         // PreventWallHanging();
         HandleFalling();
         HandleClimb();
+        HandleBlink();
         // CheckLocks();
     }
 
