@@ -1,0 +1,122 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CyberpunkControl : RecordableCharacter {
+
+    public GameObject boxPosition;
+    public float grabRange = 1f;
+    public GameObject swordSwingPrefab;
+
+    private GameObject linkedBox = null;
+    private bool hasDoubleJumped = false;
+
+    public override void doAttackAction(bool active, Vector3 mousePosition) {
+        if (!active) return;
+        if (primaryTimeLeft <= 0) {
+            SwordSwing sword = Instantiate(swordSwingPrefab, transform.position, Quaternion.identity).GetComponent<SwordSwing>();
+            Vector3 heading = mousePosition - transform.position;
+            float distance = heading.magnitude;
+            sword.SetDirection(heading / distance);
+            primaryTimeLeft = primaryCooldown;
+            anim.SetTrigger("Attack");
+            AudioManager.Instance.RequestPlay(AudioManager.Instance.cyberpunk[1]);
+        }
+    }
+
+    public override void doSpecialAction(bool active, Vector3 mousePosition) {
+        if (active) {
+            if (linkedBox == null && secondaryTimeLeft <= 0) {
+                SetNearestBox();
+                if (linkedBox != null) {
+                    anim.SetTrigger("Special");
+                    anim.SetBool("Grabbing", true);
+                    linkedBox.GetComponent<Rigidbody>().isKinematic = true;
+                    linkedBox.GetComponent<MeshRenderer>().enabled = false;
+                    secondaryTimeLeft = secondaryCooldown;
+                    boxPosition.GetComponent<BoxCollider>().enabled = true;
+                    boxPosition.GetComponent<MeshRenderer>().enabled = true;
+                }
+            }
+        } else {
+            if (linkedBox != null) {
+                anim.SetBool("Grabbing", false);
+                linkedBox.GetComponent<Rigidbody>().isKinematic = false;
+                linkedBox.GetComponent<MeshRenderer>().enabled = true;
+                linkedBox = null;
+                boxPosition.GetComponent<BoxCollider>().enabled = false;
+                boxPosition.GetComponent<MeshRenderer>().enabled = false;
+            }
+        }
+    }
+
+    private void SetNearestBox() {
+        Collider[] boxes = Physics.OverlapSphere(boxPosition.transform.position, grabRange);
+        Collider nearest = null;
+        float dist = -1;
+        foreach (Collider p in boxes) {
+            if (!p.CompareTag("Pickup")) continue;
+            if (dist == -1) {
+                nearest = p;
+                dist = Vector3.Distance(boxPosition.transform.position, p.transform.position);
+            } else {
+                float newDist = Vector3.Distance(boxPosition.transform.position, p.transform.position);
+                if (newDist < dist) {
+                    nearest = p;
+                    dist = newDist;
+                }
+            }
+        }
+        if (nearest != null) {
+            linkedBox = nearest.gameObject;
+        }
+    }
+
+    public override void Jump() {
+        bool onGround = IsGrounded();
+        if (onGround) hasDoubleJumped = false;
+        if (onGround || !hasDoubleJumped) {
+            rigid.velocity = new Vector3(rigid.velocity.x, jumpHeight, rigid.velocity.z);
+            if (onGround) {
+                anim.SetTrigger("Jump");
+                AudioManager.Instance.RequestPlay(AudioManager.Instance.shared[0]);
+            } else {
+                anim.SetTrigger("Double Jump");
+                AudioManager.Instance.RequestPlay(AudioManager.Instance.cyberpunk[0]);
+                hasDoubleJumped = true;
+            }
+        }
+    }
+
+    public override void Attack() {
+        // event is not used
+    }
+
+    public override void Special() {
+        // event is not used
+    }
+
+    public override void HandleMovement() {
+        base.HandleMovement();
+
+        // flip box held position on move
+        Vector3 pos = boxPosition.transform.localPosition;
+        float heldxAbs = Mathf.Abs(pos.x);
+        if (moveLeft) {
+            boxPosition.transform.localPosition = new Vector3(-heldxAbs, pos.y, pos.z);
+        } else if (moveRight) {
+            boxPosition.transform.localPosition = new Vector3(heldxAbs, pos.y, pos.z);
+        }
+    }
+
+    private void UpdateBoxPos() {
+        if (linkedBox != null) {
+            linkedBox.transform.position = boxPosition.transform.position;
+        }
+    }
+
+    public override void FixedUpdate() {
+        base.FixedUpdate();
+        UpdateBoxPos();
+    }
+}

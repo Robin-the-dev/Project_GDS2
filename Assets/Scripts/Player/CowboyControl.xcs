@@ -1,0 +1,222 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class CowboyControl : RecordableCharacter {
+
+    public float grappleSpeed = 3f;
+    public float detectionRange = 2f;
+    public float minGrappleDistance = 0.5f;
+    public float grappleDistance = 3.5f;
+    public float maxGrappleDistance = 6f;
+    public float maxGrappleVelocity = 15f;
+    public float maxGrappleForce = 40f;
+    public float grappleGain = 5f;
+    public LayerMask grapplelayer;
+    public GameObject bulletPrefab;
+    public LineRenderer ropeRender;
+    public GameObject handObject;
+
+    private GameObject currentGrapplePoint = null;
+    private float currentGrappleDistance = 0;
+    private Vector3 gunTarget = Vector3.zero;
+    public int maxPoints = 5;
+    private int point = 0;
+
+    private bool hasHitMark = false;
+    private Vector3 markPosition = Vector3.zero;
+    private SpriteRenderer spriteRenderer;
+
+    public override void Start() {
+        base.Start();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    public override void doAttackAction(bool active, Vector3 mousePosition) {
+        // on mouse release do nothing
+        if (!active) return;
+        // do shoot setup
+        if (primaryTimeLeft <= 0) {
+            anim.SetTrigger("Attack");
+            primaryTimeLeft = primaryCooldown;
+            gunTarget = mousePosition;
+        }
+    }
+
+    public override void doSpecialAction(bool active, Vector3 mousePosition) {
+        if (active) {
+            if (secondaryTimeLeft <= 0 && currentGrapplePoint == null) {
+                SetNearestGrapple(mousePosition);
+                if (currentGrapplePoint != null) {
+                    anim.SetTrigger("Special");
+                    anim.SetBool("Grappling", true);
+                    hasHitMark = false;
+                    point = 1;
+                    secondaryTimeLeft = secondaryCooldown;
+                    currentGrappleDistance = grappleDistance;
+                }
+            }
+        } else {
+            if (currentGrapplePoint == null) return;
+            anim.SetBool("Grappling", false);
+            currentGrapplePoint = null;
+            if (secondaryTimeLeft <= 0) {
+                rigid.velocity = Vector3.ClampMagnitude(rigid.velocity * 3,   maxGrappleVelocity/2);
+            }
+        }
+    }
+
+    private void SetNearestGrapple(Vector3 target) {
+        Collider[] grapplePoints = Physics.OverlapSphere(target, detectionRange, grapplelayer);
+        Collider nearest = null;
+        float dist = -1;
+        foreach (Collider p in grapplePoints) {
+            float newDist = Vector3.Distance(target, p.transform.position);
+            float distPlayer = Vector3.Distance(transform.position, p.transform.position);
+            if (dist == -1 && CanReachGrapple(p.gameObject.transform) && distPlayer < maxGrappleDistance) {
+                nearest = p;
+                dist = newDist;
+            } else {
+                if (newDist < dist && CanReachGrapple(p.gameObject.transform) && distPlayer < maxGrappleDistance) {
+                    nearest = p;
+                    dist = newDist;
+                }
+            }
+        }
+        if (nearest != null) {
+            currentGrapplePoint = nearest.gameObject;
+        }
+    }
+
+    private bool CanReachGrapple(Transform grapple) {
+        return !Physics.Raycast(transform.position, (grapple.position - transform.position), detectionRange, -1, QueryTriggerInteraction.Ignore);
+    }
+
+    public override void Attack() {
+        FireBullet(gunTarget);
+    }
+
+    public override void Special() {
+        // event is never triggered
+    }
+
+    private void HandleGrapple(){
+        if (currentGrapplePoint == null) return;
+        if (transform.position.y > currentGrapplePoint.transform.position.y) return;
+        if (!hasHitMark) return;
+        Vector3 grapplePosition = currentGrapplePoint.transform.position;
+        Vector3 handPosition = handObject.transform.position;
+
+        // calculate mark position
+        Vector3 targetVector = grapplePosition - handPosition;
+        float angle = Vector3.SignedAngle(targetVector, Vector3.down, Vector3.forward);
+
+        float anglePercent = Mathf.Abs(angle)/180;
+        if (moveLeft) {
+            angle += 10 * anglePercent;
+        } else if(moveRight) {
+            angle -= 10 * anglePercent;
+        }
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(angle/180 * Mathf.PI));
+        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(angle/180 * Mathf.PI));
+        markPosition = new Vector3(tempPos.x, tempPos.y, transform.position.z);
+
+        // calculate force
+        Vector3 distance = markPosition - handPosition;
+        distance.z = transform.position.z;
+
+        Vector3 targetVelocity = Vector3.ClampMagnitude(grappleSpeed * distance, maxGrappleVelocity);
+        Vector3 error = targetVelocity - rigid.velocity;
+        Vector3 force = Vector3.ClampMagnitude(grappleGain * error, maxGrappleForce);
+
+        // perform force
+        rigid.AddForce(force);
+    }
+
+    private void FireBullet(Vector3 target) {
+        // play sound
+        AudioManager.Instance.RequestPlay(AudioManager.Instance.cowboy[0]);
+
+        // spawn bullet
+        Projectile bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity).GetComponent<Projectile>();
+        Vector3 heading = target - transform.position;
+        float distance = heading.magnitude;
+        bullet.SetDirection(heading / distance);
+    }
+
+    private void RenderGrapple() {
+        if (currentGrapplePoint != null && !hasHitMark) {
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, handObject.transform.position);
+            Vector3 mark = GetMarkPosition();
+            ropeRender.SetPosition(1, mark);
+            point++;
+            if (point == maxPoints) hasHitMark = true;
+        } else if (currentGrapplePoint != null && hasHitMark) {
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, handObject.transform.position);
+            ropeRender.SetPosition(1, currentGrapplePoint.transform.position);
+        } else {
+            ropeRender.enabled = false;
+        }
+    }
+
+    private Vector3 GetMarkPosition() {
+        float distance = Vector3.Distance(handObject.transform.position, currentGrapplePoint.transform.position) * point / maxPoints;
+
+        Vector3 grapplePosition = currentGrapplePoint.transform.position;
+        Vector3 handPosition = handObject.transform.position;
+        Vector3 targetVector = handPosition - grapplePosition;
+        float angle = Vector3.SignedAngle(targetVector, Vector3.down, Vector3.forward);
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = handPosition.x + (distance * Mathf.Sin(angle/180 * Mathf.PI));
+        tempPos.y = handPosition.y + (distance * Mathf.Cos(angle/180 * Mathf.PI));
+        return new Vector3(tempPos.x, tempPos.y, transform.position.z);
+    }
+
+    public override void HandleMovement() {
+        if (currentGrapplePoint == null) {
+            base.HandleMovement();
+        } else {
+            HandleGrapple();
+        }
+    }
+
+    public override void HandleClimb() {
+        base.HandleClimb();
+        if (currentGrapplePoint == null) return;
+        float playerDistance = Vector3.Distance(currentGrapplePoint.transform.position, handObject.transform.position);
+        if (playerDistance < currentGrappleDistance) currentGrappleDistance = playerDistance;
+        if (climbUp) {
+            currentGrappleDistance -= 4 * Time.deltaTime;
+        } else if (climbDown) {
+            currentGrappleDistance += 4 * Time.deltaTime;
+        }
+        if (currentGrappleDistance > maxGrappleDistance) currentGrappleDistance = maxGrappleDistance;
+        if (currentGrappleDistance < minGrappleDistance) currentGrappleDistance = minGrappleDistance;
+    }
+
+    public override void HandleFalling() {
+        // disable falling increase while on grapple
+        if (currentGrapplePoint == null) {
+            base.HandleFalling();
+        }
+    }
+
+    public override void FixedUpdate() {
+        base.FixedUpdate();
+        RenderGrapple();
+
+        Vector3 pos = handObject.transform.localPosition;
+        float heldxAbs = Mathf.Abs(pos.x);
+        if (spriteRenderer.flipX) {
+            handObject.transform.localPosition = new Vector3(heldxAbs, pos.y, pos.z);
+        }else {
+            handObject.transform.localPosition = new Vector3(-heldxAbs, pos.y, pos.z);
+        }
+    }
+}
