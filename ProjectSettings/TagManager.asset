@@ -41,8 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 1841671677
+  - name: Background
+    uniqueID: 1481723917
+    locked: 0
+  - name: Midground
+    uniqueID: 2107174967
+    locked: 0
+  - name: Light Enitiy
+    uniqueID: 2479925771
     locked: 0
   - name: Entity
     uniqueID: 1044467935
@@ -50,12 +56,6 @@ TagManager:
   - name: Interactable
     uniqueID: 3106444597
     locked: 0
-  - name: Midground
-    uniqueID: 2107174967
-    locked: 0
-  - name: Background
-    uniqueID: 1481723917
-    locked: 0
-  - name: Light Enitiy
-    uniqueID: 2479925771
+  - name: Foreground
+    uniqueID: 1841671677
     locked: 0
