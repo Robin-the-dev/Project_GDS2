@@ -38,6 +38,7 @@ public class PlayerCharacter : AnimatedCharacter {
     public InteractableObject currentInteraction = null;
 
     public GameObject boxPosition;
+    public BoxFinder boxFinder;
 
     // [HideInInspector]
     // public BackgroundTransition currentTransition = null;
@@ -67,13 +68,9 @@ public class PlayerCharacter : AnimatedCharacter {
     /// <param name="mousePosition"> current mousePosition </param>
     public void doSpecialAction(bool active, Vector3 mousePosition){
         if (foundBox != null && heldBox == null && active) {
-            heldBox = foundBox;
-            heldBox.Interact(true);
-            runMultiplier = 0.75f;
+            UpdateBoxState(true);
         } else if (heldBox != null && !active) {
-            heldBox.Interact(false);
-            heldBox = null;
-            runMultiplier = 1f;
+            UpdateBoxState(false);
         }
     }
 
@@ -104,12 +101,12 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public void MoveRight(bool active) {
-        if (active) GetComponent<SpriteRenderer>().flipX = !active;
+        if (active) UpdateFacingDirection(!active);
         moveRight = active;
     }
 
     public void MoveLeft(bool active) {
-        if (active) GetComponent<SpriteRenderer>().flipX = active;
+        if (active) UpdateFacingDirection(active);
         moveLeft = active;
     }
 
@@ -165,6 +162,32 @@ public class PlayerCharacter : AnimatedCharacter {
         }
         rigid.velocity = new Vector2(rigid.velocity.x, currentVelocity.y);
         moveX = 0;
+    }
+
+    private void UpdateBoxState(bool active) {
+        if (active){
+            heldBox = foundBox;
+            heldBox.Interact(true);
+            runMultiplier = 0.75f;
+        } else {
+            heldBox.Interact(false);
+            heldBox = null;
+            runMultiplier = 1f;
+        }
+        boxPosition.GetComponent<SpriteRenderer>().enabled = active;
+        boxPosition.GetComponent<BoxCollider2D>().enabled = active;
+    }
+
+    public void UpdateFacingDirection(bool isFacingLeft) {
+        float newBoxPosX = Mathf.Abs(boxPosition.transform.localPosition.x);
+        float newFinderPosX = Mathf.Abs(boxFinder.transform.localPosition.x);
+        if (isFacingLeft) {
+            newBoxPosX = -newBoxPosX;
+            newFinderPosX = -newFinderPosX;
+        }
+        boxPosition.transform.localPosition = new Vector2(newBoxPosX, boxPosition.transform.localPosition.y);
+        boxFinder.transform.localPosition = new Vector2(newFinderPosX, boxFinder.transform.localPosition.y);
+        GetComponent<SpriteRenderer>().flipX = isFacingLeft;
     }
 
     // public virtual void PreventWallHanging() {
