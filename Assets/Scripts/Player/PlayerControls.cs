@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControls : MonoBehaviour{
+public class PlayerControls : MonoBehaviour {
 
     public bool SoloMode;
     public PlayerCharacter activeCharacter;
@@ -56,6 +56,9 @@ public class PlayerControls : MonoBehaviour{
         //interact
         if (GetKeyDown("Interact")) {
             activeCharacter.Interact();
+            activeCharacter.HoldInteract(true);
+        } else if (GetKeyUp("Interact")) {
+            activeCharacter.HoldInteract(false);
         }
 
         //climbUp

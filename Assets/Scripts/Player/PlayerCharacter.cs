@@ -31,7 +31,14 @@ public class PlayerCharacter : AnimatedCharacter {
     public Rigidbody2D rigid;
 
     // [HideInInspector]
-    // public InteractableObject currentInteraction = null;
+    public InteractableBox foundBox = null;
+    // [HideInInspector]
+    public InteractableBox heldBox = null;
+    [HideInInspector]
+    public InteractableObject currentInteraction = null;
+
+    public GameObject boxPosition;
+
     // [HideInInspector]
     // public BackgroundTransition currentTransition = null;
     // [HideInInspector]
@@ -59,7 +66,15 @@ public class PlayerCharacter : AnimatedCharacter {
     /// <param name="active"> if true keyPressed, if false keyReleased </param>
     /// <param name="mousePosition"> current mousePosition </param>
     public void doSpecialAction(bool active, Vector3 mousePosition){
-
+        if (foundBox != null && heldBox == null && active) {
+            heldBox = foundBox;
+            heldBox.Interact(true);
+            runMultiplier = 0.75f;
+        } else if (heldBox != null && !active) {
+            heldBox.Interact(false);
+            heldBox = null;
+            runMultiplier = 1f;
+        }
     }
 
     /// <summary>
@@ -107,6 +122,7 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public void Sprint(bool active) {
+        if (heldBox != null) return;
         if (active) {
             runMultiplier = 1.5f;
         } else {
@@ -130,7 +146,7 @@ public class PlayerCharacter : AnimatedCharacter {
     public virtual void HandleMovement() {
         // setAnimation Triggers
         anim.SetBool("OnGround", IsGrounded());
-        anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 3);
+        anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 0.5);
 
         if (moveRight){
             moveX += 1;
@@ -153,11 +169,11 @@ public class PlayerCharacter : AnimatedCharacter {
 
     // public virtual void PreventWallHanging() {
     //     // Check if the body's current velocity will result in a collision
-    //     Vector3 direction = Vector3.up;
+    //     Vector3 direction = Vector2.up;
     //     if (moveLeft) {
-    //         direction = Vector3.left * walkSpeed * runMultiplier;
+    //         direction = Vector2.left * walkSpeed * runMultiplier;
     //     } else if (moveRight) {
-    //         direction = Vector3.right * walkSpeed * runMultiplier;
+    //         direction = Vector2.right * walkSpeed * runMultiplier;
     //     }
     //     if (rigid.SweepTest(direction, out RaycastHit hit, direction.magnitude * Time.deltaTime, QueryTriggerInteraction.Ignore)) {
     //         // If so, stop the movement
@@ -174,21 +190,6 @@ public class PlayerCharacter : AnimatedCharacter {
         }
     }
 
-    // public virtual void Update() {
-    //     if (Time.timeScale > 0 ) {
-    //         HandleCoolDowns();
-    //     }
-    // }
-
-    // public virtual void HandleCoolDowns() {
-    //     if (primaryTimeLeft > 0) {
-    //         primaryTimeLeft -= Time.deltaTime;
-    //     }
-    //     if (secondaryTimeLeft > 0) {
-    //         secondaryTimeLeft -= Time.deltaTime;
-    //     }
-    // }
-
     public override void FixedUpdate() {
         base.FixedUpdate();
         HandleMovement();
@@ -196,70 +197,55 @@ public class PlayerCharacter : AnimatedCharacter {
         // PreventWallHanging();
         HandleFalling();
         HandleClimb();
+        UpdateBoxPos();
         // CheckLocks();
     }
 
     public void Interact() {
-        // if (currentInteraction != null) {
-        //     currentInteraction.Interact();
-        // }
+        if (currentInteraction != null && heldBox == null) {
+            currentInteraction.Interact();
+        }
     }
-    //
+
+    public void HoldInteract(bool active) {
+
+    }
+
+    public void UpdateBox(InteractableBox box){
+        if (heldBox != null) return;
+        foundBox = box;
+    }
+
+    private void UpdateBoxPos() {
+        if (heldBox != null) {
+            heldBox.transform.position = boxPosition.transform.position;
+        }
+    }
+
+
     // public void EnterDoor() {
     //     if (currentTransition != null) {
     //         rigid.transform.position = currentTransition.link.spawnPoint.transform.position;
     //     }
     // }
 
-    // private void OnTriggerEnter(Collider col) {
-    //     if (col.TryGetComponent(out BackgroundTransition transition)) {
-    //         if (transition.active && transition.link.active) {
-    //             currentTransition = transition;
-    //         }
-    //     }
-    //     if (col.TryGetComponent(out LockController padlock)) {
-    //         if (!padlock.active) {
-    //             currentLock = padlock;
-    //         }
-    //     } else if (col.TryGetComponent(out InteractableObject interact)) {
-    //         currentInteraction = interact;
-    //     }
-    //     if (col.CompareTag("Ladder")) {
-    //         onLadder = true;
-    //     }
-    // }
-    //
-    // private void OnTriggerStay(Collider col) {
-    //     if (col.TryGetComponent(out BackgroundTransition transition)) {
-    //         if (transition.active && transition.link.active) {
-    //             currentTransition = transition;
-    //         }
-    //     }
-    //     if (col.TryGetComponent(out LockController padlock)) {
-    //         if (!padlock.active) {
-    //             currentLock = padlock;
-    //         }
-    //     } else if (col.TryGetComponent(out InteractableObject interact)) {
-    //         currentInteraction = interact;
-    //     }
-    //     if (col.CompareTag("Ladder")) {
-    //         onLadder = true;
-    //     }
-    // }
-    //
-    // private void OnTriggerExit(Collider col) {
-    //     if (col.TryGetComponent(out BackgroundTransition transition)) {
-    //         currentTransition = null;
-    //     }
-    //     if (col.TryGetComponent(out LockController padlock)) {
-    //         currentLock = null;
-    //     } else if (col.TryGetComponent(out InteractableObject interact)) {
-    //         currentInteraction = null;
-    //     }
-    //     if (col.CompareTag("Ladder")) {
-    //         onLadder = false;
-    //     }
-    // }
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = interact;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = interact;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = null;
+        }
+    }
 
     // private void CheckLocks() {
     //     if (currentLock != null && PlayerPrefs.GetInt("keyCount") > 0) {
