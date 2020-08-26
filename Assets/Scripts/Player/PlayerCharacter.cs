@@ -30,15 +30,41 @@ public class PlayerCharacter : AnimatedCharacter {
     [HideInInspector]
     public Rigidbody2D rigid;
 
-    // [HideInInspector]
+    [HideInInspector]
     public InteractableBox foundBox = null;
-    // [HideInInspector]
+    [HideInInspector]
     public InteractableBox heldBox = null;
     [HideInInspector]
     public InteractableObject currentInteraction = null;
 
     public GameObject boxPosition;
     public BoxFinder boxFinder;
+
+    public float grappleSpeed = 3f;
+    public float detectionRange = 2f;
+    public float minGrappleDistance = 0.5f;
+    public float grappleDistance = 3.5f;
+    public float maxGrappleDistance = 6f;
+    public float maxGrappleVelocity = 15f;
+    public float maxGrappleForce = 40f;
+    public float grappleGain = 5f;
+    public LayerMask grapplelayer;
+    public LineRenderer ropeRender;
+    public GameObject handObject;
+
+    public GameObject currentGrapplePoint = null;
+    public List<Collider2D> grapplePoints;
+    private float currentGrappleDistance = 0;
+    private bool hasHitMark = false;
+    private Vector2 markPosition = Vector3.zero;
+    private SpriteRenderer spriteRenderer;
+
+    public int maxRopePoints = 5;
+    private int ropePoint = 0;
+
+    public float ropeCooldown = 5f;
+    [HideInInspector]
+    public float ropeTimeLeft = 0f;
 
     // [HideInInspector]
     // public BackgroundTransition currentTransition = null;
@@ -67,11 +93,75 @@ public class PlayerCharacter : AnimatedCharacter {
     /// <param name="active"> if true keyPressed, if false keyReleased </param>
     /// <param name="mousePosition"> current mousePosition </param>
     public void doSpecialAction(bool active, Vector3 mousePosition){
-        if (foundBox != null && heldBox == null && active) {
+        if (active && currentGrapplePoint == null) {
+            SetNearestGrapple(mousePosition);
+            if (currentGrapplePoint != null) {
+                doGrappleAction();
+                return;
+            }
+        }
+        if (!active && currentGrapplePoint != null) {
+            if (currentGrapplePoint == null) return;
+            // anim.SetBool("Grappling", false);
+            currentGrapplePoint = null;
+            if (ropeTimeLeft <= 0) {
+                rigid.velocity = Vector3.ClampMagnitude(rigid.velocity * 3,   maxGrappleVelocity/2);
+            }
+        } else if (foundBox != null && heldBox == null && active) {
             UpdateBoxState(true);
         } else if (heldBox != null && !active) {
             UpdateBoxState(false);
         }
+    }
+
+
+    public void doGrappleAction() {
+        // anim.SetTrigger("Special");
+        // anim.SetBool("Grappling", true);
+        hasHitMark = false;
+        ropePoint = 1;
+        ropeTimeLeft = ropeCooldown;
+        currentGrappleDistance = grappleDistance;
+    }
+
+    private void SetNearestGrapple(Vector3 target) {
+        // set up filter to only collect grapple points
+        ContactFilter2D filter = new ContactFilter2D();
+        grapplePoints = new List<Collider2D>();
+        filter.SetLayerMask(LayerMask.GetMask("Grapple"));
+        filter.useTriggers = true;
+        Debug.Log("Yoink");
+        // test if any grapple points exist within range
+        Physics2D.OverlapCircle(target, detectionRange, filter, grapplePoints);
+        Collider2D nearest = null;
+        float dist = -1;
+        //find the nearest grapple point to mouse position
+        foreach (Collider2D p in grapplePoints) {
+            float newDist = Vector2.Distance(target, p.transform.position);
+            float distPlayer = Vector2.Distance(transform.position, p.transform.position);
+            if (dist == -1 && CanReachGrapple(p.gameObject.transform) && distPlayer < maxGrappleDistance) {
+                nearest = p;
+                dist = newDist;
+            } else {
+                if (newDist < dist && CanReachGrapple(p.gameObject.transform) && distPlayer < maxGrappleDistance) {
+                    nearest = p;
+                    dist = newDist;
+                }
+            }
+        }
+        //update grapple point
+        if (nearest != null) {
+            currentGrapplePoint = nearest.gameObject;
+        }
+    }
+
+    private bool CanReachGrapple(Transform grapple) {
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.useTriggers = false;
+        filter.SetLayerMask(~LayerMask.GetMask("Player"));
+        List<RaycastHit2D> results = new List<RaycastHit2D>();
+        Physics2D.Raycast(transform.position, (grapple.position - transform.position), filter, results, detectionRange);
+        return results.Count == 0;
     }
 
     /// <summary>
@@ -131,19 +221,26 @@ public class PlayerCharacter : AnimatedCharacter {
         // default does nothing
     }
 
-    // when override make sure to implement base.HandleClimb();
-    public virtual void HandleClimb() {
-        if (onLadder) {
-            if (climbUp) {
-                rigid.velocity = new Vector2(rigid.velocity.x, 7);
-            }
+    public void HandleClimb() {
+        if (currentGrapplePoint == null) return;
+        float playerDistance = Vector2.Distance(currentGrapplePoint.transform.position, handObject.transform.position);
+        if (playerDistance < currentGrappleDistance) currentGrappleDistance = playerDistance;
+        if (climbUp) {
+            currentGrappleDistance -= 4 * Time.deltaTime;
+        } else if (climbDown) {
+            currentGrappleDistance += 4 * Time.deltaTime;
         }
+        if (currentGrappleDistance > maxGrappleDistance) currentGrappleDistance = maxGrappleDistance;
+        if (currentGrappleDistance < minGrappleDistance) currentGrappleDistance = minGrappleDistance;
     }
 
     public virtual void HandleMovement() {
         // setAnimation Triggers
         anim.SetBool("OnGround", IsGrounded());
         anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 0.5);
+
+        // don't use ground movement if grappeling
+        if (currentGrapplePoint != null) return;
 
         if (moveRight){
             moveX += 1;
@@ -208,6 +305,7 @@ public class PlayerCharacter : AnimatedCharacter {
     // }
 
     public virtual void HandleFalling() {
+        if (currentGrapplePoint != null) return;
         if (rigid.velocity.y < 0) {
             rigid.velocity += Vector2.ClampMagnitude(Vector3.up * 2.5f * Physics.gravity.y * Time.deltaTime, jumpHeight*5);
         }
@@ -220,7 +318,9 @@ public class PlayerCharacter : AnimatedCharacter {
         // PreventWallHanging();
         HandleFalling();
         HandleClimb();
+        HandleGrapple();
         UpdateBoxPos();
+        RenderGrapple();
         // CheckLocks();
     }
 
@@ -234,16 +334,6 @@ public class PlayerCharacter : AnimatedCharacter {
 
     }
 
-    public void UpdateBox(InteractableBox box){
-        if (heldBox != null) return;
-        foundBox = box;
-    }
-
-    private void UpdateBoxPos() {
-        if (heldBox != null) {
-            heldBox.transform.position = boxPosition.transform.position;
-        }
-    }
 
 
     // public void EnterDoor() {
@@ -278,6 +368,8 @@ public class PlayerCharacter : AnimatedCharacter {
     //     }
     // }
 
+
+
     public bool IsGrounded() {
         float width = (transform.localScale.x * 0.15f) * 1.5f;
         float height = (transform.localScale.y * 0.4f) * 1.5f;
@@ -303,5 +395,83 @@ public class PlayerCharacter : AnimatedCharacter {
         else Debug.DrawRay(corner2Start, corner2End, Color.red);
 
         return (corner1 > 0 || corner2 > 0);
+    }
+
+    private void HandleGrapple(){
+        if (currentGrapplePoint == null) return;
+        if (transform.position.y > currentGrapplePoint.transform.position.y) return;
+        if (!hasHitMark) return;
+        Vector2 grapplePosition = currentGrapplePoint.transform.position;
+        Vector2 handPosition = handObject.transform.position;
+
+        // calculate mark position
+        Vector2 targetVector = grapplePosition - handPosition;
+        float angle = Vector2.SignedAngle(targetVector, Vector2.down);
+
+        float anglePercent = Mathf.Abs(angle)/180;
+        if (moveLeft) {
+            angle += 10 * anglePercent;
+        } else if(moveRight) {
+            angle -= 10 * anglePercent;
+        } else {
+
+        }
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(angle/180 * Mathf.PI));
+        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(angle/180 * Mathf.PI));
+        markPosition = new Vector2(tempPos.x, tempPos.y);
+
+        // calculate force
+        Vector2 distance = markPosition - handPosition;
+
+        Vector2 targetVelocity = Vector2.ClampMagnitude(grappleSpeed * distance, maxGrappleVelocity);
+        Vector2 error = targetVelocity - rigid.velocity;
+        Vector2 force = Vector2.ClampMagnitude(grappleGain * error, maxGrappleForce);
+
+        // perform force
+        rigid.AddForce(force);
+    }
+
+    private void RenderGrapple() {
+        if (currentGrapplePoint != null && !hasHitMark) {
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, handObject.transform.position);
+            Vector2 mark = GetMarkPosition();
+            ropeRender.SetPosition(1, mark);
+            ropePoint++;
+            if (ropePoint == maxRopePoints) hasHitMark = true;
+        } else if (currentGrapplePoint != null && hasHitMark) {
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, handObject.transform.position);
+            ropeRender.SetPosition(1, currentGrapplePoint.transform.position);
+        } else {
+            ropeRender.enabled = false;
+        }
+    }
+
+    private Vector2 GetMarkPosition() {
+        float distance = Vector2.Distance(handObject.transform.position, currentGrapplePoint.transform.position) * ropePoint / maxRopePoints;
+
+        Vector2 grapplePosition = currentGrapplePoint.transform.position;
+        Vector2 handPosition = handObject.transform.position;
+        Vector2 targetVector = handPosition - grapplePosition;
+        float angle = Vector2.SignedAngle(targetVector, Vector3.down);
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = handPosition.x + (distance * Mathf.Sin(angle/180 * Mathf.PI));
+        tempPos.y = handPosition.y + (distance * Mathf.Cos(angle/180 * Mathf.PI));
+        return new Vector2(tempPos.x, tempPos.y);
+    }
+
+    public void UpdateBox(InteractableBox box){
+        if (heldBox != null) return;
+        foundBox = box;
+    }
+
+    private void UpdateBoxPos() {
+        if (heldBox != null) {
+            heldBox.transform.position = boxPosition.transform.position;
+        }
     }
 }

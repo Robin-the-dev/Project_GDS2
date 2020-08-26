@@ -14,19 +14,20 @@ public class CowboyControl : RecordableCharacter {
     public float maxGrappleForce = 40f;
     public float grappleGain = 5f;
     public LayerMask grapplelayer;
-    public GameObject bulletPrefab;
     public LineRenderer ropeRender;
     public GameObject handObject;
 
     private GameObject currentGrapplePoint = null;
     private float currentGrappleDistance = 0;
-    private Vector3 gunTarget = Vector3.zero;
-    public int maxPoints = 5;
-    private int point = 0;
-
     private bool hasHitMark = false;
     private Vector3 markPosition = Vector3.zero;
     private SpriteRenderer spriteRenderer;
+
+
+    public GameObject bulletPrefab;
+    private Vector3 gunTarget = Vector3.zero;
+    public int maxPoints = 5;
+    private int point = 0;
 
     public override void Start() {
         base.Start();
