@@ -123,6 +123,9 @@ public class PlayerControls : MonoBehaviour {
     }
 
     private void updateMousePos() {
+        Rect screen = new Rect(0, 0, Screen.width, Screen.height);
+        if (!screen.Contains(Input.mousePosition)) return;
+
         Vector3 tempPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(tempPos);
         mousePosition = new Vector3(worldPosition.x, worldPosition.y, 0);

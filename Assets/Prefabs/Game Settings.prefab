@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 1531531654169441670}
   - component: {fileID: 339466265}
   - component: {fileID: 339466266}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: BoxLoc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2575061745947852213}
   m_Enabled: 0
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 15a6d6f952edd4745becc30ca246a3d8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -630,7 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6218572705078487351, guid: f98e3b09a5c10f44f828e811b70b5a1a, type: 3}
       propertyPath: m_Size.x
-      value: 0.45
+      value: 0.475
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f98e3b09a5c10f44f828e811b70b5a1a, type: 3}

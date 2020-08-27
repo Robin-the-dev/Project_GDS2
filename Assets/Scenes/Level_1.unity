@@ -1472,14 +1472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 339466265, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 15a6d6f952edd4745becc30ca246a3d8, type: 2}
-    - target: {fileID: 2575061745947852213, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 5381946292006793251, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1527,10 +1519,6 @@ PrefabInstance:
     - target: {fileID: 5381946292006793252, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
       propertyPath: m_Name
       value: Game Settings
-      objectReference: {fileID: 0}
-    - target: {fileID: 6218572706772717038, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
-      propertyPath: m_Size.x
-      value: 0.475
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
