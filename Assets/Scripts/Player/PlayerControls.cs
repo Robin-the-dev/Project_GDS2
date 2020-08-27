@@ -36,14 +36,6 @@ public class PlayerControls : MonoBehaviour {
         }
     }
 
-    // private void InitAbilityIcons() {
-    //     if (primaryAbilityIcon != null && secondaryAbilityIcon != null) return;
-    //     primaryAbilityIcon = FindObjectOfType<PrimaryAbilityIcon>().GetComponent<Image>();
-    //     secondaryAbilityIcon = FindObjectOfType<SecondaryAbilityIcon>().GetComponent<Image>();
-    //     primaryCoolDownText = primaryAbilityIcon.GetComponentInChildren<Text>();
-    //     secondaryCoolDownText = secondaryAbilityIcon.GetComponentInChildren<Text>();
-    // }
-
     private void HandleControls() {
         //Jump controls
         if (GetKeyDown("Jump")) {
@@ -111,28 +103,6 @@ public class PlayerControls : MonoBehaviour {
             activeCharacter.doSpecialAction(false, mousePosition);
         }
     }
-
-    // public void HandleCoolDowns() {
-    //     // do gun cooldown
-    //     InitAbilityIcons();
-    //     if (activeCharacter.primaryTimeLeft > 0) {
-    //         primaryAbilityIcon.color = new Color32(255, 255, 255, 100);
-    //         primaryCoolDownText.enabled = true;
-    //         primaryCoolDownText.text = activeCharacter.primaryTimeLeft.ToString("F1");
-    //     } else {
-    //         primaryAbilityIcon.color = new Color32(255, 255, 255, 255);
-    //         primaryCoolDownText.enabled = false;
-    //     }
-    //     // do lasoo cooldown
-    //     if (activeCharacter.secondaryTimeLeft > 0) {
-    //         secondaryAbilityIcon.color = new Color32(255, 255, 255, 100);
-    //         secondaryCoolDownText.enabled = true;
-    //         secondaryCoolDownText.text = activeCharacter.secondaryTimeLeft.ToString("F1");
-    //     } else {
-    //         secondaryAbilityIcon.color = new Color32(255, 255, 255, 255);
-    //         secondaryCoolDownText.enabled = false;
-    //     }
-    // }
 
     private bool IsKeyCode(string key, KeyCode code) {
         return ControlSettings.Instance.get(key) == code;

@@ -52,8 +52,8 @@ public class PlayerCharacter : AnimatedCharacter {
     public LineRenderer ropeRender;
     public GameObject handObject;
 
-    public GameObject currentGrapplePoint = null;
-    public List<Collider2D> grapplePoints;
+    private GameObject currentGrapplePoint = null;
+    private List<Collider2D> grapplePoints;
     private float currentGrappleDistance = 0;
     private bool hasHitMark = false;
     private Vector2 markPosition = Vector3.zero;
@@ -66,10 +66,6 @@ public class PlayerCharacter : AnimatedCharacter {
     [HideInInspector]
     public float ropeTimeLeft = 0f;
 
-    // [HideInInspector]
-    // public BackgroundTransition currentTransition = null;
-    // [HideInInspector]
-    // public LockController currentLock = null;
     [HideInInspector]
     public bool onLadder = false;
 
@@ -114,7 +110,6 @@ public class PlayerCharacter : AnimatedCharacter {
         }
     }
 
-
     public void doGrappleAction() {
         // anim.SetTrigger("Special");
         // anim.SetBool("Grappling", true);
@@ -130,7 +125,6 @@ public class PlayerCharacter : AnimatedCharacter {
         grapplePoints = new List<Collider2D>();
         filter.SetLayerMask(LayerMask.GetMask("Grapple"));
         filter.useTriggers = true;
-        Debug.Log("Yoink");
         // test if any grapple points exist within range
         Physics2D.OverlapCircle(target, detectionRange, filter, grapplePoints);
         Collider2D nearest = null;
@@ -158,24 +152,10 @@ public class PlayerCharacter : AnimatedCharacter {
     private bool CanReachGrapple(Transform grapple) {
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = false;
-        filter.SetLayerMask(~LayerMask.GetMask("Player"));
+        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab"));
         List<RaycastHit2D> results = new List<RaycastHit2D>();
         Physics2D.Raycast(transform.position, (grapple.position - transform.position), filter, results, detectionRange);
         return results.Count == 0;
-    }
-
-    /// <summary>
-    /// for use to trigger events on attack animations
-    /// </summary>
-    public void Attack(){
-
-    }
-
-    /// <summary>
-    /// for use to trigger events on special animations
-    /// </summary>
-    public void Special(){
-
     }
 
     public virtual void Jump() {
@@ -287,22 +267,26 @@ public class PlayerCharacter : AnimatedCharacter {
         GetComponent<SpriteRenderer>().flipX = isFacingLeft;
     }
 
-    // public virtual void PreventWallHanging() {
-    //     // Check if the body's current velocity will result in a collision
-    //     Vector3 direction = Vector2.up;
-    //     if (moveLeft) {
-    //         direction = Vector2.left * walkSpeed * runMultiplier;
-    //     } else if (moveRight) {
-    //         direction = Vector2.right * walkSpeed * runMultiplier;
-    //     }
-    //     if (rigid.SweepTest(direction, out RaycastHit hit, direction.magnitude * Time.deltaTime, QueryTriggerInteraction.Ignore)) {
-    //         // If so, stop the movement
-    //         if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Default")) {
-    //             if (hit.point.y < transform.position.y - transform.localScale.y * 0.4) return;
-    //             rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
-    //         }
-    //     }
-    // }
+    public virtual void PreventWallHanging() {
+        // Check if the body's current velocity will result in a collision
+        Vector2 direction = Vector2.up;
+        if (moveLeft) {
+            direction = Vector2.left * walkSpeed * runMultiplier;
+        } else if (moveRight) {
+            direction = Vector2.right * walkSpeed * runMultiplier;
+        }
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(LayerMask.NameToLayer("Default"));
+        filter.useTriggers = false;
+        List<RaycastHit2D> results = new List<RaycastHit2D>();
+        Physics2D.Raycast(transform.position, direction, filter, results, direction.magnitude * Time.deltaTime);
+        Debug.DrawRay(transform.position, direction * Time.deltaTime, Color.blue);
+        if (results.Count > 0) {
+            // If so, stop the movement
+            if (results[0].point.y < transform.position.y - transform.localScale.y * 0.4) return;
+            rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
+        }
+    }
 
     public virtual void HandleFalling() {
         if (currentGrapplePoint != null) return;
@@ -315,7 +299,7 @@ public class PlayerCharacter : AnimatedCharacter {
         base.FixedUpdate();
         HandleMovement();
         HandleJumpHeld();
-        // PreventWallHanging();
+        PreventWallHanging();
         HandleFalling();
         HandleClimb();
         HandleGrapple();
@@ -333,14 +317,6 @@ public class PlayerCharacter : AnimatedCharacter {
     public void HoldInteract(bool active) {
 
     }
-
-
-
-    // public void EnterDoor() {
-    //     if (currentTransition != null) {
-    //         rigid.transform.position = currentTransition.link.spawnPoint.transform.position;
-    //     }
-    // }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
@@ -360,16 +336,6 @@ public class PlayerCharacter : AnimatedCharacter {
         }
     }
 
-    // private void CheckLocks() {
-    //     if (currentLock != null && PlayerPrefs.GetInt("keyCount") > 0) {
-    //         currentLock.Interact();
-    //         currentLock = null;
-    //         PlayerPrefs.SetInt("keyCount", PlayerPrefs.GetInt("keyCount")-1);
-    //     }
-    // }
-
-
-
     public bool IsGrounded() {
         float width = (transform.localScale.x * 0.15f) * 1.5f;
         float height = (transform.localScale.y * 0.4f) * 1.5f;
@@ -381,7 +347,7 @@ public class PlayerCharacter : AnimatedCharacter {
 
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = false;
-        filter.SetLayerMask(~LayerMask.GetMask("Player"));
+        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab"));
         List<RaycastHit2D> results1 = new List<RaycastHit2D>();
         List<RaycastHit2D> results2 = new List<RaycastHit2D>();
 

@@ -30,7 +30,6 @@ public class BoxFinder : MonoBehaviour {
 
     // adds box to potential targets
     private void OnTriggerEnter2D(Collider2D col) {
-        Debug.Log("Bonk");
         if (col.TryGetComponent(out InteractableBox box)){
             boxes.Add(box);
         }
