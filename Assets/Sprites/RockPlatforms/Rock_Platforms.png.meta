@@ -110,6 +110,738 @@ TextureImporter:
   - first:
       213: 3675633565182893824
     second: Rock_Platforms_35
+  - first:
+      213: -8642898909145744480
+    second: Rock_Platforms_0
+  - first:
+      213: -7560616568138441187
+    second: Rock_Platforms_1
+  - first:
+      213: -1834627253295078046
+    second: Rock_Platforms_2
+  - first:
+      213: 3005633826234266335
+    second: Rock_Platforms_3
+  - first:
+      213: -7631426147346173797
+    second: Rock_Platforms_4
+  - first:
+      213: 5450122825014729808
+    second: Rock_Platforms_5
+  - first:
+      213: -421720747478366505
+    second: Rock_Platforms_6
+  - first:
+      213: 7879047792949138931
+    second: Rock_Platforms_7
+  - first:
+      213: 1449166902170091714
+    second: Rock_Platforms_8
+  - first:
+      213: 4196508327464604647
+    second: Rock_Platforms_9
+  - first:
+      213: -483891136769672292
+    second: Rock_Platforms_10
+  - first:
+      213: -956567060326856944
+    second: Rock_Platforms_11
+  - first:
+      213: -1366980539228776503
+    second: Rock_Platforms_12
+  - first:
+      213: -1816240144993950861
+    second: Rock_Platforms_13
+  - first:
+      213: -5331020369963660106
+    second: Rock_Platforms_14
+  - first:
+      213: -960292995186450478
+    second: Rock_Platforms_15
+  - first:
+      213: -3450305104741333770
+    second: Rock_Platforms_16
+  - first:
+      213: -8044088156766221620
+    second: Rock_Platforms_17
+  - first:
+      213: -5560714982109979287
+    second: Rock_Platforms_18
+  - first:
+      213: 3955893810308279881
+    second: Rock_Platforms_19
+  - first:
+      213: 214249692881394394
+    second: Rock_Platforms_20
+  - first:
+      213: 7887447728983487463
+    second: Rock_Platforms_21
+  - first:
+      213: 3089319847682961641
+    second: Rock_Platforms_22
+  - first:
+      213: -7114417924399256355
+    second: Rock_Platforms_23
+  - first:
+      213: -4001026457711321607
+    second: Rock_Platforms_24
+  - first:
+      213: 643817705179343534
+    second: Rock_Platforms_25
+  - first:
+      213: -6368031444907721214
+    second: Rock_Platforms_26
+  - first:
+      213: -6531654896516008629
+    second: Rock_Platforms_27
+  - first:
+      213: -9217742067733805644
+    second: Rock_Platforms_28
+  - first:
+      213: -6170268828143830318
+    second: Rock_Platforms_29
+  - first:
+      213: 1167383429919376234
+    second: Rock_Platforms_30
+  - first:
+      213: 7790418040905075984
+    second: Rock_Platforms_31
+  - first:
+      213: 8889856173660023631
+    second: Rock_Platforms_32
+  - first:
+      213: -3223185202979585876
+    second: Rock_Platforms_33
+  - first:
+      213: -7569803562624742078
+    second: Rock_Platforms_34
+  - first:
+      213: -8136972213820453753
+    second: Rock_Platforms_35
+  - first:
+      213: -3411031575882100395
+    second: Rock_Platforms_36
+  - first:
+      213: -6510498564869417915
+    second: Rock_Platforms_37
+  - first:
+      213: -3109468094188080117
+    second: Rock_Platforms_38
+  - first:
+      213: -3028897041570217894
+    second: Rock_Platforms_39
+  - first:
+      213: 2731658905735038622
+    second: Rock_Platforms_40
+  - first:
+      213: 4426610625858531345
+    second: Rock_Platforms_41
+  - first:
+      213: -2204125282129042615
+    second: Rock_Platforms_42
+  - first:
+      213: 5596273535324985613
+    second: Rock_Platforms_43
+  - first:
+      213: -8824399729706509347
+    second: Rock_Platforms_44
+  - first:
+      213: -6538720945509953807
+    second: Rock_Platforms_45
+  - first:
+      213: -3479098767611656756
+    second: Rock_Platforms_46
+  - first:
+      213: 7591702561305479482
+    second: Rock_Platforms_47
+  - first:
+      213: 8494478958860388298
+    second: Rock_Platforms_48
+  - first:
+      213: 6246974998055822932
+    second: Rock_Platforms_49
+  - first:
+      213: 4117186700559044022
+    second: Rock_Platforms_50
+  - first:
+      213: 7637716636881157603
+    second: Rock_Platforms_51
+  - first:
+      213: -9028638940111159521
+    second: Rock_Platforms_52
+  - first:
+      213: 3018868470692319352
+    second: Rock_Platforms_53
+  - first:
+      213: -6985033374593302788
+    second: Rock_Platforms_54
+  - first:
+      213: -5320489473452242188
+    second: Rock_Platforms_55
+  - first:
+      213: 779771890334766662
+    second: Rock_Platforms_56
+  - first:
+      213: 3688682542565592910
+    second: Rock_Platforms_57
+  - first:
+      213: -5673658220395090832
+    second: Rock_Platforms_58
+  - first:
+      213: 932517402821959818
+    second: Rock_Platforms_59
+  - first:
+      213: 3738978636117389880
+    second: Rock_Platforms_60
+  - first:
+      213: -4840047595524952243
+    second: Rock_Platforms_61
+  - first:
+      213: 4802092086339896073
+    second: Rock_Platforms_62
+  - first:
+      213: 7537365068057153146
+    second: Rock_Platforms_63
+  - first:
+      213: 5307978866745019050
+    second: Rock_Platforms_64
+  - first:
+      213: -4335197985036807000
+    second: Rock_Platforms_65
+  - first:
+      213: 2918275438419107855
+    second: Rock_Platforms_66
+  - first:
+      213: -2373446672710764864
+    second: Rock_Platforms_67
+  - first:
+      213: -5894322281916142827
+    second: Rock_Platforms_68
+  - first:
+      213: 1182385970319595705
+    second: Rock_Platforms_69
+  - first:
+      213: -8444673409047030728
+    second: Rock_Platforms_70
+  - first:
+      213: 5002427563243367144
+    second: Rock_Platforms_71
+  - first:
+      213: -8188619024039493872
+    second: Rock_Platforms_36
+  - first:
+      213: 6660884091349999548
+    second: Rock_Platforms_37
+  - first:
+      213: 6639941769828115193
+    second: Rock_Platforms_38
+  - first:
+      213: 2154243472796704723
+    second: Rock_Platforms_39
+  - first:
+      213: 8351151382339166852
+    second: Rock_Platforms_40
+  - first:
+      213: 1082099015421750710
+    second: Rock_Platforms_41
+  - first:
+      213: -5847564141251332113
+    second: Rock_Platforms_42
+  - first:
+      213: 4939602954447868238
+    second: Rock_Platforms_43
+  - first:
+      213: -4020113739044461143
+    second: Rock_Platforms_44
+  - first:
+      213: -4277129369885122986
+    second: Rock_Platforms_45
+  - first:
+      213: 5276686363485927926
+    second: Rock_Platforms_46
+  - first:
+      213: -3589818995368026461
+    second: Rock_Platforms_47
+  - first:
+      213: -8439865993866132902
+    second: Rock_Platforms_48
+  - first:
+      213: -4632584534566953450
+    second: Rock_Platforms_49
+  - first:
+      213: 8959147961491541402
+    second: Rock_Platforms_50
+  - first:
+      213: 5436186628892078575
+    second: Rock_Platforms_51
+  - first:
+      213: 7146282120074437984
+    second: Rock_Platforms_52
+  - first:
+      213: -1785382221771635684
+    second: Rock_Platforms_53
+  - first:
+      213: 8270593735755290029
+    second: Rock_Platforms_54
+  - first:
+      213: -4096273677631760120
+    second: Rock_Platforms_55
+  - first:
+      213: -1128785673109777778
+    second: Rock_Platforms_56
+  - first:
+      213: 2892395323535133548
+    second: Rock_Platforms_57
+  - first:
+      213: -4591304594455228028
+    second: Rock_Platforms_58
+  - first:
+      213: -8116288283835292256
+    second: Rock_Platforms_59
+  - first:
+      213: 834671475620480029
+    second: Rock_Platforms_60
+  - first:
+      213: -3653005826406261558
+    second: Rock_Platforms_61
+  - first:
+      213: -8530191437062451112
+    second: Rock_Platforms_62
+  - first:
+      213: -1607171476474348182
+    second: Rock_Platforms_63
+  - first:
+      213: -476536356764004169
+    second: Rock_Platforms_64
+  - first:
+      213: 3211286887321863906
+    second: Rock_Platforms_65
+  - first:
+      213: -3358383439145496550
+    second: Rock_Platforms_66
+  - first:
+      213: 5778801320902010932
+    second: Rock_Platforms_67
+  - first:
+      213: 7767164703350087715
+    second: Rock_Platforms_68
+  - first:
+      213: 7095184045770779009
+    second: Rock_Platforms_69
+  - first:
+      213: 8952498451012314443
+    second: Rock_Platforms_70
+  - first:
+      213: -1465356520758304945
+    second: Rock_Platforms_71
+  - first:
+      213: -3397019282597383866
+    second: Rock_Platforms_72
+  - first:
+      213: 4240359101041546671
+    second: Rock_Platforms_73
+  - first:
+      213: 5920657726682554846
+    second: Rock_Platforms_74
+  - first:
+      213: -7386963340008793043
+    second: Rock_Platforms_75
+  - first:
+      213: -2508149060616675008
+    second: Rock_Platforms_76
+  - first:
+      213: 8826460369477736603
+    second: Rock_Platforms_77
+  - first:
+      213: -8820689143563294782
+    second: Rock_Platforms_78
+  - first:
+      213: 6397604757786632924
+    second: Rock_Platforms_79
+  - first:
+      213: -4112976296951349548
+    second: Rock_Platforms_72
+  - first:
+      213: -2269854177253882941
+    second: Rock_Platforms_73
+  - first:
+      213: 840468629287888121
+    second: Rock_Platforms_74
+  - first:
+      213: -8049530483498737215
+    second: Rock_Platforms_75
+  - first:
+      213: -93852486498453646
+    second: Rock_Platforms_76
+  - first:
+      213: -8459362644206417058
+    second: Rock_Platforms_77
+  - first:
+      213: 6944341682952746706
+    second: Rock_Platforms_78
+  - first:
+      213: -914477809437475522
+    second: Rock_Platforms_79
+  - first:
+      213: -8286031258005212608
+    second: Rock_Platforms_80
+  - first:
+      213: -5337172197164960110
+    second: Rock_Platforms_81
+  - first:
+      213: 2510839521175418995
+    second: Rock_Platforms_82
+  - first:
+      213: -1595382325378184650
+    second: Rock_Platforms_83
+  - first:
+      213: 298762177296222800
+    second: Rock_Platforms_84
+  - first:
+      213: 90568789726371086
+    second: Rock_Platforms_85
+  - first:
+      213: -7743005962986549535
+    second: Rock_Platforms_86
+  - first:
+      213: -4289336544665483035
+    second: Rock_Platforms_87
+  - first:
+      213: 514720088498481832
+    second: Rock_Platforms_88
+  - first:
+      213: -7689982931293886976
+    second: Rock_Platforms_89
+  - first:
+      213: -7129738847540930267
+    second: Rock_Platforms_90
+  - first:
+      213: 457839364029536493
+    second: Rock_Platforms_91
+  - first:
+      213: -500978963281910416
+    second: Rock_Platforms_92
+  - first:
+      213: -4653503143774686030
+    second: Rock_Platforms_93
+  - first:
+      213: -7969251644885574625
+    second: Rock_Platforms_94
+  - first:
+      213: -321471580170030456
+    second: Rock_Platforms_95
+  - first:
+      213: -1720474784765016882
+    second: Rock_Platforms_96
+  - first:
+      213: 2717930853687869867
+    second: Rock_Platforms_97
+  - first:
+      213: -6498881853628651514
+    second: Rock_Platforms_98
+  - first:
+      213: -7038853836217490419
+    second: Rock_Platforms_99
+  - first:
+      213: -6874426873431308784
+    second: Rock_Platforms_100
+  - first:
+      213: -4013086284556335667
+    second: Rock_Platforms_101
+  - first:
+      213: -8165509572177594924
+    second: Rock_Platforms_102
+  - first:
+      213: -1868497851641713962
+    second: Rock_Platforms_103
+  - first:
+      213: -6015486791127554401
+    second: Rock_Platforms_104
+  - first:
+      213: 1261495598039284846
+    second: Rock_Platforms_105
+  - first:
+      213: -4018785158629626186
+    second: Rock_Platforms_106
+  - first:
+      213: -3250555619578812235
+    second: Rock_Platforms_107
+  - first:
+      213: -214308578019808342
+    second: Rock_Platforms_108
+  - first:
+      213: 1195270941149042546
+    second: Rock_Platforms_109
+  - first:
+      213: -268565358089942659
+    second: Rock_Platforms_110
+  - first:
+      213: 1612880027175042103
+    second: Rock_Platforms_111
+  - first:
+      213: 5128189753171021766
+    second: Rock_Platforms_112
+  - first:
+      213: 3980590328111398695
+    second: Rock_Platforms_113
+  - first:
+      213: -8127404059080185139
+    second: Rock_Platforms_114
+  - first:
+      213: 5506571445741124002
+    second: Rock_Platforms_115
+  - first:
+      213: 2985197785637045774
+    second: Rock_Platforms_80
+  - first:
+      213: 2135982038883502553
+    second: Rock_Platforms_81
+  - first:
+      213: 6742852158121295210
+    second: Rock_Platforms_82
+  - first:
+      213: -8588879627767623408
+    second: Rock_Platforms_83
+  - first:
+      213: 138725689642899544
+    second: Rock_Platforms_84
+  - first:
+      213: 6676153376339712847
+    second: Rock_Platforms_85
+  - first:
+      213: 8056822155284162364
+    second: Rock_Platforms_86
+  - first:
+      213: 2377466071962135929
+    second: Rock_Platforms_87
+  - first:
+      213: 2036064606587570877
+    second: Rock_Platforms_88
+  - first:
+      213: 5138172874494982419
+    second: Rock_Platforms_89
+  - first:
+      213: 4118886013167308978
+    second: Rock_Platforms_90
+  - first:
+      213: -3012410916301639821
+    second: Rock_Platforms_91
+  - first:
+      213: -7804454285270175628
+    second: Rock_Platforms_92
+  - first:
+      213: 8495425932064649386
+    second: Rock_Platforms_93
+  - first:
+      213: 7007910843157199340
+    second: Rock_Platforms_94
+  - first:
+      213: 1024146382721204534
+    second: Rock_Platforms_95
+  - first:
+      213: -7157376025195440217
+    second: Rock_Platforms_96
+  - first:
+      213: -7992002432828392682
+    second: Rock_Platforms_97
+  - first:
+      213: -6622115304917173666
+    second: Rock_Platforms_98
+  - first:
+      213: -870078276488466177
+    second: Rock_Platforms_99
+  - first:
+      213: -1275782284430411599
+    second: Rock_Platforms_100
+  - first:
+      213: -8108630798708670464
+    second: Rock_Platforms_101
+  - first:
+      213: -5570777865923825089
+    second: Rock_Platforms_102
+  - first:
+      213: 4852530024906232707
+    second: Rock_Platforms_103
+  - first:
+      213: 6611073779608443663
+    second: Rock_Platforms_104
+  - first:
+      213: 6693593146362548891
+    second: Rock_Platforms_105
+  - first:
+      213: -3990408844628441019
+    second: Rock_Platforms_106
+  - first:
+      213: -8135068316450379839
+    second: Rock_Platforms_107
+  - first:
+      213: 8762677401137775771
+    second: Rock_Platforms_108
+  - first:
+      213: 2926364012446079410
+    second: Rock_Platforms_109
+  - first:
+      213: -1015675781475556675
+    second: Rock_Platforms_110
+  - first:
+      213: 24051389213803898
+    second: Rock_Platforms_111
+  - first:
+      213: -5783253982046056634
+    second: Rock_Platforms_112
+  - first:
+      213: -8967720352482616101
+    second: Rock_Platforms_113
+  - first:
+      213: 1071575403877011811
+    second: Rock_Platforms_114
+  - first:
+      213: 3849048122380106709
+    second: Rock_Platforms_115
+  - first:
+      213: -6783235964291453273
+    second: Rock_Platforms_116
+  - first:
+      213: -6655027584402889724
+    second: Rock_Platforms_117
+  - first:
+      213: 3214159921493100630
+    second: Rock_Platforms_118
+  - first:
+      213: 189232193345099544
+    second: Rock_Platforms_119
+  - first:
+      213: -2059064800839475403
+    second: Rock_Platforms_120
+  - first:
+      213: 8983879077281025856
+    second: Rock_Platforms_121
+  - first:
+      213: -378609490266803743
+    second: Rock_Platforms_122
+  - first:
+      213: -3840176449308767349
+    second: Rock_Platforms_123
+  - first:
+      213: -2507505494135755597
+    second: Rock_Platforms_124
+  - first:
+      213: -1284459169225096153
+    second: Rock_Platforms_125
+  - first:
+      213: 7186400669508013649
+    second: Rock_Platforms_126
+  - first:
+      213: 2157419851785123589
+    second: Rock_Platforms_127
+  - first:
+      213: -1365526088459709274
+    second: Rock_Platforms_128
+  - first:
+      213: 1166952958584878123
+    second: Rock_Platforms_129
+  - first:
+      213: -131355199370368500
+    second: Rock_Platforms_130
+  - first:
+      213: -2944142698729310791
+    second: Rock_Platforms_131
+  - first:
+      213: -4681724967478730197
+    second: Rock_Platforms_116
+  - first:
+      213: -7568917519871701676
+    second: Rock_Platforms_117
+  - first:
+      213: 8496140929918278064
+    second: Rock_Platforms_118
+  - first:
+      213: -1629835343890117155
+    second: Rock_Platforms_119
+  - first:
+      213: 4196942644492778393
+    second: Rock_Platforms_120
+  - first:
+      213: 1931844328837907622
+    second: Rock_Platforms_121
+  - first:
+      213: 1178739615338405524
+    second: Rock_Platforms_122
+  - first:
+      213: -575777284324590022
+    second: Rock_Platforms_123
+  - first:
+      213: -4776454689905248852
+    second: Rock_Platforms_124
+  - first:
+      213: -6377668384609154491
+    second: Rock_Platforms_125
+  - first:
+      213: -2247817450818303580
+    second: Rock_Platforms_126
+  - first:
+      213: 5469456358602444383
+    second: Rock_Platforms_127
+  - first:
+      213: -4315842353988116878
+    second: Rock_Platforms_128
+  - first:
+      213: 1061797111203557401
+    second: Rock_Platforms_129
+  - first:
+      213: -8851220900883526558
+    second: Rock_Platforms_130
+  - first:
+      213: -7845019601198939253
+    second: Rock_Platforms_131
+  - first:
+      213: -4709283697811459252
+    second: Rock_Platforms_132
+  - first:
+      213: -3559392689094927488
+    second: Rock_Platforms_133
+  - first:
+      213: -1470745425315739344
+    second: Rock_Platforms_134
+  - first:
+      213: 9152963374910080439
+    second: Rock_Platforms_135
+  - first:
+      213: 9221500814722779826
+    second: Rock_Platforms_136
+  - first:
+      213: 6747897918077577236
+    second: Rock_Platforms_137
+  - first:
+      213: -9017729585864401918
+    second: Rock_Platforms_138
+  - first:
+      213: -5011124670792776402
+    second: Rock_Platforms_139
+  - first:
+      213: -4543763140610128831
+    second: Rock_Platforms_140
+  - first:
+      213: -2403563425224850413
+    second: Rock_Platforms_141
+  - first:
+      213: 812694212004637974
+    second: Rock_Platforms_142
+  - first:
+      213: -4773282560519474593
+    second: Rock_Platforms_143
+  - first:
+      213: -5717408380876853037
+    second: Rock_Platforms_144
+  - first:
+      213: -7962732746688191125
+    second: Rock_Platforms_145
+  - first:
+      213: -6324501745650115165
+    second: Rock_Platforms_146
+  - first:
+      213: -1734909407261401660
+    second: Rock_Platforms_147
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -201,18 +933,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80173389d1dc33450800000000000000
-      internalID: 6067418649989443848
+      spriteID: 0abb1c2fb314e0880800000000000000
+      internalID: -8642898909145744480
       vertices: []
       indices: 
       edges: []
@@ -222,18 +954,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecf16b04c43f44b40800000000000000
-      internalID: 5423727360089661390
+      spriteID: d1edc250a4b431790800000000000000
+      internalID: -7560616568138441187
       vertices: []
       indices: 
       edges: []
@@ -243,18 +975,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0588077457c00b630800000000000000
-      internalID: 3940663371798448208
+      spriteID: 265a810cb381a86e0800000000000000
+      internalID: -1834627253295078046
       vertices: []
       indices: 
       edges: []
@@ -264,18 +996,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfb2053b93a45aa80800000000000000
-      internalID: -8456271113636271109
+      spriteID: fd277995a0826b920800000000000000
+      internalID: 3005633826234266335
       vertices: []
       indices: 
       edges: []
@@ -285,18 +1017,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc50c7ad372215ba0800000000000000
-      internalID: -6102058139128166965
+      spriteID: b90bdcd1a5ab71690800000000000000
+      internalID: -7631426147346173797
       vertices: []
       indices: 
       edges: []
@@ -306,18 +1038,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1467bdf158200f170800000000000000
-      internalID: 8210064891484796481
+      spriteID: 05c504755d9b2ab40800000000000000
+      internalID: 5450122825014729808
       vertices: []
       indices: 
       edges: []
@@ -327,18 +1059,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e3269390ce1dfa90800000000000000
-      internalID: -7278627610302209052
+      spriteID: 7d6c32ce63fb52af0800000000000000
+      internalID: -421720747478366505
       vertices: []
       indices: 
       edges: []
@@ -348,18 +1080,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9453714ed3436c690800000000000000
-      internalID: -7582315482207275703
+      spriteID: 3f51f030930085d60800000000000000
+      internalID: 7879047792949138931
       vertices: []
       indices: 
       edges: []
@@ -369,18 +1101,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca151278720649330800000000000000
-      internalID: 3716701315374600620
+      spriteID: 2c00a189e997c1410800000000000000
+      internalID: 1449166902170091714
       vertices: []
       indices: 
       edges: []
@@ -390,18 +1122,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc5c51f966f69de50800000000000000
-      internalID: 6834616396057789899
+      spriteID: 7e31f7bf61efc3a30800000000000000
+      internalID: 4196508327464604647
       vertices: []
       indices: 
       edges: []
@@ -411,18 +1143,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 496d462b7f71e9c80800000000000000
-      internalID: -8314181509462042988
+      spriteID: c9b32ea239fd849f0800000000000000
+      internalID: -483891136769672292
       vertices: []
       indices: 
       edges: []
@@ -432,18 +1164,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 64
+        y: 384
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14791b4a44edb7760800000000000000
-      internalID: 7456797994444232513
+      spriteID: 017c065a35799b2f0800000000000000
+      internalID: -956567060326856944
       vertices: []
       indices: 
       edges: []
@@ -453,18 +1185,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3415b5b4056b3a30800000000000000
-      internalID: 4196058548728566846
+      spriteID: 9c795603172870de0800000000000000
+      internalID: -1366980539228776503
       vertices: []
       indices: 
       edges: []
@@ -474,18 +1206,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37ea10005e122db80800000000000000
-      internalID: -8371591489896993165
+      spriteID: 373e4d2063b6bc6e0800000000000000
+      internalID: -1816240144993950861
       vertices: []
       indices: 
       edges: []
@@ -495,18 +1227,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ac5a4bf0ae3530d0800000000000000
-      internalID: -3443777478923232093
+      spriteID: 6bcc1fde7396406b0800000000000000
+      internalID: -5331020369963660106
       vertices: []
       indices: 
       edges: []
@@ -516,18 +1248,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2434d916bb4488260800000000000000
-      internalID: 7100000384136856386
+      spriteID: 2df9d95db9a5ca2f0800000000000000
+      internalID: -960292995186450478
       vertices: []
       indices: 
       edges: []
@@ -537,18 +1269,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eab6bac86dad84cd0800000000000000
-      internalID: -2573566572024337490
+      spriteID: 6f40d29a9cd0e10d0800000000000000
+      internalID: -3450305104741333770
       vertices: []
       indices: 
       edges: []
@@ -558,18 +1290,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a480e4d0acb6f6a50800000000000000
-      internalID: 6516545701379180618
+      spriteID: ccac50ad078ad5090800000000000000
+      internalID: -8044088156766221620
       vertices: []
       indices: 
       edges: []
@@ -579,18 +1311,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af69c55b51c32b700800000000000000
-      internalID: 554571768054716154
+      spriteID: 96d542a8f2f54d2b0800000000000000
+      internalID: -5560714982109979287
       vertices: []
       indices: 
       edges: []
@@ -600,18 +1332,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdb181b7903d46f30800000000000000
-      internalID: 4568007959733869535
+      spriteID: 94e6794167826e630800000000000000
+      internalID: 3955893810308279881
       vertices: []
       indices: 
       edges: []
@@ -621,18 +1353,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc5cbc21cf8e49630800000000000000
-      internalID: 3933024543946032591
+      spriteID: ada9e65e5fa29f200800000000000000
+      internalID: 214249692881394394
       vertices: []
       indices: 
       edges: []
@@ -642,18 +1374,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9273c9211c0a241b0800000000000000
-      internalID: -5673795829432043735
+      spriteID: 7e3b5868be7d57d60800000000000000
+      internalID: 7887447728983487463
       vertices: []
       indices: 
       edges: []
@@ -663,18 +1395,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2329eeff044bcb920800000000000000
-      internalID: 3007476842441380402
+      spriteID: 9e0f4b698087fda20800000000000000
+      internalID: 3089319847682961641
       vertices: []
       indices: 
       edges: []
@@ -684,18 +1416,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 32
+        y: 352
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 271c68f4f2135d610800000000000000
-      internalID: 1645275318141239666
+      spriteID: ddca2807792844d90800000000000000
+      internalID: -7114417924399256355
       vertices: []
       indices: 
       edges: []
@@ -705,18 +1437,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f026a3bbbb28b24c0800000000000000
-      internalID: -4311208475465457137
+      spriteID: 9fd5d2392af7978c0800000000000000
+      internalID: -4001026457711321607
       vertices: []
       indices: 
       edges: []
@@ -726,18 +1458,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1710a99b5d87cc540800000000000000
-      internalID: 5029527743203246449
+      spriteID: eaa6251bacc4fe800800000000000000
+      internalID: 643817705179343534
       vertices: []
       indices: 
       edges: []
@@ -747,18 +1479,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c3100f329ca19000800000000000000
-      internalID: 41003615745217479
+      spriteID: 20ef1cfd32530a7a0800000000000000
+      internalID: -6368031444907721214
       vertices: []
       indices: 
       edges: []
@@ -768,18 +1500,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f480b688a384b4640800000000000000
-      internalID: 5065221622142273615
+      spriteID: b45f8b15a76ea55a0800000000000000
+      internalID: -6531654896516008629
       vertices: []
       indices: 
       edges: []
@@ -789,18 +1521,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9561bcddbc24c33a0800000000000000
-      internalID: -6684394303557790119
+      spriteID: 4b54d855d60041080800000000000000
+      internalID: -9217742067733805644
       vertices: []
       indices: 
       edges: []
@@ -810,18 +1542,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7037c817c261900a0800000000000000
-      internalID: -6914971372711283961
+      spriteID: 2da32d9313dce5aa0800000000000000
+      internalID: -6170268828143830318
       vertices: []
       indices: 
       edges: []
@@ -831,18 +1563,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd9aac99d9c631450800000000000000
-      internalID: 6058305347889310172
+      spriteID: a6385016b01633010800000000000000
+      internalID: 1167383429919376234
       vertices: []
       indices: 
       edges: []
@@ -852,18 +1584,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1225be38495b97820800000000000000
-      internalID: 2916561883172131361
+      spriteID: 01d01fbceef1d1c60800000000000000
+      internalID: 7790418040905075984
       vertices: []
       indices: 
       edges: []
@@ -873,18 +1605,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc9f0736a2beb12a0800000000000000
-      internalID: -6765555447904536113
+      spriteID: f4ba157e61d1f5b70800000000000000
+      internalID: 8889856173660023631
       vertices: []
       indices: 
       edges: []
@@ -894,18 +1626,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7d1f207a9847ff20800000000000000
-      internalID: 3456311067174444415
+      spriteID: ca04b139222f443d0800000000000000
+      internalID: -3223185202979585876
       vertices: []
       indices: 
       edges: []
@@ -915,18 +1647,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d94f1cb315c2bc6d0800000000000000
-      internalID: -2969230801914170211
+      spriteID: 24d044e24c7a2f690800000000000000
+      internalID: -7569803562624742078
       vertices: []
       indices: 
       edges: []
@@ -936,18 +1668,2370 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 0
+        y: 320
         width: 32
         height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00f9a31d049720330800000000000000
-      internalID: 3675633565182893824
+      spriteID: 78c020012eaa31f80800000000000000
+      internalID: -8136972213820453753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fbe1ff16e2c5e80800000000000000
+      internalID: -8188619024039493872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf97fa4ac6307c50800000000000000
+      internalID: 6660884091349999548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f222e71cdfc52c50800000000000000
+      internalID: 6639941769828115193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df50cb560965ed10800000000000000
+      internalID: 2154243472796704723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482a6d99fef35e370800000000000000
+      internalID: 8351151382339166852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd63024253640f00800000000000000
+      internalID: 1082099015421750710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7f66f256749dea0800000000000000
+      internalID: -5847564141251332113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41d55747befc8440800000000000000
+      internalID: 4939602954447868238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a566939adfa538c0800000000000000
+      internalID: -4020113739044461143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_45
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e5b91df7594a4c0800000000000000
+      internalID: -4277129369885122986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_46
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9f9be5a4e8a3940800000000000000
+      internalID: 5276686363485927926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_47
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae9325b4a66e2ec0800000000000000
+      internalID: -3589818995368026461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52c5bb48929fda80800000000000000
+      internalID: -8439865993866132902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e1b2909e0c5bfb0800000000000000
+      internalID: -4632584534566953450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d4ed67a99455c70800000000000000
+      internalID: 8959147961491541402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_51
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe137d3dfe6317b40800000000000000
+      internalID: 5436186628892078575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_52
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06523cfb9b1bc2360800000000000000
+      internalID: 7146282120074437984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c140103245c0937e0800000000000000
+      internalID: -1785382221771635684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5d345ee2d07c270800000000000000
+      internalID: 8270593735755290029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_55
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809d9fd0bcc1727c0800000000000000
+      internalID: -4096273677631760120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82ddbe296fb550f0800000000000000
+      internalID: -1128785673109777778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_57
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b0051e83ad32820800000000000000
+      internalID: 2892395323535133548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_58
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48190ef0cc86840c0800000000000000
+      internalID: -4591304594455228028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_59
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5255bcec62d5f80800000000000000
+      internalID: -8116288283835292256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d148288e849559b00800000000000000
+      internalID: 834671475620480029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc5f9a2e8aed4dc0800000000000000
+      internalID: -3653005826406261558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_62
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85050d7351cae9980800000000000000
+      internalID: -8530191437062451112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_63
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d3b9bae0e22b9e0800000000000000
+      internalID: -1607171476474348182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0d58455b00369f0800000000000000
+      internalID: -476536356764004169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_65
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e680bee868c09c20800000000000000
+      internalID: 3211286887321863906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_66
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a109d2a3e00a461d0800000000000000
+      internalID: -3358383439145496550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_67
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4382ce71f2d623050800000000000000
+      internalID: 5778801320902010932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_68
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320622f35238acb60800000000000000
+      internalID: 7767164703350087715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_69
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189af283c48277260800000000000000
+      internalID: 7095184045770779009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_70
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45e2d8a8e9ad3c70800000000000000
+      internalID: 8952498451012314443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_71
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f16e612020aabe0800000000000000
+      internalID: -1465356520758304945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4defc9279d5cbe6c0800000000000000
+      internalID: -4112976296951349548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_73
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c388d8e6abdf70e0800000000000000
+      internalID: -2269854177253882941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_74
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f4609de3c1f9ab00800000000000000
+      internalID: 840468629287888121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_75
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1216a6ca25a4090800000000000000
+      internalID: -8049530483498737215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277f8f829a192bef0800000000000000
+      internalID: -93852486498453646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_77
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b0ed5ae7e4a9a80800000000000000
+      internalID: -8459362644206417058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_78
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6365bc7f14f5060800000000000000
+      internalID: 6944341682952746706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_79
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d7085074f1f43f0800000000000000
+      internalID: -914477809437475522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06cd2dd19d8d6920800000000000000
+      internalID: 2985197785637045774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_81
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d90442f85884ad10800000000000000
+      internalID: 2135982038883502553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_82
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dbbc9005c639d50800000000000000
+      internalID: 6742852158121295210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_83
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01152500c7b2ec880800000000000000
+      internalID: -8588879627767623408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_84
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858d26c974adce100800000000000000
+      internalID: 138725689642899544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_85
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bd0cebf1676ac50800000000000000
+      internalID: 6676153376339712847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_86
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37a53830159fcf60800000000000000
+      internalID: 8056822155284162364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_87
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97da8dccbc47ef020800000000000000
+      internalID: 2377466071962135929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_88
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbac56fd8fd814c10800000000000000
+      internalID: 2036064606587570877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_89
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31932d291057e4740800000000000000
+      internalID: 5138172874494982419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_90
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b099259109392930800000000000000
+      internalID: 4118886013167308978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_91
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fe4586b34c136d0800000000000000
+      internalID: -3012410916301639821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_92
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47032b46d2201b390800000000000000
+      internalID: -7804454285270175628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_93
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0fa50efd0d5e570800000000000000
+      internalID: 8495425932064649386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_94
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce93ef748c9114160800000000000000
+      internalID: 7007910843157199340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_95
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631491c75bf763e00800000000000000
+      internalID: 1024146382721204534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_96
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7145e2d64ebac90800000000000000
+      internalID: -7157376025195440217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_97
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bb43b7124b61190800000000000000
+      internalID: -7992002432828392682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_98
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5afbb437358914a0800000000000000
+      internalID: -6622115304917173666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_99
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0fe1bda6cdce3f0800000000000000
+      internalID: -870078276488466177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_100
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8f9cd85c28b4ee0800000000000000
+      internalID: -1275782284430411599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_101
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0008d2cff3b587f80800000000000000
+      internalID: -8108630798708670464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_102
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f327003db0f90b2b0800000000000000
+      internalID: -5570777865923825089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_103
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383147c0956a75340800000000000000
+      internalID: 4852530024906232707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bd57953904fbb50800000000000000
+      internalID: 6611073779608443663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_105
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92ddef908b64ec50800000000000000
+      internalID: 6693593146362548891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_106
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54848534c483f98c0800000000000000
+      internalID: -3990408844628441019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_107
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7a076b77e6a1f80800000000000000
+      internalID: -8135068316450379839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_108
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9409207ba84b9970800000000000000
+      internalID: 8762677401137775771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_109
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9d55590988c9820800000000000000
+      internalID: 2926364012446079410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_110
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2ae2e024897e1f0800000000000000
+      internalID: -1015675781475556675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_111
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75817e6c92755000800000000000000
+      internalID: 24051389213803898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_112
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f0842f421cdbfa0800000000000000
+      internalID: -5783253982046056634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_113
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc9b393ad14c8380800000000000000
+      internalID: -8967720352482616101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_114
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361922207200fde00800000000000000
+      internalID: 1071575403877011811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_115
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbb9d9cfd09a6530800000000000000
+      internalID: 3849048122380106709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_116
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b226a5962fb270fb0800000000000000
+      internalID: -4681724967478730197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_117
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d01d51e9dc5f690800000000000000
+      internalID: -7568917519871701676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_118
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b99f69492b58e570800000000000000
+      internalID: 8496140929918278064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_119
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd8d05d369a169e0800000000000000
+      internalID: -1629835343890117155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_120
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b3eab49198e3a30800000000000000
+      internalID: 4196942644492778393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_121
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a48cb58e2a4fca10800000000000000
+      internalID: 1931844328837907622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_122
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e1de65f69bb5010800000000000000
+      internalID: 1178739615338405524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_123
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ef71a4c9d6208f0800000000000000
+      internalID: -575777284324590022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_124
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5f27a24cf96bdb0800000000000000
+      internalID: -4776454689905248852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_125
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ac1200568fd77a0800000000000000
+      internalID: -6377668384609154491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_126
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a90d0c10f52ec0e0800000000000000
+      internalID: -2247817450818303580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_127
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e0009649967eb40800000000000000
+      internalID: 5469456358602444383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ed3ffce3c0b14c0800000000000000
+      internalID: -4315842353988116878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_129
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910f2d4d8d24cbe00800000000000000
+      internalID: 1061797111203557401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_130
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c03568c752a2580800000000000000
+      internalID: -8851220900883526558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_131
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b838f86cc34e02390800000000000000
+      internalID: -7845019601198939253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_132
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43f86d7d6345aeb0800000000000000
+      internalID: -4709283697811459252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_133
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bdf5e253f7a9ec0800000000000000
+      internalID: -3559392689094927488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_134
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0394609f3dcd69be0800000000000000
+      internalID: -1470745425315739344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_135
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b50dabe1bbd50f70800000000000000
+      internalID: 9152963374910080439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_136
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bac685222a59ff70800000000000000
+      internalID: 9221500814722779826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_137
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418ac93976955ad50800000000000000
+      internalID: 6747897918077577236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_138
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c950a38b69ad280800000000000000
+      internalID: -9017729585864401918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_139
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25433879a8e47ab0800000000000000
+      internalID: -5011124670792776402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_140
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1448b6c5f7f41f0c0800000000000000
+      internalID: -4543763140610128831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_141
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3140a54acc3d4aed0800000000000000
+      internalID: -2403563425224850413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_142
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d6d897415474b00800000000000000
+      internalID: 812694212004637974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_143
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f527ba71dc4e1cdb0800000000000000
+      internalID: -4773282560519474593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_144
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d07ef5ae5fa7a0b0800000000000000
+      internalID: -5717408380876853037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_145
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65a74851c0be7190800000000000000
+      internalID: -7962732746688191125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_146
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3addf25cb2bda38a0800000000000000
+      internalID: -6324501745650115165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_Platforms_147
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd53b6061d5ce7e0800000000000000
+      internalID: -1734909407261401660
       vertices: []
       indices: 
       edges: []

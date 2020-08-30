@@ -379,10 +379,6 @@ public class PlayerCharacter : AnimatedCharacter {
         }
     }
 
-    private void OnDrawGizmos() {
-        Handles.Label(transform.position, swingAngle + "");
-    }
-
     private void HandleGrapple(){
         if (currentGrapplePoint == null) return;
         if (transform.position.y > currentGrapplePoint.transform.position.y) return;
