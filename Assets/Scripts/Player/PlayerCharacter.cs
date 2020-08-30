@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerCharacter : AnimatedCharacter {
 
@@ -61,6 +62,11 @@ public class PlayerCharacter : AnimatedCharacter {
 
     public int maxRopePoints = 5;
     private int ropePoint = 0;
+
+    private bool hitSwingMark = false;
+    private float swingMark = 0f;
+    private bool swingingRight = true;
+    private float swingAngle = 0f;
 
     public float ropeCooldown = 5f;
     [HideInInspector]
@@ -267,26 +273,6 @@ public class PlayerCharacter : AnimatedCharacter {
         GetComponent<SpriteRenderer>().flipX = isFacingLeft;
     }
 
-    public virtual void PreventWallHanging() {
-        // Check if the body's current velocity will result in a collision
-        Vector2 direction = Vector2.up;
-        if (moveLeft) {
-            direction = Vector2.left * walkSpeed * runMultiplier;
-        } else if (moveRight) {
-            direction = Vector2.right * walkSpeed * runMultiplier;
-        }
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(LayerMask.NameToLayer("Default"));
-        filter.useTriggers = false;
-        List<RaycastHit2D> results = new List<RaycastHit2D>();
-        Physics2D.Raycast(transform.position, direction, filter, results, direction.magnitude * Time.deltaTime);
-        Debug.DrawRay(transform.position, direction * Time.deltaTime, Color.blue);
-        if (results.Count > 0) {
-            // If so, stop the movement
-            if (results[0].point.y < transform.position.y - transform.localScale.y * 0.4) return;
-            rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
-        }
-    }
 
     public virtual void HandleFalling() {
         if (currentGrapplePoint != null) return;
@@ -299,7 +285,6 @@ public class PlayerCharacter : AnimatedCharacter {
         base.FixedUpdate();
         HandleMovement();
         HandleJumpHeld();
-        PreventWallHanging();
         HandleFalling();
         HandleClimb();
         HandleGrapple();
@@ -363,6 +348,41 @@ public class PlayerCharacter : AnimatedCharacter {
         return (corner1 > 0 || corner2 > 0);
     }
 
+
+    // down = 180
+    // swinging left -180 -> -90
+    // swinging right 180 -> 90
+    // up = 0
+    // plan
+    // initial 60 -> -75 -> 90 -> -105
+    // detect moving direction
+    // if moving left, mark = -120
+    // if moving right, mark = 120
+    // then if moving right && swing angle neagtive mark = -140
+    // mark counter
+    // default = 2
+    // mark =
+    private void UpdateSwingAngle(Vector2 grapplePosition, Vector2 handPosition) {
+        // calculate mark position
+        Vector2 targetVector = grapplePosition - handPosition;
+        swingAngle = Vector2.SignedAngle(targetVector, Vector2.down);
+
+        if (swingAngle < 0 ) {
+
+        }
+
+        float anglePercent = Mathf.Abs(swingAngle)/180;
+        if (moveLeft) {
+            swingAngle += 10 * anglePercent;
+        } else if(moveRight) {
+            swingAngle -= 10 * anglePercent;
+        }
+    }
+
+    private void OnDrawGizmos() {
+        Handles.Label(transform.position, swingAngle + "");
+    }
+
     private void HandleGrapple(){
         if (currentGrapplePoint == null) return;
         if (transform.position.y > currentGrapplePoint.transform.position.y) return;
@@ -370,22 +390,11 @@ public class PlayerCharacter : AnimatedCharacter {
         Vector2 grapplePosition = currentGrapplePoint.transform.position;
         Vector2 handPosition = handObject.transform.position;
 
-        // calculate mark position
-        Vector2 targetVector = grapplePosition - handPosition;
-        float angle = Vector2.SignedAngle(targetVector, Vector2.down);
-
-        float anglePercent = Mathf.Abs(angle)/180;
-        if (moveLeft) {
-            angle += 10 * anglePercent;
-        } else if(moveRight) {
-            angle -= 10 * anglePercent;
-        } else {
-
-        }
+        UpdateSwingAngle(grapplePosition, handPosition);
 
         Vector2 tempPos = new Vector2();
-        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(angle/180 * Mathf.PI));
-        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(angle/180 * Mathf.PI));
+        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(swingAngle/180 * Mathf.PI));
+        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(swingAngle/180 * Mathf.PI));
         markPosition = new Vector2(tempPos.x, tempPos.y);
 
         // calculate force
