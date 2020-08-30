@@ -1,0 +1,90 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class EventLink : LinkedObject {
+
+    private Transform startPosition;
+    
+    [Serializable]
+    public struct Key {
+        public string key;
+        public bool value;
+        public bool inverted;
+    }
+    public Key[] keys;
+    public LinkedObject[] objs;
+    public String key;
+
+    public bool orMode = false;
+
+    private int getKeyID(string key) {
+        for (int i = 0; i < keys.Length; i++) {
+            if (string.Equals(key, keys[i].key)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public override void Activate(string msg) {
+        int keyID = getKeyID(msg);
+        if (keyID == -1) return;
+        if (keys[keyID].inverted) {
+            keys[keyID].value = false;
+        } else {
+            keys[keyID].value = true;
+        }
+
+        CheckActive();
+    }
+
+    private bool isActive() {
+        bool result = !orMode;
+        foreach (Key entry in keys) {
+            if (orMode) {
+                if (entry.value == true) return true;
+            } else {
+                if (entry.value == false) result = false;
+            }
+        }
+        return result;
+    }
+
+    public override void Deactivate(string msg) {
+        int keyID = getKeyID(msg);
+        if (keyID == -1) return;
+        if (keys[keyID].inverted) {
+            keys[keyID].value = true;
+        } else {
+            keys[keyID].value = false;
+        }
+
+        CheckActive();
+    }
+
+    void CheckActive() {
+        if (isActive()) {
+            foreach (LinkedObject l in objs) {
+                if (l == null) continue;
+                l.Activate(key);
+            }
+        } else {
+            foreach (LinkedObject l in objs) {
+                if (l == null) continue;
+                l.Deactivate(key);
+            }
+        }
+    }
+    // Start is called before the first frame update
+    void Start() {
+        startPosition = transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}

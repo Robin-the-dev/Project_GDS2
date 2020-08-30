@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerCharacter : AnimatedCharacter {
 
@@ -30,12 +31,47 @@ public class PlayerCharacter : AnimatedCharacter {
     [HideInInspector]
     public Rigidbody2D rigid;
 
-    // [HideInInspector]
-    // public InteractableObject currentInteraction = null;
-    // [HideInInspector]
-    // public BackgroundTransition currentTransition = null;
-    // [HideInInspector]
-    // public LockController currentLock = null;
+    [HideInInspector]
+    public InteractableBox foundBox = null;
+    [HideInInspector]
+    public InteractableBox heldBox = null;
+    [HideInInspector]
+    public InteractableObject currentInteraction = null;
+
+    public GameObject boxPosition;
+    public BoxFinder boxFinder;
+
+    public float grappleSpeed = 3f;
+    public float detectionRange = 2f;
+    public float minGrappleDistance = 0.5f;
+    public float grappleDistance = 3.5f;
+    public float maxGrappleDistance = 6f;
+    public float maxGrappleVelocity = 15f;
+    public float maxGrappleForce = 40f;
+    public float grappleGain = 5f;
+    public LayerMask grapplelayer;
+    public LineRenderer ropeRender;
+    public GameObject handObject;
+
+    private GameObject currentGrapplePoint = null;
+    private List<Collider2D> grapplePoints;
+    private float currentGrappleDistance = 0;
+    private bool hasHitMark = false;
+    private Vector2 markPosition = Vector3.zero;
+    private SpriteRenderer spriteRenderer;
+
+    public int maxRopePoints = 5;
+    private int ropePoint = 0;
+
+    private bool hitSwingMark = false;
+    private float swingMark = 0f;
+    private bool swingingRight = true;
+    private float swingAngle = 0f;
+
+    public float ropeCooldown = 5f;
+    [HideInInspector]
+    public float ropeTimeLeft = 0f;
+
     [HideInInspector]
     public bool onLadder = false;
 
@@ -59,21 +95,73 @@ public class PlayerCharacter : AnimatedCharacter {
     /// <param name="active"> if true keyPressed, if false keyReleased </param>
     /// <param name="mousePosition"> current mousePosition </param>
     public void doSpecialAction(bool active, Vector3 mousePosition){
-
+        if (active && currentGrapplePoint == null) {
+            SetNearestGrapple(mousePosition);
+            if (currentGrapplePoint != null) {
+                doGrappleAction();
+                return;
+            }
+        }
+        if (!active && currentGrapplePoint != null) {
+            if (currentGrapplePoint == null) return;
+            // anim.SetBool("Grappling", false);
+            currentGrapplePoint = null;
+            if (ropeTimeLeft <= 0) {
+                rigid.velocity = Vector3.ClampMagnitude(rigid.velocity * 3,   maxGrappleVelocity/2);
+            }
+        } else if (foundBox != null && heldBox == null && active) {
+            UpdateBoxState(true);
+        } else if (heldBox != null && !active) {
+            UpdateBoxState(false);
+        }
     }
 
-    /// <summary>
-    /// for use to trigger events on attack animations
-    /// </summary>
-    public void Attack(){
-
+    public void doGrappleAction() {
+        // anim.SetTrigger("Special");
+        // anim.SetBool("Grappling", true);
+        hasHitMark = false;
+        ropePoint = 1;
+        ropeTimeLeft = ropeCooldown;
+        currentGrappleDistance = grappleDistance;
     }
 
-    /// <summary>
-    /// for use to trigger events on special animations
-    /// </summary>
-    public void Special(){
+    private void SetNearestGrapple(Vector3 target) {
+        // set up filter to only collect grapple points
+        ContactFilter2D filter = new ContactFilter2D();
+        grapplePoints = new List<Collider2D>();
+        filter.SetLayerMask(LayerMask.GetMask("Grapple"));
+        filter.useTriggers = true;
+        // test if any grapple points exist within range
+        Physics2D.OverlapCircle(target, detectionRange, filter, grapplePoints);
+        Collider2D nearest = null;
+        float dist = -1;
+        //find the nearest grapple point to mouse position
+        foreach (Collider2D p in grapplePoints) {
+            float newDist = Vector2.Distance(target, p.transform.position);
+            float distPlayer = Vector2.Distance(transform.position, p.transform.position);
+            if (dist == -1 && CanReachGrapple(p.gameObject.transform) && distPlayer < maxGrappleDistance) {
+                nearest = p;
+                dist = newDist;
+            } else {
+                if (newDist < dist && CanReachGrapple(p.gameObject.transform) && distPlayer < maxGrappleDistance) {
+                    nearest = p;
+                    dist = newDist;
+                }
+            }
+        }
+        //update grapple point
+        if (nearest != null) {
+            currentGrapplePoint = nearest.gameObject;
+        }
+    }
 
+    private bool CanReachGrapple(Transform grapple) {
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.useTriggers = false;
+        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab"));
+        List<RaycastHit2D> results = new List<RaycastHit2D>();
+        Physics2D.Raycast(transform.position, (grapple.position - transform.position), filter, results, detectionRange);
+        return results.Count == 0;
     }
 
     public virtual void Jump() {
@@ -89,12 +177,12 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public void MoveRight(bool active) {
-        if (active) GetComponent<SpriteRenderer>().flipX = !active;
+        if (active) UpdateFacingDirection(!active);
         moveRight = active;
     }
 
     public void MoveLeft(bool active) {
-        if (active) GetComponent<SpriteRenderer>().flipX = active;
+        if (active) UpdateFacingDirection(active);
         moveLeft = active;
     }
 
@@ -107,6 +195,7 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public void Sprint(bool active) {
+        if (heldBox != null) return;
         if (active) {
             runMultiplier = 1.5f;
         } else {
@@ -118,19 +207,26 @@ public class PlayerCharacter : AnimatedCharacter {
         // default does nothing
     }
 
-    // when override make sure to implement base.HandleClimb();
-    public virtual void HandleClimb() {
-        if (onLadder) {
-            if (climbUp) {
-                rigid.velocity = new Vector2(rigid.velocity.x, 7);
-            }
+    public void HandleClimb() {
+        if (currentGrapplePoint == null) return;
+        float playerDistance = Vector2.Distance(currentGrapplePoint.transform.position, handObject.transform.position);
+        if (playerDistance < currentGrappleDistance) currentGrappleDistance = playerDistance;
+        if (climbUp) {
+            currentGrappleDistance -= 4 * Time.deltaTime;
+        } else if (climbDown) {
+            currentGrappleDistance += 4 * Time.deltaTime;
         }
+        if (currentGrappleDistance > maxGrappleDistance) currentGrappleDistance = maxGrappleDistance;
+        if (currentGrappleDistance < minGrappleDistance) currentGrappleDistance = minGrappleDistance;
     }
 
     public virtual void HandleMovement() {
         // setAnimation Triggers
         anim.SetBool("OnGround", IsGrounded());
-        anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 3);
+        anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 0.5);
+
+        // don't use ground movement if grappeling
+        if (currentGrapplePoint != null) return;
 
         if (moveRight){
             moveX += 1;
@@ -151,123 +247,79 @@ public class PlayerCharacter : AnimatedCharacter {
         moveX = 0;
     }
 
-    // public virtual void PreventWallHanging() {
-    //     // Check if the body's current velocity will result in a collision
-    //     Vector3 direction = Vector3.up;
-    //     if (moveLeft) {
-    //         direction = Vector3.left * walkSpeed * runMultiplier;
-    //     } else if (moveRight) {
-    //         direction = Vector3.right * walkSpeed * runMultiplier;
-    //     }
-    //     if (rigid.SweepTest(direction, out RaycastHit hit, direction.magnitude * Time.deltaTime, QueryTriggerInteraction.Ignore)) {
-    //         // If so, stop the movement
-    //         if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Default")) {
-    //             if (hit.point.y < transform.position.y - transform.localScale.y * 0.4) return;
-    //             rigid.velocity = new Vector3(0, rigid.velocity.y, 0);
-    //         }
-    //     }
-    // }
+    private void UpdateBoxState(bool active) {
+        if (active){
+            heldBox = foundBox;
+            heldBox.Interact(true);
+            runMultiplier = 0.75f;
+        } else {
+            heldBox.Interact(false);
+            heldBox = null;
+            runMultiplier = 1f;
+        }
+        boxPosition.GetComponent<SpriteRenderer>().enabled = active;
+        boxPosition.GetComponent<BoxCollider2D>().enabled = active;
+    }
+
+    public void UpdateFacingDirection(bool isFacingLeft) {
+        float newBoxPosX = Mathf.Abs(boxPosition.transform.localPosition.x);
+        float newFinderPosX = Mathf.Abs(boxFinder.transform.localPosition.x);
+        if (isFacingLeft) {
+            newBoxPosX = -newBoxPosX;
+            newFinderPosX = -newFinderPosX;
+        }
+        boxPosition.transform.localPosition = new Vector2(newBoxPosX, boxPosition.transform.localPosition.y);
+        boxFinder.transform.localPosition = new Vector2(newFinderPosX, boxFinder.transform.localPosition.y);
+        GetComponent<SpriteRenderer>().flipX = isFacingLeft;
+    }
+
 
     public virtual void HandleFalling() {
+        if (currentGrapplePoint != null) return;
         if (rigid.velocity.y < 0) {
             rigid.velocity += Vector2.ClampMagnitude(Vector3.up * 2.5f * Physics.gravity.y * Time.deltaTime, jumpHeight*5);
         }
     }
 
-    // public virtual void Update() {
-    //     if (Time.timeScale > 0 ) {
-    //         HandleCoolDowns();
-    //     }
-    // }
-
-    // public virtual void HandleCoolDowns() {
-    //     if (primaryTimeLeft > 0) {
-    //         primaryTimeLeft -= Time.deltaTime;
-    //     }
-    //     if (secondaryTimeLeft > 0) {
-    //         secondaryTimeLeft -= Time.deltaTime;
-    //     }
-    // }
-
     public override void FixedUpdate() {
         base.FixedUpdate();
         HandleMovement();
         HandleJumpHeld();
-        // PreventWallHanging();
         HandleFalling();
         HandleClimb();
+        HandleGrapple();
+        UpdateBoxPos();
+        RenderGrapple();
         // CheckLocks();
     }
 
     public void Interact() {
-        // if (currentInteraction != null) {
-        //     currentInteraction.Interact();
-        // }
+        if (currentInteraction != null && heldBox == null) {
+            currentInteraction.Interact();
+        }
     }
-    //
-    // public void EnterDoor() {
-    //     if (currentTransition != null) {
-    //         rigid.transform.position = currentTransition.link.spawnPoint.transform.position;
-    //     }
-    // }
 
-    // private void OnTriggerEnter(Collider col) {
-    //     if (col.TryGetComponent(out BackgroundTransition transition)) {
-    //         if (transition.active && transition.link.active) {
-    //             currentTransition = transition;
-    //         }
-    //     }
-    //     if (col.TryGetComponent(out LockController padlock)) {
-    //         if (!padlock.active) {
-    //             currentLock = padlock;
-    //         }
-    //     } else if (col.TryGetComponent(out InteractableObject interact)) {
-    //         currentInteraction = interact;
-    //     }
-    //     if (col.CompareTag("Ladder")) {
-    //         onLadder = true;
-    //     }
-    // }
-    //
-    // private void OnTriggerStay(Collider col) {
-    //     if (col.TryGetComponent(out BackgroundTransition transition)) {
-    //         if (transition.active && transition.link.active) {
-    //             currentTransition = transition;
-    //         }
-    //     }
-    //     if (col.TryGetComponent(out LockController padlock)) {
-    //         if (!padlock.active) {
-    //             currentLock = padlock;
-    //         }
-    //     } else if (col.TryGetComponent(out InteractableObject interact)) {
-    //         currentInteraction = interact;
-    //     }
-    //     if (col.CompareTag("Ladder")) {
-    //         onLadder = true;
-    //     }
-    // }
-    //
-    // private void OnTriggerExit(Collider col) {
-    //     if (col.TryGetComponent(out BackgroundTransition transition)) {
-    //         currentTransition = null;
-    //     }
-    //     if (col.TryGetComponent(out LockController padlock)) {
-    //         currentLock = null;
-    //     } else if (col.TryGetComponent(out InteractableObject interact)) {
-    //         currentInteraction = null;
-    //     }
-    //     if (col.CompareTag("Ladder")) {
-    //         onLadder = false;
-    //     }
-    // }
+    public void HoldInteract(bool active) {
 
-    // private void CheckLocks() {
-    //     if (currentLock != null && PlayerPrefs.GetInt("keyCount") > 0) {
-    //         currentLock.Interact();
-    //         currentLock = null;
-    //         PlayerPrefs.SetInt("keyCount", PlayerPrefs.GetInt("keyCount")-1);
-    //     }
-    // }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = interact;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = interact;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = null;
+        }
+    }
 
     public bool IsGrounded() {
         float width = (transform.localScale.x * 0.15f) * 1.5f;
@@ -280,7 +332,7 @@ public class PlayerCharacter : AnimatedCharacter {
 
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = false;
-        filter.SetLayerMask(~LayerMask.GetMask("Player"));
+        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab"));
         List<RaycastHit2D> results1 = new List<RaycastHit2D>();
         List<RaycastHit2D> results2 = new List<RaycastHit2D>();
 
@@ -294,5 +346,103 @@ public class PlayerCharacter : AnimatedCharacter {
         else Debug.DrawRay(corner2Start, corner2End, Color.red);
 
         return (corner1 > 0 || corner2 > 0);
+    }
+
+
+    // down = 180
+    // swinging left -180 -> -90
+    // swinging right 180 -> 90
+    // up = 0
+    // plan
+    // initial 60 -> -75 -> 90 -> -105
+    // detect moving direction
+    // if moving left, mark = -120
+    // if moving right, mark = 120
+    // then if moving right && swing angle neagtive mark = -140
+    // mark counter
+    // default = 2
+    // mark =
+    private void UpdateSwingAngle(Vector2 grapplePosition, Vector2 handPosition) {
+        // calculate mark position
+        Vector2 targetVector = grapplePosition - handPosition;
+        swingAngle = Vector2.SignedAngle(targetVector, Vector2.down);
+
+        if (swingAngle < 0 ) {
+
+        }
+
+        float anglePercent = Mathf.Abs(swingAngle)/180;
+        if (moveLeft) {
+            swingAngle += 10 * anglePercent;
+        } else if(moveRight) {
+            swingAngle -= 10 * anglePercent;
+        }
+    }
+
+    private void HandleGrapple(){
+        if (currentGrapplePoint == null) return;
+        if (transform.position.y > currentGrapplePoint.transform.position.y) return;
+        if (!hasHitMark) return;
+        Vector2 grapplePosition = currentGrapplePoint.transform.position;
+        Vector2 handPosition = handObject.transform.position;
+
+        UpdateSwingAngle(grapplePosition, handPosition);
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(swingAngle/180 * Mathf.PI));
+        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(swingAngle/180 * Mathf.PI));
+        markPosition = new Vector2(tempPos.x, tempPos.y);
+
+        // calculate force
+        Vector2 distance = markPosition - handPosition;
+
+        Vector2 targetVelocity = Vector2.ClampMagnitude(grappleSpeed * distance, maxGrappleVelocity);
+        Vector2 error = targetVelocity - rigid.velocity;
+        Vector2 force = Vector2.ClampMagnitude(grappleGain * error, maxGrappleForce);
+
+        // perform force
+        rigid.AddForce(force);
+    }
+
+    private void RenderGrapple() {
+        if (currentGrapplePoint != null && !hasHitMark) {
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, handObject.transform.position);
+            Vector2 mark = GetMarkPosition();
+            ropeRender.SetPosition(1, mark);
+            ropePoint++;
+            if (ropePoint == maxRopePoints) hasHitMark = true;
+        } else if (currentGrapplePoint != null && hasHitMark) {
+            ropeRender.enabled = true;
+            ropeRender.SetPosition(0, handObject.transform.position);
+            ropeRender.SetPosition(1, currentGrapplePoint.transform.position);
+        } else {
+            ropeRender.enabled = false;
+        }
+    }
+
+    private Vector2 GetMarkPosition() {
+        float distance = Vector2.Distance(handObject.transform.position, currentGrapplePoint.transform.position) * ropePoint / maxRopePoints;
+
+        Vector2 grapplePosition = currentGrapplePoint.transform.position;
+        Vector2 handPosition = handObject.transform.position;
+        Vector2 targetVector = handPosition - grapplePosition;
+        float angle = Vector2.SignedAngle(targetVector, Vector3.down);
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = handPosition.x + (distance * Mathf.Sin(angle/180 * Mathf.PI));
+        tempPos.y = handPosition.y + (distance * Mathf.Cos(angle/180 * Mathf.PI));
+        return new Vector2(tempPos.x, tempPos.y);
+    }
+
+    public void UpdateBox(InteractableBox box){
+        if (heldBox != null) return;
+        foundBox = box;
+    }
+
+    private void UpdateBoxPos() {
+        if (heldBox != null) {
+            heldBox.transform.position = boxPosition.transform.position;
+        }
     }
 }
