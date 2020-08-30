@@ -93,7 +93,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1044467935
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1785008065297623884, guid: c5d276ddc3094064c8be6224679e577c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,6 +168,29 @@ MonoBehaviour:
   jumpHeight: 11
   walkSpeed: 7
   rigid: {fileID: 0}
+  foundBox: {fileID: 0}
+  heldBox: {fileID: 0}
+  currentInteraction: {fileID: 0}
+  boxPosition: {fileID: 0}
+  boxFinder: {fileID: 0}
+  grappleSpeed: 25
+  detectionRange: 1
+  minGrappleDistance: 0.5
+  grappleDistance: 3
+  maxGrappleDistance: 6
+  maxGrappleVelocity: 30
+  maxGrappleForce: 100
+  grappleGain: 5
+  grapplelayer:
+    serializedVersion: 2
+    m_Bits: 0
+  ropeRender: {fileID: 0}
+  handObject: {fileID: 0}
+  currentGrapplePoint: {fileID: 0}
+  grapplePoints: []
+  maxRopePoints: 5
+  ropeCooldown: 5
+  ropeTimeLeft: 0
   onLadder: 0
 --- !u!1 &6218572706105257764
 GameObject:
