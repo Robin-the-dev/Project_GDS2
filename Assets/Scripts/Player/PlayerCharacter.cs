@@ -41,32 +41,28 @@ public class PlayerCharacter : AnimatedCharacter {
     public GameObject boxPosition;
     public BoxFinder boxFinder;
 
-    public float grappleSpeed = 3f;
-    public float detectionRange = 2f;
+    public float detectionRange = 1f;
+
     public float minGrappleDistance = 0.5f;
     public float grappleDistance = 3.5f;
     public float maxGrappleDistance = 6f;
-    public float maxGrappleVelocity = 15f;
-    public float maxGrappleForce = 40f;
-    public float grappleGain = 5f;
+
+    private SpringJoint2D joint;
+
+    private float currentGrappleDistance = 0;
+
     public LayerMask grapplelayer;
     public LineRenderer ropeRender;
     public GameObject handObject;
-
     private GameObject currentGrapplePoint = null;
     private List<Collider2D> grapplePoints;
-    private float currentGrappleDistance = 0;
+
     private bool hasHitMark = false;
     private Vector2 markPosition = Vector3.zero;
     private SpriteRenderer spriteRenderer;
 
     public int maxRopePoints = 5;
     private int ropePoint = 0;
-
-    private bool hitSwingMark = false;
-    private float swingMark = 0f;
-    private bool swingingRight = true;
-    private float swingAngle = 0f;
 
     public float ropeCooldown = 5f;
     [HideInInspector]
@@ -78,6 +74,7 @@ public class PlayerCharacter : AnimatedCharacter {
     public override void Start() {
         base.Start();
         rigid = GetComponent<Rigidbody2D>();
+        joint = GetComponent<SpringJoint2D>();
     }
 
     /// <summary>
@@ -105,10 +102,12 @@ public class PlayerCharacter : AnimatedCharacter {
         if (!active && currentGrapplePoint != null) {
             if (currentGrapplePoint == null) return;
             // anim.SetBool("Grappling", false);
+            joint.connectedBody = null;
+            joint.enabled = false;
             currentGrapplePoint = null;
-            if (ropeTimeLeft <= 0) {
-                rigid.velocity = Vector3.ClampMagnitude(rigid.velocity * 3,   maxGrappleVelocity/2);
-            }
+            // if (ropeTimeLeft <= 0) {
+            //     rigid.velocity = Vector3.ClampMagnitude(rigid.velocity * 3, maxGrappleVelocity/2);
+            // }
         } else if (foundBox != null && heldBox == null && active) {
             UpdateBoxState(true);
         } else if (heldBox != null && !active) {
@@ -119,10 +118,13 @@ public class PlayerCharacter : AnimatedCharacter {
     public void doGrappleAction() {
         // anim.SetTrigger("Special");
         // anim.SetBool("Grappling", true);
+        joint.connectedBody = currentGrapplePoint.GetComponent<Rigidbody2D>();
+        joint.enabled = true;
         hasHitMark = false;
         ropePoint = 1;
         ropeTimeLeft = ropeCooldown;
         currentGrappleDistance = grappleDistance;
+        joint.distance = currentGrappleDistance;
     }
 
     private void SetNearestGrapple(Vector3 target) {
@@ -379,33 +381,11 @@ public class PlayerCharacter : AnimatedCharacter {
         }
     }
 
-    private void OnDrawGizmos() {
-        Handles.Label(transform.position, swingAngle + "");
-    }
 
     private void HandleGrapple(){
-        if (currentGrapplePoint == null) return;
-        if (transform.position.y > currentGrapplePoint.transform.position.y) return;
-        if (!hasHitMark) return;
-        Vector2 grapplePosition = currentGrapplePoint.transform.position;
-        Vector2 handPosition = handObject.transform.position;
-
-        UpdateSwingAngle(grapplePosition, handPosition);
-
-        Vector2 tempPos = new Vector2();
-        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(swingAngle/180 * Mathf.PI));
-        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(swingAngle/180 * Mathf.PI));
-        markPosition = new Vector2(tempPos.x, tempPos.y);
-
-        // calculate force
-        Vector2 distance = markPosition - handPosition;
-
-        Vector2 targetVelocity = Vector2.ClampMagnitude(grappleSpeed * distance, maxGrappleVelocity);
-        Vector2 error = targetVelocity - rigid.velocity;
-        Vector2 force = Vector2.ClampMagnitude(grappleGain * error, maxGrappleForce);
-
-        // perform force
-        rigid.AddForce(force);
+        if (currentGrapplePoint != null && hasHitMark) {
+            joint.distance = currentGrappleDistance;
+        }
     }
 
     private void RenderGrapple() {
