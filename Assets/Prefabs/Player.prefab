@@ -173,21 +173,15 @@ MonoBehaviour:
   currentInteraction: {fileID: 0}
   boxPosition: {fileID: 0}
   boxFinder: {fileID: 0}
-  grappleSpeed: 25
   detectionRange: 1
-  minGrappleDistance: 0.5
+  minGrappleDistance: 0.9
   grappleDistance: 3
   maxGrappleDistance: 6
-  maxGrappleVelocity: 30
-  maxGrappleForce: 100
-  grappleGain: 5
   grapplelayer:
     serializedVersion: 2
     m_Bits: 0
   ropeRender: {fileID: 0}
   handObject: {fileID: 0}
-  currentGrapplePoint: {fileID: 0}
-  grapplePoints: []
   maxRopePoints: 5
   ropeCooldown: 5
   ropeTimeLeft: 0

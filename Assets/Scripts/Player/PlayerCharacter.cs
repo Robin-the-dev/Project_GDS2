@@ -350,41 +350,31 @@ public class PlayerCharacter : AnimatedCharacter {
         return (corner1 > 0 || corner2 > 0);
     }
 
-
-    // down = 180
-    // swinging left -180 -> -90
-    // swinging right 180 -> 90
-    // up = 0
-    // plan
-    // initial 60 -> -75 -> 90 -> -105
-    // detect moving direction
-    // if moving left, mark = -120
-    // if moving right, mark = 120
-    // then if moving right && swing angle neagtive mark = -140
-    // mark counter
-    // default = 2
-    // mark =
     private void UpdateSwingAngle(Vector2 grapplePosition, Vector2 handPosition) {
         // calculate mark position
+        if (!moveLeft && !moveRight) return;
         Vector2 targetVector = grapplePosition - handPosition;
-        swingAngle = Vector2.SignedAngle(targetVector, Vector2.down);
+        float swingAngle = Vector2.SignedAngle(targetVector, Vector2.up);
 
-        if (swingAngle < 0 ) {
-
-        }
-
-        float anglePercent = Mathf.Abs(swingAngle)/180;
+        float anglePercent = 1 - Mathf.Abs(swingAngle)/120;
         if (moveLeft) {
-            swingAngle += 10 * anglePercent;
+            swingAngle -= anglePercent * 100;
         } else if(moveRight) {
-            swingAngle -= 10 * anglePercent;
+            swingAngle += anglePercent * 100;
         }
+
+        Vector2 tempPos = new Vector2();
+        tempPos.x = grapplePosition.x + (currentGrappleDistance * Mathf.Sin(swingAngle/180 * Mathf.PI));
+        tempPos.y = grapplePosition.y + (currentGrappleDistance * Mathf.Cos(swingAngle/180 * Mathf.PI));
+
+        rigid.AddForce((tempPos - new Vector2(transform.position.x, transform.position.y)));
     }
 
 
     private void HandleGrapple(){
         if (currentGrapplePoint != null && hasHitMark) {
             joint.distance = currentGrappleDistance;
+            UpdateSwingAngle(currentGrapplePoint.transform.position, handObject.transform.position);
         }
     }
 

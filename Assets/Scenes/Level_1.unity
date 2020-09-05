@@ -128,7 +128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6218572706772717041, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
   m_PrefabInstance: {fileID: 5381946291456967471}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1957773279}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 942442c8f94343440ae003355fbed717, type: 3}
@@ -9993,6 +9993,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19a218eb36d2ae84ebe3cb5f474ff81c, type: 3}
+--- !u!1 &1957773279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6218572706772717035, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
+  m_PrefabInstance: {fileID: 5381946291456967471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &1957773285
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957773279}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.005
+  m_DampingRatio: 1
+  m_Frequency: 2
 --- !u!1 &1963776450
 GameObject:
   m_ObjectHideFlags: 0
@@ -10269,6 +10294,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.49
       objectReference: {fileID: 0}
+    - target: {fileID: 6218572706772717041, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
+      propertyPath: minGrappleDistance
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8235241916283500856, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.065
@@ -10282,6 +10311,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2212191939674212349, guid: 19a218eb36d2ae84ebe3cb5f474ff81c, type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6030373071710396824, guid: 19a218eb36d2ae84ebe3cb5f474ff81c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.96
