@@ -279,7 +279,10 @@ public class PlayerCharacter : AnimatedCharacter {
     public virtual void HandleFalling() {
         if (currentGrapplePoint != null) return;
         if (rigid.velocity.y < 0) {
+            anim.SetBool("Falling", true);
             rigid.velocity += Vector2.ClampMagnitude(Vector3.up * 2.5f * Physics.gravity.y * Time.deltaTime, jumpHeight*5);
+        } else if (rigid.velocity.y > 0) {
+            anim.SetBool("Falling", false);
         }
     }
 
