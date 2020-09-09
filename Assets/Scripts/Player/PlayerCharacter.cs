@@ -71,6 +71,8 @@ public class PlayerCharacter : AnimatedCharacter {
     [HideInInspector]
     public bool onLadder = false;
 
+    public bool inWater = false;
+
     public override void Start() {
         base.Start();
         rigid = GetComponent<Rigidbody2D>();
@@ -170,7 +172,6 @@ public class PlayerCharacter : AnimatedCharacter {
         if (IsGrounded()) {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
             anim.SetTrigger("Jump");
-            // AudioManager.Instance.RequestPlay(AudioManager.Instance.shared[0]);
         }
     }
 
@@ -199,7 +200,7 @@ public class PlayerCharacter : AnimatedCharacter {
     public void Sprint(bool active) {
         if (heldBox != null) return;
         if (active) {
-            runMultiplier = 1.5f;
+            runMultiplier = 1.25f;
         } else {
             runMultiplier = 1f;
         }
@@ -222,10 +223,28 @@ public class PlayerCharacter : AnimatedCharacter {
         if (currentGrappleDistance < minGrappleDistance) currentGrappleDistance = minGrappleDistance;
     }
 
+    public void DoWaterMovement() {
+        if (climbUp) {
+            rigid.velocity = Vector2.up * walkSpeed * runMultiplier / 2;
+        } else if (climbDown) {
+            rigid.velocity = Vector2.down * walkSpeed * runMultiplier / 2;
+        }
+    }
+
+    public void CancelWaterMovement() {
+        // rigid.gravityScale = 2f;
+    }
+
     public virtual void HandleMovement() {
         // setAnimation Triggers
         anim.SetBool("OnGround", IsGrounded());
         anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 0.5);
+
+        if (inWater) {
+            DoWaterMovement();
+        } else {
+            CancelWaterMovement();
+        }
 
         // don't use ground movement if grappeling
         if (currentGrapplePoint != null) return;
@@ -260,7 +279,7 @@ public class PlayerCharacter : AnimatedCharacter {
             runMultiplier = 1f;
         }
         boxPosition.GetComponent<SpriteRenderer>().enabled = active;
-        boxPosition.GetComponent<BoxCollider2D>().enabled = active;
+        boxPosition.GetComponent<PolygonCollider2D>().enabled = active;
     }
 
     public void UpdateFacingDirection(bool isFacingLeft) {
@@ -269,6 +288,9 @@ public class PlayerCharacter : AnimatedCharacter {
         if (isFacingLeft) {
             newBoxPosX = -newBoxPosX;
             newFinderPosX = -newFinderPosX;
+            boxPosition.transform.localScale = new Vector3(-Mathf.Abs(boxPosition.transform.localScale.x), boxPosition.transform.localScale.y, boxPosition.transform.localScale.z);
+        } else {
+            boxPosition.transform.localScale = new Vector3(Mathf.Abs(boxPosition.transform.localScale.x), boxPosition.transform.localScale.y, boxPosition.transform.localScale.z);
         }
         boxPosition.transform.localPosition = new Vector2(newBoxPosX, boxPosition.transform.localPosition.y);
         boxFinder.transform.localPosition = new Vector2(newFinderPosX, boxFinder.transform.localPosition.y);
@@ -277,7 +299,7 @@ public class PlayerCharacter : AnimatedCharacter {
 
 
     public virtual void HandleFalling() {
-        if (currentGrapplePoint != null) return;
+        if (currentGrapplePoint != null || inWater) return;
         if (rigid.velocity.y < 0) {
             anim.SetBool("Falling", true);
             rigid.velocity += Vector2.ClampMagnitude(Vector3.up * 2.5f * Physics.gravity.y * Time.deltaTime, jumpHeight*5);
@@ -312,18 +334,21 @@ public class PlayerCharacter : AnimatedCharacter {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = interact;
         }
+        if (col.tag == "Water") inWater = true;
     }
 
     private void OnTriggerStay2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = interact;
         }
+        if (col.tag == "Water") inWater = true;
     }
 
     private void OnTriggerExit2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = null;
         }
+        if (col.tag == "Water") inWater = false;
     }
 
     public bool IsGrounded() {

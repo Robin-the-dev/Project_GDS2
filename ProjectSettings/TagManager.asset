@@ -19,8 +19,8 @@ TagManager:
   - Player
   - Grapple
   - AntiWallGrab
-  - 
-  - 
+  - SupportPlayer
+  - Moveable
   - 
   - 
   - 
