@@ -1,0 +1,36 @@
+﻿{
+  "Conversations" : [
+    {
+      "Key": "Temp",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Hello There!",
+          "Emote" : 3
+        },
+        {
+          "Character" : 1,
+          "Text" : "General Kenobi...",
+          "Emote" : 0
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "Temp2",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Nya~",
+          "Emote" : 3
+        },
+        {
+          "Character" : 1,
+          "Text" : "Cease...",
+          "Emote" : 0
+        }
+      ],
+      "IsBlocking" : true
+    }
+  ]
+}
