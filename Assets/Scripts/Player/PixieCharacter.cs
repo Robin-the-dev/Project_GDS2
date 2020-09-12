@@ -14,38 +14,45 @@ public class PixieCharacter : AnimatedCharacter {
     public float maxForce = 10f;
     public float flightGain = 20f;
 
+    public float flightSpeed = 10f;
+
     private MakiPathing pathing;
 
     private float nextActionTime = 0.0f;
     private float period = 0.25f;
 
     private Stack<Vector3Int> path = null;
+    private bool pixieMode = false;
+    public PlayerCharacter player;
+    public float maxDistanceFromPlayer = 30f;
 
-    private void FixedUpdate() {
-        if (Time.time > nextActionTime) {
-            nextActionTime += period;
-            Stack<Vector3Int> newPath = pathing.Algorithm();
-            if (newPath != null) {
-                path = newPath;
-            }
-        }
-        if (path == null) return;
+    private bool moveUp = false;
+    private bool moveDown = false;
+    private bool moveLeft = false;
+    private bool moveRight = false;
 
+    private int moveX = 0;
+    private int moveY = 0;
+
+    public override void FixedUpdate() {
+        base.FixedUpdate();
         GetComponent<SpriteRenderer>().flipX = rigid.velocity.x < 0;
-
-        Vector3 position = pathing.ToWorldSpace(path.Peek());
-
-        float distance = Vector3.Distance(transform.position, pathing.endPos);
-        if (Vector3.Distance(transform.position, position) < minDistance) path.Pop();
-        float newSpeed = maxSpeed;
-        if (distance < maxDistance) newSpeed = (distance/maxDistance) * maxSpeed;
-        if (distance > minDistance){
-            Vector2 direction = position - transform.position;
-            Vector2 targetVelocity = Vector3.ClampMagnitude(newSpeed * direction, maxVelocity);
-            Vector2 error = targetVelocity - rigid.velocity;
-            Vector2 force = Vector2.ClampMagnitude(flightGain * error, maxForce);
-            rigid.AddForce(force);
+        if (pixieMode) {
+            ManualMovement();
+        } else {
+            PathMovement();
         }
+    }
+
+    public void UpdatePixieMode(bool pixieMode) {
+        this.pixieMode = pixieMode;
+        if (pixieMode) {
+            rigid.velocity = Vector3.zero;
+        }
+    }
+
+    public void WarpHome(PlayerCharacter player) {
+        transform.position = player.transform.position;
     }
 
     public override void Start(){
@@ -55,22 +62,85 @@ public class PixieCharacter : AnimatedCharacter {
         nextActionTime = Time.time + period;
     }
 
+    public void Interact() {
+
+    }
+
+    public void MoveRight(bool active) {
+        moveRight = active;
+    }
+
+    public void MoveLeft(bool active) {
+        moveLeft = active;
+    }
+
+    public void MoveUp(bool active) {
+        moveUp = active;
+    }
+
+    public void MoveDown(bool active) {
+        moveDown = active;
+    }
+
+    private void ManualMovement() {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        Vector3 directionHome = player.transform.position - transform.position;
+        if (distance < maxDistanceFromPlayer) {
+            if (moveRight){
+                moveX += 1;
+            } else if (moveLeft) {
+                moveX -= 1;
+            }
+            if (moveUp){
+                moveY += 1;
+            } else if (moveDown) {
+                moveY -= 1;
+            }
+        } else {
+            rigid.AddForce(directionHome / directionHome.magnitude * flightSpeed * 4);
+        }
+        Vector2 currentVelocity = rigid.velocity;
+        Vector2 movement = new Vector2(moveX, moveY).normalized;
+
+        if (moveX != 0 || moveY != 0) {
+            rigid.velocity = movement * flightSpeed;
+        } else {
+            //comes to a slow stop rather than an isntant one.
+            rigid.velocity = new Vector2(rigid.velocity.x * 0.85f, rigid.velocity.y * 0.85f);
+        }
+        moveX = 0;
+        moveY = 0;
+    }
+
+    private void PathMovement() {
+        if (Time.time > nextActionTime) {
+            nextActionTime += period;
+            Stack<Vector3Int> newPath = pathing.Algorithm();
+            if (newPath != null) {
+                path = newPath;
+            }
+        }
+        if (path == null) return;
+
+
+
+        if (path.Count == 0) return;
+        Vector3 position = pathing.ToWorldSpace(path.Peek());
+
+        float distance = Vector3.Distance(transform.position, pathing.endPos);
+        if (Vector3.Distance(transform.position, position) < minDistance) path.Pop();
+        float newSpeed = maxSpeed;
+        if (distance < maxDistance) newSpeed = (distance/maxDistance) * maxSpeed;
+        if (distance > minDistance) {
+            Vector2 direction = position - transform.position;
+            Vector2 targetVelocity = Vector3.ClampMagnitude(newSpeed * direction, maxVelocity);
+            Vector2 error = targetVelocity - rigid.velocity;
+            Vector2 force = Vector2.ClampMagnitude(flightGain * error, maxForce);
+            rigid.AddForce(force);
+        }
+    }
+
     public void UpdatePosition(Vector3 mousePosition) {
         pathing.updateEndPos(mousePosition);
-        // flip sprite to face mouse
-
-        // // adjust speed so the further you are away the faster it moves.
-        // float distance = Vector3.Distance(transform.position, mousePosition);
-        // if (distance < minDistance) return;
-        // float newSpeed = maxSpeed;
-        // if (distance < maxDistance) newSpeed = (distance/maxDistance) * maxSpeed;
-        // // move towards mouse
-        // if (distance > minDistance){
-        //     Vector2 direction = mousePosition - transform.position;
-        //     Vector2 targetVelocity = Vector3.ClampMagnitude(newSpeed * direction, maxVelocity);
-        //     Vector2 error = targetVelocity - rigid.velocity;
-        //     Vector2 force = Vector2.ClampMagnitude(flightGain * error, maxForce);
-        //     rigid.AddForce(force);
-        // }
     }
 }

@@ -7,16 +7,12 @@ public class AstarDebugger : MonoBehaviour {
 
     public static AstarDebugger Instance { get; private set; }
 
-    [SerializeField]
-    private Grid grid;
-    [SerializeField]
-    private Tile openTile, closedTile, pathTile, currentTile, startTile, endTile;
-    [SerializeField]
-    private Tilemap tilemap;
-    [SerializeField]
-    private Canvas canvas;
-    [SerializeField]
-    private GameObject debugTextPrefab;
+    public Grid grid;
+    public Tile openTile, closedTile, pathTile, currentTile, startTile, endTile;
+    public Tilemap tilemap;
+    public Canvas canvas;
+
+    public GameObject debugTextPrefab;
 
     public AstarDebugText[] objs;
 

@@ -784,6 +784,14 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2693983521921634508, guid: 19c2d58f1f5f6624ca545b20c057ffa1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 6218572706772717041}
+    - target: {fileID: 2693983521921634508, guid: 19c2d58f1f5f6624ca545b20c057ffa1, type: 3}
+      propertyPath: maxDistanceFromPlayer
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2693983521921634510, guid: 19c2d58f1f5f6624ca545b20c057ffa1, type: 3}
       propertyPath: m_Size.x
       value: 0.8

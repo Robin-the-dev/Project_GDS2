@@ -7,12 +7,9 @@ using UnityEngine.Tilemaps;
 public class MakiPathing : MonoBehaviour {
 
 
-    [SerializeField]
-    private Tilemap tilemap;
-    [SerializeField]
-    private Grid grid;
-    [SerializeField]
-    private PixieCharacter maki;
+    public Tilemap tilemap;
+    public Grid grid;
+    public PixieCharacter maki;
 
     private Vector3Int startPos;
     public Vector3Int endPos;

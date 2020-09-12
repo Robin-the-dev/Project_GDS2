@@ -5,10 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 
 public class AstarDebugText : MonoBehaviour {
-    [SerializeField]
     public RectTransform arrow;
-    [SerializeField]
-    private TextMeshProUGUI scoreG, scoreH, scoreF;
+    public TextMeshProUGUI scoreG, scoreH, scoreF;
 
     public void SetScores(int scoreG, int scoreH, int scoreF) {
         this.scoreG.text = scoreG + "";

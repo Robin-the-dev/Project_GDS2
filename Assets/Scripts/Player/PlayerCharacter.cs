@@ -231,9 +231,6 @@ public class PlayerCharacter : AnimatedCharacter {
         }
     }
 
-    public void CancelWaterMovement() {
-        // rigid.gravityScale = 2f;
-    }
 
     public virtual void HandleMovement() {
         // setAnimation Triggers
@@ -242,9 +239,7 @@ public class PlayerCharacter : AnimatedCharacter {
 
         if (inWater) {
             DoWaterMovement();
-        } else {
-            CancelWaterMovement();
-        }
+        } 
 
         // don't use ground movement if grappeling
         if (currentGrapplePoint != null) return;
