@@ -6,6 +6,8 @@ using TMPro;
 
 public class ConversationHandler : MonoBehaviour {
 
+    public static ConversationHandler Instance { get; private set; }
+
     private string currentText = "";
     public TextMeshProUGUI leftText;
     public TextMeshProUGUI rightText;
@@ -22,6 +24,15 @@ public class ConversationHandler : MonoBehaviour {
     public void DisplayText(string key) {
         rightText.text = "";
         leftText.text = "";
+    }
+
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator Print(string originText, bool leftSide) {

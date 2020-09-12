@@ -162,7 +162,7 @@ public class PlayerCharacter : AnimatedCharacter {
     private bool CanReachGrapple(Transform grapple) {
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = false;
-        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab"));
+        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab", "SupportPlayer"));
         List<RaycastHit2D> results = new List<RaycastHit2D>();
         Physics2D.Raycast(transform.position, (grapple.position - transform.position), filter, results, detectionRange);
         return results.Count == 0;
@@ -362,7 +362,7 @@ public class PlayerCharacter : AnimatedCharacter {
 
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = false;
-        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab"));
+        filter.SetLayerMask(~LayerMask.GetMask("Player", "AntiWallGrab", "SupportPlayer"));
         List<RaycastHit2D> results1 = new List<RaycastHit2D>();
         List<RaycastHit2D> results2 = new List<RaycastHit2D>();
 
