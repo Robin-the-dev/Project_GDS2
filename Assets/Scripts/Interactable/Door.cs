@@ -4,32 +4,29 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private Sprite openDoorSprite;
-
-    private SpriteRenderer spriteRenderer;
-    private Sprite closedDoorSprite;
-    private BoxCollider2D doorCollider;
     [HideInInspector] public bool isOpen;
+
+    private Vector3 startPosition;
+    private float timeFraction;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        doorCollider = GetComponent<BoxCollider2D>();
         isOpen = false;
-        closedDoorSprite = spriteRenderer.sprite;
+        startPosition = transform.position;
+        timeFraction = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeFraction += Time.deltaTime;
+
         if(isOpen) {
-            spriteRenderer.sprite = openDoorSprite;
-            doorCollider.enabled = false;
+            transform.position = Vector3.Lerp(startPosition, startPosition + new Vector3(0.0f, 2.0f, 0.0f), timeFraction);
         }
         else {
-            spriteRenderer.sprite = closedDoorSprite;
-            doorCollider.enabled = true;
+            transform.position = Vector3.Lerp(transform.position, startPosition, timeFraction);
         }
     }
 }
