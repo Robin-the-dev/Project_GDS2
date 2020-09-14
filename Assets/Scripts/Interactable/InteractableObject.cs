@@ -6,12 +6,18 @@ using TMPro;
 public abstract class InteractableObject : MonoBehaviour {
 
     public LinkedObject obj;
+    public string key;
     public GameObject popup;
     public bool interactable = false;
-    public string key;
     public bool active = false;
     [HideInInspector]
     public int interacting = 0;
+
+    public void InitLink(string key, LinkedObject obj) {
+        this.obj = obj;
+        this.key = key;
+        CheckState();
+    }
 
     public abstract void Interact();
 

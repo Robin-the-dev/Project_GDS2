@@ -13,6 +13,10 @@ public class EventLink : LinkedObject {
         public InteractableObject interactable;
         public bool value;
         public bool inverted;
+
+        public void UpdateKey(string key) {
+            this.key = key;
+        }
     }
     public Key[] keys;
     public LinkedObject[] objs;
@@ -83,6 +87,11 @@ public class EventLink : LinkedObject {
     // Start is called before the first frame update
     void Start() {
         startPosition = transform;
+        for (int i = 0; i < keys.Length;i++) {
+            if (keys[i].interactable == null) continue;
+            if (keys[i].key == null || keys[i].key == "") keys[i].UpdateKey("Link_" + i);
+            keys[i].interactable.InitLink(keys[i].key, this);
+        }
     }
 
     // Update is called once per frame
