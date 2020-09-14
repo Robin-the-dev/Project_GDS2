@@ -4317,6 +4317,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 1599922583}
+    - target: {fileID: 804789120294824137, guid: 16f7243745ade4540b6eaf1cba3051ad, type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 1599922583}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f7243745ade4540b6eaf1cba3051ad, type: 3}
 --- !u!1001 &1940274599436205829
@@ -4557,6 +4561,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 214960220}
+    - target: {fileID: 5744334229376223731, guid: 6c2f5228db0bf4336a0708325376d6a5, type: 3}
+      propertyPath: obj
+      value: 
+      objectReference: {fileID: 214960220}
     - target: {fileID: 5744334229376223732, guid: 6c2f5228db0bf4336a0708325376d6a5, type: 3}
       propertyPath: m_Name
       value: Button
@@ -4632,6 +4640,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7195280354129242619, guid: b25d72eb747cd4b8ebf4521a5a4863fe, type: 3}
       propertyPath: door
+      value: 
+      objectReference: {fileID: 1160675234}
+    - target: {fileID: 7195280354129242619, guid: b25d72eb747cd4b8ebf4521a5a4863fe, type: 3}
+      propertyPath: obj
       value: 
       objectReference: {fileID: 1160675234}
     m_RemovedComponents: []

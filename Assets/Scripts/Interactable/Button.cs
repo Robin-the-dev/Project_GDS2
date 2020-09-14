@@ -4,33 +4,51 @@ using UnityEngine;
 
 public class Button : InteractableObject
 {
-    [SerializeField] private Door door;
     [SerializeField] private Sprite onSprite;
 
     private SpriteRenderer spriteRenderer;
     private Sprite offSprite;
-    private bool isPressed;
+    private float timeLeft;
+    private const float closingTimeOffset = 3.0f; // Change this if you want to change closing time offset
 
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         offSprite = spriteRenderer.sprite;
-        isPressed = false;
+        timeLeft = closingTimeOffset;
+    }
 
+    private void FixedUpdate() {
+        if(active) {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if(timeLeft <= 0.0f) {
+            active = !active;
+            switchOff();
+        }
     }
 
     public override void Interact() {
-        if (isPressed) {
-            isPressed = false;
-            door.isOpen = false;
-            spriteRenderer.sprite = offSprite;
-        }
-        else {
-            isPressed = true;
-            door.isOpen = true;
-            spriteRenderer.sprite = onSprite;
-        }
+        active = !active;
+        CheckState();
     }
 
     public override void CheckState() {
+        if (active)
+            switchOn();
+        else
+            switchOff();
+    }
+
+    private void switchOn() {
+        obj.Activate(key);
+        spriteRenderer.sprite = onSprite;
+
+    }
+
+    private void switchOff() {
+        obj.Deactivate(key);
+        spriteRenderer.sprite = offSprite;
+        timeLeft = closingTimeOffset;
     }
 }
