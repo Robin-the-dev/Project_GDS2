@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : LinkedObject
 {
     [HideInInspector] public bool isOpen;
 
@@ -21,12 +21,21 @@ public class Door : MonoBehaviour
     void Update()
     {
         timeFraction += Time.deltaTime;
+    }
 
-        if(isOpen) {
-            transform.position = Vector3.Lerp(startPosition, startPosition + new Vector3(0.0f, 2.0f, 0.0f), timeFraction);
-        }
-        else {
-            transform.position = Vector3.Lerp(transform.position, startPosition, timeFraction);
-        }
+    public override void Activate(string msg) {
+        openDoor();
+    }
+
+    public override void Deactivate(string msg) {
+        closeDoor();
+    }
+
+    private void openDoor() {
+        transform.position = Vector3.Lerp(startPosition, startPosition + new Vector3(0.0f, 2.0f, 0.0f), timeFraction);
+    }
+
+    private void closeDoor() {
+        transform.position = Vector3.Lerp(transform.position, startPosition, timeFraction);
     }
 }
