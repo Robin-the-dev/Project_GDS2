@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlate : MonoBehaviour
-{
+public class PressurePlate : InteractableObject {
     [SerializeField] private Door door;
     [SerializeField] private Sprite onSprite;
 
@@ -23,13 +22,21 @@ public class PressurePlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public override void Interact() {
+
+    }
+
+    public override void CheckState() {
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             spriteRenderer.sprite = onSprite;
-            pressurePlateCollider.size = new Vector2(1.0f, 0.19f);
+            pressurePlateCollider.size = new Vector2(1.0f, 0.20f);
             door.isOpen = true;
         }
     }
