@@ -715,6 +715,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.49
       objectReference: {fileID: 0}
+    - target: {fileID: 6218572706105257753, guid: f98e3b09a5c10f44f828e811b70b5a1a, type: 3}
+      propertyPath: m_AssetsPPU
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8267432072470059718, guid: f98e3b09a5c10f44f828e811b70b5a1a, type: 3}
       propertyPath: m_RootOrder
       value: 6

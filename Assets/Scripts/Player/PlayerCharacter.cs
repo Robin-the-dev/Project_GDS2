@@ -227,7 +227,7 @@ public class PlayerCharacter : AnimatedCharacter {
         if (climbUp) {
             rigid.velocity = Vector2.up * walkSpeed * runMultiplier / 2;
         } else if (climbDown) {
-            rigid.velocity = Vector2.down * walkSpeed * runMultiplier / 2;
+            rigid.velocity = Vector2.down * walkSpeed * runMultiplier;
         }
     }
 
@@ -239,7 +239,7 @@ public class PlayerCharacter : AnimatedCharacter {
 
         if (inWater) {
             DoWaterMovement();
-        } 
+        }
 
         // don't use ground movement if grappeling
         if (currentGrapplePoint != null) return;

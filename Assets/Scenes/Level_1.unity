@@ -11544,6 +11544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15977075554188741, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3767109595703482772, guid: 8c02a8a5b48446c40bd4a584b9449b72, type: 3}
       propertyPath: tilemap
       value: 
