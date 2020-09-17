@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlate : InteractableObject
-{
+public class PressurePlate : InteractableObject {
     [SerializeField] private Sprite onSprite;
 
     private SpriteRenderer spriteRenderer;
@@ -12,14 +11,14 @@ public class PressurePlate : InteractableObject
     private Vector2 offSize;
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         offSprite = spriteRenderer.sprite;
         offSize = pressurePlateCollider.size;
     }
 
     public override void Interact() {
+
     }
 
     public override void CheckState() {
@@ -27,18 +26,18 @@ public class PressurePlate : InteractableObject
             switchOn();
         else
             switchOff();
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            interactPressurePlate();
+            interactPressurePlate(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            interactPressurePlate();
+            interactPressurePlate(false);
         }
     }
 
@@ -54,8 +53,8 @@ public class PressurePlate : InteractableObject
         pressurePlateCollider.size = offSize;
     }
 
-    private void interactPressurePlate() {
-        active = !active;
+    private void interactPressurePlate(bool active) {
+        this.active = active;
         CheckState();
     }
 }

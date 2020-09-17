@@ -11,6 +11,8 @@ public class PlayerControls : MonoBehaviour {
     public Vector3 mousePosition = Vector3.zero;
     private Camera mainCamera;
 
+    private Transform target = null;
+
     [HideInInspector]
     public Image primaryAbilityIcon;
     [HideInInspector]
@@ -19,6 +21,10 @@ public class PlayerControls : MonoBehaviour {
     public Text primaryCoolDownText;
     [HideInInspector]
     public Text secondaryCoolDownText;
+
+    private bool pixieMode = false;
+
+    private float pixieHeld = 0;
 
     public void Awake() {
         //reset keys when reload.
@@ -31,8 +37,77 @@ public class PlayerControls : MonoBehaviour {
         updateMousePos();
         pixieCharacter.UpdatePosition(mousePosition);
         if (Time.timeScale > 0) {
-            HandleControls();
-            // HandleCoolDowns();
+            SwitchMode();
+            if (pixieMode) {
+                HandlePixieControls();
+            } else {
+                HandleControls();
+            }
+        }
+    }
+
+    private void SwitchMode() {
+        if (GetKey("Maki")) {
+            pixieHeld += Time.deltaTime;
+        } else if (GetKeyUp("Maki")) {
+            if (pixieHeld >= 0.3) {
+                pixieCharacter.WarpHome(activeCharacter);
+                pixieMode = false;
+            } else {
+                pixieMode = !pixieMode;
+            }
+            pixieCharacter.UpdatePixieMode(pixieMode);
+            ChangeCamera();
+            if (pixieMode) {
+                CancelControls();
+            }
+            pixieHeld = 0;
+        }
+    }
+
+    private void CancelControls() {
+        activeCharacter.ClimbUp(false);
+        activeCharacter.ClimbDown(false);
+        activeCharacter.MoveLeft(false);
+        activeCharacter.MoveRight(false);
+        activeCharacter.HoldJump(false);
+        activeCharacter.HoldInteract(false);
+        activeCharacter.Sprint(false);
+        activeCharacter.doAttackAction(false, mousePosition);
+        activeCharacter.doSpecialAction(false, mousePosition);
+    }
+
+    private void HandlePixieControls() {
+        //interact
+        if (GetKeyDown("Interact")) {
+            pixieCharacter.Interact();
+        }
+
+        if (GetKeyDown("MoveUp")) {
+            pixieCharacter.MoveUp(true);
+        } else if (GetKeyUp("MoveUp")) {
+            pixieCharacter.MoveUp(false);
+        }
+
+        //climbDown
+        if (GetKeyDown("MoveDown")) {
+            pixieCharacter.MoveDown(true);
+        } else if (GetKeyUp("MoveDown")) {
+            pixieCharacter.MoveDown(false);
+        }
+
+        //moveLeft
+        if (GetKeyDown("MoveLeft")) {
+            pixieCharacter.MoveLeft(true);
+        } else if(GetKeyUp("MoveLeft")) {
+            pixieCharacter.MoveLeft(false);
+        }
+
+        //moveRight
+        if (GetKeyDown("MoveRight")) {
+            pixieCharacter.MoveRight(true);
+        } else if(GetKeyUp("MoveRight")) {
+            pixieCharacter.MoveRight(false);
         }
     }
 
@@ -120,6 +195,28 @@ public class PlayerControls : MonoBehaviour {
 
     private bool GetKey(string code) {
         return Input.GetKey(ControlSettings.Instance.get(code)) || Input.GetKey(ControlSettings.Instance.get(code + "Alt"));
+    }
+
+    private void ChangeCamera() {
+        if (pixieMode) {
+            target = pixieCharacter.transform;
+        } else {
+            target = activeCharacter.transform;
+        }
+        StartCoroutine(Transition());
+    }
+
+    IEnumerator Transition() {
+        float t = 0.0f;
+        float transitionDuration = 0.25f;
+        Vector3 startingPos = mainCamera.transform.position;
+        while (t < 1.0f) {
+             t += Time.deltaTime * (Time.timeScale/transitionDuration);
+             Vector3 newPos = new Vector3(target.position.x, target.position.y, startingPos.z);
+             mainCamera.transform.position = Vector3.Lerp(startingPos, newPos, t);
+             yield return 0;
+        }
+        mainCamera.transform.SetParent(target);
     }
 
     private void updateMousePos() {

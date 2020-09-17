@@ -36,11 +36,9 @@ public class ControlSettings : MonoBehaviour{
         defaultKeys.Add("AttackAlt", KeyCode.None);
         defaultKeys.Add("Ability1", KeyCode.Mouse1);
         defaultKeys.Add("Ability1Alt", KeyCode.None);
-        defaultKeys.Add("Ability2", KeyCode.Q);
-        defaultKeys.Add("Ability2Alt", KeyCode.None);
-        // Camera
-        defaultKeys.Add("CameraReset", KeyCode.LeftControl);
-        defaultKeys.Add("CameraResetAlt", KeyCode.RightControl);
+
+        defaultKeys.Add("Maki", KeyCode.Q);
+        defaultKeys.Add("MakiAlt", KeyCode.None);
 
         InitKeys(false);
         AddOverrides();
