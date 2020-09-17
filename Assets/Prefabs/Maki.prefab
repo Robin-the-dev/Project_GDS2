@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 2693983521921634508}
   - component: {fileID: 2693983521921634509}
   - component: {fileID: 2693983521921634510}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Maki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1815041525
-  m_SortingLayer: 6
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2368176213253622843, guid: fb468dbbf67e869468283acda2ba221a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

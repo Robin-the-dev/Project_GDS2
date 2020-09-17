@@ -6,16 +6,22 @@ using System;
 public class EventLink : LinkedObject {
 
     private Transform startPosition;
-    
+
     [Serializable]
     public struct Key {
         public string key;
+        public InteractableObject interactable;
         public bool value;
         public bool inverted;
+
+        public void UpdateKey(string key) {
+            this.key = key;
+        }
     }
     public Key[] keys;
     public LinkedObject[] objs;
     public String key;
+    private bool active = false;
 
     public bool orMode = false;
 
@@ -65,6 +71,7 @@ public class EventLink : LinkedObject {
     }
 
     void CheckActive() {
+        active = isActive();
         if (isActive()) {
             foreach (LinkedObject l in objs) {
                 if (l == null) continue;
@@ -80,11 +87,29 @@ public class EventLink : LinkedObject {
     // Start is called before the first frame update
     void Start() {
         startPosition = transform;
+        for (int i = 0; i < keys.Length;i++) {
+            if (keys[i].interactable == null) continue;
+            if (keys[i].key == null || keys[i].key == "") keys[i].UpdateKey("Link_" + i);
+            keys[i].interactable.InitLink(keys[i].key, this);
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    public void OnDrawGizmos() {
+        foreach (Key k in keys) {
+            if (k.interactable == null) continue; // skip null
+            if (k.value) Gizmos.color = Color.green;
+            else Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, k.interactable.transform.position);
+
+        }
+        if (active) Gizmos.color = Color.green;
+        else Gizmos.color = Color.red;
+        foreach (LinkedObject l in objs) {
+            if (l == null) continue; // skip null
+            Gizmos.DrawLine(transform.position, l.transform.position);
+        }
+        Gizmos.DrawIcon(transform.position, "EventLink.png", true);
 
     }
 }
