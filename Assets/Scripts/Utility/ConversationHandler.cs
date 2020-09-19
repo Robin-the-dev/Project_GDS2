@@ -12,7 +12,10 @@ public class ConversationHandler : MonoBehaviour {
     private string currentText = "";
     public TextMeshProUGUI leftText;
     public TextMeshProUGUI rightText;
-    public Image chatBox;
+    public TextMeshProUGUI leftLabel;
+    public TextMeshProUGUI rightLabel;
+    public Image boxLeft;
+    public Image boxRight;
     public GameObject maki;
     public GameObject lori;
     private Animator makiAnim;
@@ -23,7 +26,7 @@ public class ConversationHandler : MonoBehaviour {
     public Entries entries;
 
     public void Start(){
-        string path = Application.dataPath + "/Json/Conversations.json";
+        string path = Application.streamingAssetsPath + "/Json/Conversations.json";
         string jsonText = File.ReadAllText(path);
         entries = JsonUtility.FromJson<Entries>(jsonText);
         makiAnim = maki.GetComponent<Animator>();
@@ -33,14 +36,14 @@ public class ConversationHandler : MonoBehaviour {
         DisableAll();
     }
 
-    private void ShowBox() {
-        chatBox.enabled = true;
-    }
 
     private void DisableAll(){
-        chatBox.enabled = false;
+        boxLeft.enabled = false;
+        boxRight.enabled = false;
         rightText.text = "";
         leftText.text = "";
+        rightLabel.enabled = false;
+        leftLabel.enabled = false;
         makiImage.enabled = false;
         loriImage.enabled = false;
     }
@@ -51,7 +54,6 @@ public class ConversationHandler : MonoBehaviour {
         Conversation convo = GetEntry(key);
         if (convo == null) return;
         StartCoroutine(Print(convo, audio));
-        ShowBox();
     }
 
     private Conversation GetEntry(string key) {
@@ -79,11 +81,18 @@ public class ConversationHandler : MonoBehaviour {
             if (c.Character == Character.Lori) {
                 makiImage.enabled = false;
                 loriImage.enabled = true;
+                boxRight.enabled = true;
+                boxLeft.enabled = false;
+                rightLabel.enabled = false;
+                leftLabel.enabled = true;
                 loriAnim.SetTrigger(c.Emote);
-
             } else if (c.Character == Character.Maki) {
                 makiImage.enabled = true;
                 loriImage.enabled = false;
+                boxRight.enabled = false;
+                boxLeft.enabled = true;
+                rightLabel.enabled = true;
+                leftLabel.enabled = false;
                 makiAnim.SetTrigger(c.Emote);
                 leftSide = true;
             }
@@ -94,7 +103,7 @@ public class ConversationHandler : MonoBehaviour {
             }
             // print text
             string currentText = "";
-            for (int i = 0; i < c.Text.Length; i++) {
+            for (int i = 0; i <= c.Text.Length; i++) {
                 currentText = c.Text.Substring(0, i);
                 //update display text
                 if (leftSide) leftText.text = currentText;
