@@ -8,10 +8,14 @@ public class InteractableBox : MonoBehaviour {
     Rigidbody2D rigid;
     SpriteRenderer sprite;
 
+    [HideInInspector] public Vector3 startPosition;
+
     public void Start() {
         boxCollider = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+
+        startPosition = transform.position;
     }
 
     public void Interact(bool active) {
