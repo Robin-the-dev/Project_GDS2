@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
@@ -11,7 +12,13 @@ public class ConversationHandler : MonoBehaviour {
     private string currentText = "";
     public TextMeshProUGUI leftText;
     public TextMeshProUGUI rightText;
-    public GameObject chatBox;
+    public Image chatBox;
+    public GameObject maki;
+    public GameObject lori;
+    private Animator makiAnim;
+    private Animator loriAnim;
+    private Image makiImage;
+    private Image loriImage;
 
     public Entries entries;
 
@@ -19,32 +26,87 @@ public class ConversationHandler : MonoBehaviour {
         string path = Application.dataPath + "/Json/Conversations.json";
         string jsonText = File.ReadAllText(path);
         entries = JsonUtility.FromJson<Entries>(jsonText);
+        makiAnim = maki.GetComponent<Animator>();
+        loriAnim = lori.GetComponent<Animator>();
+        makiImage = maki.GetComponent<Image>();
+        loriImage = lori.GetComponent<Image>();
+        DisableAll();
     }
 
-    public void DisplayText(string key) {
+    private void ShowBox() {
+        chatBox.enabled = true;
+    }
+
+    private void DisableAll(){
+        chatBox.enabled = false;
         rightText.text = "";
         leftText.text = "";
+        makiImage.enabled = false;
+        loriImage.enabled = false;
+    }
+
+    public void DisplayText(string key, AudioSource audio) {
+        rightText.text = "";
+        leftText.text = "";
+        Conversation convo = GetEntry(key);
+        if (convo == null) return;
+        StartCoroutine(Print(convo, audio));
+        ShowBox();
+    }
+
+    private Conversation GetEntry(string key) {
+        foreach (Conversation c in entries.Conversations) {
+            if (c.Key == key) {
+              return c;
+            }
+        }
+        return null;
     }
 
     void Awake() {
         if (Instance == null) {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else {
-            Destroy(gameObject);
         }
     }
 
-    IEnumerator Print(string originText, bool leftSide) {
-        string currentText = "";
-        for (int i = 0; i < originText.Length; i++) {
-            currentText = originText.Substring(0, i);
-            //update display text
-            if (leftSide) leftText.text = currentText;
-            else rightText.text = currentText;
-            //wait delay
-            yield return new WaitForSeconds(PlayerPrefs.GetInt("TextDelay"));
+    IEnumerator Print(Conversation convo, AudioSource audio) {
+        // for each chatline do
+        foreach (ChatLine c in convo.Lines) {
+            rightText.text = "";
+            leftText.text = "";
+            bool leftSide = false;
+            // show the correct character
+            if (c.Character == Character.Lori) {
+                makiImage.enabled = false;
+                loriImage.enabled = true;
+                loriAnim.SetTrigger(c.Emote);
+
+            } else if (c.Character == Character.Maki) {
+                makiImage.enabled = true;
+                loriImage.enabled = false;
+                makiAnim.SetTrigger(c.Emote);
+                leftSide = true;
+            }
+            //if has sound, play sound
+            if (c.Sound != null) {
+                AudioClip clip = Resources.Load<AudioClip>(c.Sound);
+                audio.PlayOneShot(clip);
+            }
+            // print text
+            string currentText = "";
+            for (int i = 0; i < c.Text.Length; i++) {
+                currentText = c.Text.Substring(0, i);
+                //update display text
+                if (leftSide) leftText.text = currentText;
+                else rightText.text = currentText;
+                //wait delay
+                yield return new WaitForSeconds(0.1f);
+            }
+            // wait then play next
+            yield return new WaitForSeconds(0.5f);
         }
+        yield return new WaitForSeconds(1f);
+        DisableAll();
     }
 
     [System.Serializable]
@@ -69,6 +131,7 @@ public class ConversationHandler : MonoBehaviour {
     public class ChatLine {
         public Character Character;
         public string Text;
-        public Emote Emote;
+        public string Emote;
+        public string Sound;
     }
 }

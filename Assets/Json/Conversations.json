@@ -6,12 +6,13 @@
         {
           "Character" : 0,
           "Text" : "Hello There!",
-          "Emote" : 3
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/SoundEffects/Skittering Bugs"
         },
         {
           "Character" : 1,
           "Text" : "General Kenobi...",
-          "Emote" : 0
+          "Emote" : "Neutral"
         }
       ],
       "IsBlocking" : false
@@ -22,12 +23,12 @@
         {
           "Character" : 0,
           "Text" : "Nya~",
-          "Emote" : 3
+          "Emote" : "Sad"
         },
         {
           "Character" : 1,
           "Text" : "Cease...",
-          "Emote" : 0
+          "Emote" : "Neutral_Closed"
         }
       ],
       "IsBlocking" : true
