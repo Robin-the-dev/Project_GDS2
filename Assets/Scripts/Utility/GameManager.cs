@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void damage() {
+    public void Damage() {
         if(playerLife != 0) {
             playerLife--;
         }

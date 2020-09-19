@@ -71,4 +71,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacter: {fileID: 0}
-  player: {fileID: 0}
+  delayTime: 1
