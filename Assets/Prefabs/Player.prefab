@@ -4989,7 +4989,7 @@ MonoBehaviour:
   detectionRange: 1
   minGrappleDistance: 0.9
   grappleDistance: 3
-  maxGrappleDistance: 6
+  maxGrappleDistance: 12
   grapplelayer:
     serializedVersion: 2
     m_Bits: 0

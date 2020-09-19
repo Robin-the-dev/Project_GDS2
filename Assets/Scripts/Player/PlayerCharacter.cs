@@ -169,7 +169,7 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public virtual void Jump() {
-        if (IsGrounded()) {
+        if (IsGrounded()|| inWater) {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
             anim.SetTrigger("Jump");
         }
@@ -236,8 +236,9 @@ public class PlayerCharacter : AnimatedCharacter {
         // setAnimation Triggers
         anim.SetBool("OnGround", IsGrounded());
         anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 0.5);
-
+        anim.SetBool("InWater", inWater);
         if (inWater) {
+
             DoWaterMovement();
         }
 

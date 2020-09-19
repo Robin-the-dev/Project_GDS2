@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: 578b3e79f3698f34d9f9bf31d69e1bfd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1049228218523307835
+    second: Maki_Sheet_0
+  - first:
+      213: -8815498432614254255
+    second: Maki_Sheet_1
+  - first:
+      213: 8733873449230163969
+    second: Maki_Sheet_2
+  - first:
+      213: -5340389113967482879
+    second: Maki_Sheet_3
+  - first:
+      213: 3551050882240791017
+    second: Maki_Sheet_4
+  - first:
+      213: 5928819795599819970
+    second: Maki_Sheet_5
+  - first:
+      213: 2736540139020820339
+    second: Maki_Sheet_6
+  - first:
+      213: 9069530168280273419
+    second: Maki_Sheet_7
+  - first:
+      213: -4257908169531974148
+    second: Maki_Sheet_8
+  - first:
+      213: -3566266079656612202
+    second: Maki_Sheet_9
+  - first:
+      213: 4595826342208924401
+    second: Maki_Sheet_10
+  - first:
+      213: -9120117383020780474
+    second: Maki_Sheet_11
+  - first:
+      213: 8567142897867458443
+    second: Maki_Sheet_12
+  - first:
+      213: 5671397567684289254
+    second: Maki_Sheet_13
+  - first:
+      213: -113137805911393776
+    second: Maki_Sheet_14
+  - first:
+      213: 3952348807806480980
+    second: Maki_Sheet_15
+  - first:
+      213: -1464640698226828364
+    second: Maki_Sheet_16
+  - first:
+      213: -2370870495703655930
+    second: Maki_Sheet_17
+  - first:
+      213: 2999343306332475768
+    second: Maki_Sheet_18
+  - first:
+      213: 9115887855139946817
+    second: Maki_Sheet_19
+  - first:
+      213: 3259884149121447938
+    second: Maki_Sheet_20
+  - first:
+      213: -5469948549410018289
+    second: Maki_Sheet_21
+  - first:
+      213: 4390442027139128087
+    second: Maki_Sheet_22
+  - first:
+      213: 3136546299802886955
+    second: Maki_Sheet_23
+  - first:
+      213: -1375103825408015714
+    second: Maki_Sheet_24
+  - first:
+      213: -7063058661983533876
+    second: Maki_Sheet_25
+  - first:
+      213: -9034199345018697470
+    second: Maki_Sheet_26
+  - first:
+      213: -2508713534846897334
+    second: Maki_Sheet_27
+  - first:
+      213: -4000141529936105589
+    second: Maki_Sheet_28
+  - first:
+      213: -7432655584943280299
+    second: Maki_Sheet_29
+  - first:
+      213: 2380694530350246941
+    second: Maki_Sheet_30
+  - first:
+      213: 8002512568067298005
+    second: Maki_Sheet_31
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Maki_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fc565718b9f8e00800000000000000
+      internalID: 1049228218523307835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159b30ec1ee09a580800000000000000
+      internalID: -8815498432614254255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1006496c0a3f43970800000000000000
+      internalID: 8733873449230163969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108ea9b356023e5b0800000000000000
+      internalID: -5340389113967482879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1cc4f86fdd74130800000000000000
+      internalID: 3551050882240791017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4080e1136674250800000000000000
+      internalID: 5928819795599819970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f1fe3f1c42af520800000000000000
+      internalID: 2736540139020820339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maki_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02d808b2a17ddd70800000000000000
+      internalID: 9069530168280273419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
