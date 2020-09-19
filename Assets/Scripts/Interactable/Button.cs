@@ -43,7 +43,6 @@ public class Button : InteractableObject
     private void switchOn() {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
-
     }
 
     private void switchOff() {
