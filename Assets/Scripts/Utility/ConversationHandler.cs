@@ -8,8 +8,6 @@ using TMPro;
 public class ConversationHandler : MonoBehaviour {
 
     public static ConversationHandler Instance { get; private set; }
-
-    private string currentText = "";
     public TextMeshProUGUI leftText;
     public TextMeshProUGUI rightText;
     public TextMeshProUGUI leftLabel;
