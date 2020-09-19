@@ -38,6 +38,11 @@ public class Respawn : MonoBehaviour
                 GameManager.instance.Damage();
             }
         }
+
+        if(collision.gameObject.tag == "Box")
+        {
+            collision.transform.position = collision.GetComponent<InteractableBox>().startPosition;
+        }
     }
 
     IEnumerator DelayCounter(Collider2D collision)
