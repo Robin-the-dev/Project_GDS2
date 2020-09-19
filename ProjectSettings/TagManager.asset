@@ -7,7 +7,7 @@ TagManager:
   - BoxFinder
   - Water
   - Conversation
-  - Box
+  - Pixie
   layers:
   - Default
   - TransparentFX

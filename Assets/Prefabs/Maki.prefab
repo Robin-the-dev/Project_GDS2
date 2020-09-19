@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2693983521921634510}
   m_Layer: 12
   m_Name: Maki
-  m_TagString: Untagged
+  m_TagString: Pixie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,9 @@ MonoBehaviour:
   maxVelocity: 10
   maxForce: 10
   flightGain: 20
+  flightSpeed: 10
+  player: {fileID: 0}
+  maxDistanceFromPlayer: 30
 --- !u!50 &2693983521921634509
 Rigidbody2D:
   serializedVersion: 4
