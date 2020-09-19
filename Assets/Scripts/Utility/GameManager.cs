@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite damagedHeartSprite;
     private int playerLife;
 
+    [HideInInspector] public float score;
+
     private void Awake() {
         instance = this; // Singleton
     }
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         state = State.Idle;
         playerLife = 3;
+        score = 0.0f;
     }
 
     // Update is called once per frame
@@ -44,5 +47,10 @@ public class GameManager : MonoBehaviour
             playerLife--;
         }
         hearts[playerLife].sprite = damagedHeartSprite;
+    }
+
+    public void AddScore(float score)
+    {
+        this.score += score;
     }
 }
