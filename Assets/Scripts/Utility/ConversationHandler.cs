@@ -83,7 +83,7 @@ public class ConversationHandler : MonoBehaviour {
                 boxLeft.enabled = false;
                 rightLabel.enabled = false;
                 leftLabel.enabled = true;
-                loriAnim.SetTrigger(c.Emote);
+                loriAnim.Play(c.Emote);
             } else if (c.Character == Character.Maki) {
                 makiImage.enabled = true;
                 loriImage.enabled = false;
@@ -91,7 +91,7 @@ public class ConversationHandler : MonoBehaviour {
                 boxLeft.enabled = true;
                 rightLabel.enabled = true;
                 leftLabel.enabled = false;
-                makiAnim.SetTrigger(c.Emote);
+                makiAnim.Play(c.Emote);
                 leftSide = true;
             }
             //if has sound, play sound
