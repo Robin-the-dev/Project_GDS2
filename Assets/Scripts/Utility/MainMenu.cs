@@ -11,7 +11,8 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void ResetGems() {
-        AudioManager.Instance.PlayStartGame();  
+        AudioManager.Instance.PlayStartGame();
         PlayerPrefs.SetString("GemTracker", "");
+        PlayerPrefs.SetFloat("Score", 0f);
     }
 }
