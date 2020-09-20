@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Ambience sound effect Clips")]
     // List ambience sound clips here
-    [SerializeField] private AudioClip fireTorch;
+    public AudioClip fireTorch; // needs to be public so that Lamp object can call this audio clip to play its own audio source
     [SerializeField] private AudioClip rocksFallingInWater;
     [SerializeField] private AudioClip skitteringBugs;
     [SerializeField] private AudioClip waterDrips;
@@ -68,15 +68,6 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Ambience
-    public void PlayFireTorch() {
-        PlayAmbienceOneShot(fireTorch);
-    }
-
-    // Use below method to loop the fire torch sound
-    public void PlayFireTorchLoop() {
-        InvokeRepeating("PlayFireTorch", 0.0f, fireTorch.length);
-    }
-
     public void PlayRocksFallingInWater() {
         PlayAmbienceOneShot(rocksFallingInWater);
     }
