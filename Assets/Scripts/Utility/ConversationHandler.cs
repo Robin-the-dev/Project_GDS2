@@ -58,7 +58,7 @@ public class ConversationHandler : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (!chatActive) {
+        if (!chatActive && convoQueue.Count > 0) {
             KeyValuePair<Conversation,AudioSource> convo = convoQueue.First();
             convoQueue.Remove(convoQueue.First().Key);
             chatActive = true;

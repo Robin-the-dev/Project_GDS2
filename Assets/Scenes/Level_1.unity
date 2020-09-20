@@ -66724,8 +66724,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: Help1
+  collisions: 0
   counter: 0
-  maxCounter: 85
+  maxCounter: 60
 --- !u!82 &1700917847
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67172,6 +67173,14 @@ PrefabInstance:
     - target: {fileID: 883524861180207718, guid: 1c75feeccdd0de243aa80ad24133b764, type: 3}
       propertyPath: m_Name
       value: Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 883524861180208024, guid: 1c75feeccdd0de243aa80ad24133b764, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2107174967
+      objectReference: {fileID: 0}
+    - target: {fileID: 883524861180208024, guid: 1c75feeccdd0de243aa80ad24133b764, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 883524861180208027, guid: 1c75feeccdd0de243aa80ad24133b764, type: 3}
       propertyPath: m_LocalPosition.x
