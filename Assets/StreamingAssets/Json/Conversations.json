@@ -5,7 +5,7 @@
       "Lines": [
         {
           "Character" : 1,
-          "Text" : "Lori, why are we down here anyway...",
+          "Text" : "Lori, why are we down here anyway?",
           "Emote" : "Neutral"
         },
         {
@@ -35,24 +35,49 @@
         },
         {
           "Character" : 1,
-          "Text" : "*Sighs*",
+          "Text" : "*Sigh*",
           "Emote" : "Neutral_Blink"
         }
       ],
       "IsBlocking" : true
     },
     {
-      "Key": "Temp2",
+      "Key": "Level_1_Fall",
       "Lines": [
         {
           "Character" : 0,
-          "Text" : "Nya~",
+          "Text" : "...",
           "Emote" : "Sad"
         },
         {
           "Character" : 1,
-          "Text" : "Cease...",
-          "Emote" : "Neutral_Closed"
+          "Text" : "Lori, are you okay?",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 0,
+          "Text" : " I’m, fine just a little wet.",
+          "Emote" : "Sad_Left"
+        },
+        {
+          "Character" : 1,
+          "Text" : "I told you.",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Yeah yeah I got it, You told me so...",
+          "Emote" : "Sad_Blink"
+        },
+        {
+          "Character" : 0,
+          "Text" : " No point sitting around here sulking,",
+          "Emote" : "Neutral_Blink"
+        },
+        {
+          "Character" : 0,
+          "Text" : "We’ve got an adventure on our hands!",
+          "Emote" : "Neutral"
         }
       ],
       "IsBlocking" : true
