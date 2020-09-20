@@ -10,10 +10,10 @@ public class DoorAnimated : LinkedObject {
 
     // Start is called before the first frame update
     void Start() {
-        if(isOpen) openDoor();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
+        if(isOpen) openDoor();
     }
 
     public override void Activate(string msg) {

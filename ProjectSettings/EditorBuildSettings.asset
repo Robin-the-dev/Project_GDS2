@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
     guid: a5218f96cf5e8f8488a51f0195e9d37c
-  - enabled: 1
-    path: Assets/Scenes/RobinTestScene.unity
-    guid: bf3d449b0e5ba405683e8668f700ec9b
   m_configObjects: {}

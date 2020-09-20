@@ -84,7 +84,7 @@
         },
         {
           "Character" : 0,
-          "Text" : " I’m, fine just a little wet.",
+          "Text" : "I’m, fine just a little wet.",
           "Emote" : "Sad_Left"
         },
         {
@@ -99,7 +99,7 @@
         },
         {
           "Character" : 0,
-          "Text" : " No point sitting around here sulking,",
+          "Text" : "No point sitting around here sulking,",
           "Emote" : "Neutral_Blink"
         },
         {
@@ -109,6 +109,80 @@
         }
       ],
       "IsBlocking" : true
+    },
+    {
+      "Key": "UnfinishedGame",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Well... That's a big door.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/SoundEffects/Gauntlet Discovery"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Yep it is, wonder if it opens?",
+          "Emote" : "Neutral_Right"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Probably... Well, doesn't look like it can right now.",
+          "Emote" : "Neutral_Right"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Why do you think that?",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 0,
+          "Text" : "There's nothing behind it...",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Huh?",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Yep, The level isn't done past there.",
+          "Emote" : "Neutral_Left"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Level... Lori you can't just break the fourth wall like that!",
+          "Emote" : "Neutral_Blink"
+        },
+        {
+          "Character" : 0,
+          "Text" : "I can and I just did.",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 1,
+          "Text" : "*groan*",
+          "Emote" : "Neutral_Blink"
+        },
+        {
+          "Character" : 2,
+          "Text" : "Thank you for playing, Sorry there isn't much in the second level, hopefully we'll have something more for you next time - Team Null Pointer",
+          "Emote" : "Help"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "DeadEnd",
+      "Lines": [
+        {
+          "Character" : 2,
+          "Text" : "Sorry, This is a dead end for now, enjoy this sound effect in the mean time. - Team Null Pointer",
+          "Emote" : "Help",
+          "Sound" : "Sounds/SoundEffects/Cave Level Opening"
+        }
+      ],
+      "IsBlocking" : false
     }
   ]
 }
