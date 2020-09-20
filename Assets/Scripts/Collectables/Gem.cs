@@ -25,6 +25,7 @@ public class Gem : MonoBehaviour {
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Pixie") {
             PlayerPrefs.SetFloat("Score", PlayerPrefs.GetFloat("Score") + score);
             FindObjectOfType<GemTracker>().TrackGem(id);
+            AudioManager.Instance.PlayStartGame(); 
             Destroy(gameObject);
         }
     }

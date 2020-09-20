@@ -107,13 +107,37 @@ public class ConversationHandler : MonoBehaviour {
                 if (leftSide) leftText.text = currentText;
                 else rightText.text = currentText;
                 //wait delay
-                yield return new WaitForSeconds(0.1f);
+                string currentChar;
+                if (currentText.Length < 2) {
+                    currentChar = currentText;
+                } else {
+                    currentChar = currentText.Substring(currentText.Length-1, 1);
+                }
+                if (currentChar == "." || currentChar == "!" || currentChar == "?") {
+                    Talking(c, false);
+                    yield return new WaitForSeconds(0.2f);
+                } else if (currentChar == ",") {
+                    Talking(c, false);
+                    yield return new WaitForSeconds(0.15f);
+                }else {
+                    Talking(c, true);
+                    yield return new WaitForSeconds(0.075f);
+                }
             }
             // wait then play next
-            yield return new WaitForSeconds(0.5f);
+            Talking(c, false);
+            yield return new WaitForSeconds(0.75f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         DisableAll();
+    }
+
+    private void Talking(ChatLine c, bool isTalking) {
+        if (c.Character == Character.Lori) {
+            loriAnim.SetBool("End", !isTalking);
+        } else if (c.Character == Character.Maki) {
+            makiAnim.SetBool("End", !isTalking);
+        }
     }
 
     [System.Serializable]

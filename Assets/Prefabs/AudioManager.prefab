@@ -56,6 +56,11 @@ MonoBehaviour:
   skitteringBugs: {fileID: 8300000, guid: eb2c26cccbdc6a34191b8343bf53a5dc, type: 3}
   waterDrips: {fileID: 8300000, guid: 907b72d2b51dc4d0bb74e85216b92a5f, type: 3}
   waterDropSingle: {fileID: 8300000, guid: fd67d75d8484346688380fbb832e75ab, type: 3}
+  start: {fileID: 8300000, guid: c07fce4f5d7f27c4f807d7e99d4ee72c, type: 3}
+  pause: {fileID: 8300000, guid: 35b826bbd1f73a7479f7ff335eb00fa4, type: 3}
+  click: {fileID: 8300000, guid: 3b65a0034058a4f4e9d2b8ab6c29bedf, type: 3}
+  levelSelect: {fileID: 8300000, guid: 1e8c657e06da18c41a712bba03d7f03a, type: 3}
+  leaveGame: {fileID: 8300000, guid: e3f18185ebd50b34fb317e101934e4be, type: 3}
 --- !u!82 &8683267885542910180
 AudioSource:
   m_ObjectHideFlags: 0

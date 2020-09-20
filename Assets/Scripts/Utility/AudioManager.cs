@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    
+
     [Header("Audio Sources")]
     // List audio sources here
     [SerializeField] private AudioSource BGMSource;
@@ -36,6 +36,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip skitteringBugs;
     [SerializeField] private AudioClip waterDrips;
     [SerializeField] private AudioClip waterDropSingle;
+
+
+    [Header("Menu Sounds")]
+    [SerializeField] private AudioClip start;
+    [SerializeField] private AudioClip pause;
+    [SerializeField] private AudioClip click;
+    [SerializeField] private AudioClip levelSelect;
+    [SerializeField] private AudioClip leaveGame;
 
     /*
     [Header("BGM Clips")]
@@ -83,6 +91,28 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWaterDropSingle() {
         PlayAmbienceOneShot(waterDropSingle);
+    }
+    #endregion
+
+    #region MenuSounds
+    public void PlayStartGame() {
+        PlaySFXOneShot(start);
+    }
+
+    public void PlayPauseGame() {
+        PlaySFXOneShot(pause);
+    }
+
+    public void PlayClickButton() {
+        PlaySFXOneShot(click);
+    }
+
+    public void PlayLevelSelect() {
+        PlaySFXOneShot(levelSelect);
+    }
+
+    public void PlayLeaveGame() {
+        PlaySFXOneShot(leaveGame);
     }
     #endregion
 

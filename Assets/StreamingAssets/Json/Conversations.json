@@ -1,21 +1,45 @@
 ﻿{
   "Conversations" : [
     {
-      "Key": "Temp",
+      "Key": "Intro1",
       "Lines": [
         {
+          "Character" : 1,
+          "Text" : "Lori, why are we down here anyway...",
+          "Emote" : "Neutral"
+        },
+        {
           "Character" : 0,
-          "Text" : "Hello There!",
-          "Emote" : "Neutral",
-          "Sound" : "Sounds/AmbientEffects/Skittering Bugs"
+          "Text" : "Because of the treasure dummy.",
+          "Emote" : "Neutral"
         },
         {
           "Character" : 1,
-          "Text" : "General Kenobi...",
-          "Emote" : "Neutral"
+          "Text" : "And the last 5 dead-end caves with nothing in them?",
+          "Emote" : "Neutral_Blink"
+        },
+        {
+          "Character" : 1,
+          "Text" : "How is this one different?",
+          "Emote" : "Neutral_Right"
+        },
+        {
+          "Character" : 0,
+          "Text" : "It just is Maki.",
+          "Emote" : "Neutral_Blink"
+        },
+        {
+          "Character" : 0,
+          "Text" : "I can feel it!",
+          "Emote" : "Neutral_Right"
+        },
+        {
+          "Character" : 1,
+          "Text" : "*Sighs*",
+          "Emote" : "Neutral_Blink"
         }
       ],
-      "IsBlocking" : false
+      "IsBlocking" : true
     },
     {
       "Key": "Temp2",
