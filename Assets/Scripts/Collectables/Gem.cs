@@ -9,6 +9,8 @@ public class Gem : MonoBehaviour {
     public Color color1;
     public Color color2;
     public float flickerDuration = 1f;
+    [HideInInspector]
+    public string id;
 
     void Start() {
         light = GetComponentInChildren<Light2D>();
@@ -21,7 +23,8 @@ public class Gem : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Pixie") {
-            GameManager.instance.AddScore(score);
+            PlayerPrefs.SetFloat("Score", PlayerPrefs.GetFloat("Score") + score);
+            FindObjectOfType<GemTracker>().TrackGem(id);
             Destroy(gameObject);
         }
     }
