@@ -105,6 +105,15 @@ public class ConversationHandler : MonoBehaviour {
                 leftLabel.enabled = false;
                 makiAnim.Play(c.Emote);
                 leftSide = true;
+            } else {
+                makiImage.enabled = true;
+                loriImage.enabled = false;
+                boxRight.enabled = false;
+                boxLeft.enabled = true;
+                rightLabel.enabled = false;
+                leftLabel.enabled = false;
+                makiAnim.Play(c.Emote);
+                leftSide = true;
             }
             //if has sound, play sound
             if (c.Sound != null) {
@@ -157,7 +166,7 @@ public class ConversationHandler : MonoBehaviour {
     public enum Emote {Neutral, Sad, Excited, Proud}
 
     [System.Serializable]
-    public enum Character {Lori, Maki}
+    public enum Character {Lori, Maki, Help}
 
     [System.Serializable]
     public class Entries {

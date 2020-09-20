@@ -53,6 +53,23 @@
       "IsBlocking" : false
     },
     {
+      "Key": "Help1",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "That box could help you get up the ledge. Your hook should be able to help you reach it.",
+          "Emote" : "Neutral"
+        },
+        {
+          "Character" : 2,
+          "Text" : "(Holding Right Click will let you use your grapple hook, it will also let you pick up boxes)",
+          "Emote" : "Help",
+          "Sound": "Sounds/MenuSounds/Leave Game"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
       "Key": "Level_1_Fall",
       "Lines": [
         {
