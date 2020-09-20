@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using UnityEngine.UI;
 using System.IO;
 using TMPro;
@@ -20,6 +21,10 @@ public class ConversationHandler : MonoBehaviour {
     private Animator loriAnim;
     private Image makiImage;
     private Image loriImage;
+
+    Dictionary<Conversation, AudioSource> convoQueue = new Dictionary<Conversation, AudioSource>();
+
+    private bool chatActive = false;
 
     public Entries entries;
 
@@ -47,11 +52,18 @@ public class ConversationHandler : MonoBehaviour {
     }
 
     public void DisplayText(string key, AudioSource audio) {
-        rightText.text = "";
-        leftText.text = "";
         Conversation convo = GetEntry(key);
         if (convo == null) return;
-        StartCoroutine(Print(convo, audio));
+        convoQueue.Add(convo, audio);
+    }
+
+    void FixedUpdate() {
+        if (!chatActive) {
+            KeyValuePair<Conversation,AudioSource> convo = convoQueue.First();
+            convoQueue.Remove(convoQueue.First().Key);
+            chatActive = true;
+            StartCoroutine(Print(convo.Key, convo.Value));
+        }
     }
 
     private Conversation GetEntry(string key) {
@@ -130,6 +142,7 @@ public class ConversationHandler : MonoBehaviour {
         }
         yield return new WaitForSeconds(2f);
         DisableAll();
+        chatActive = false;
     }
 
     private void Talking(ChatLine c, bool isTalking) {

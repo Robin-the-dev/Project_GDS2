@@ -42,6 +42,17 @@
       "IsBlocking" : true
     },
     {
+      "Key": "Intro2",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "Hey Lori, Looks like there's a Gem hiding up here, If you press 'Q' I can reach it.",
+          "Emote" : "Neutral"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
       "Key": "Level_1_Fall",
       "Lines": [
         {

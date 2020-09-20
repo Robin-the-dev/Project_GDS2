@@ -4986,7 +4986,7 @@ MonoBehaviour:
   currentInteraction: {fileID: 0}
   boxPosition: {fileID: 0}
   boxFinder: {fileID: 0}
-  detectionRange: 1
+  detectionRange: 2
   minGrappleDistance: 0.9
   grappleDistance: 3
   maxGrappleDistance: 12
