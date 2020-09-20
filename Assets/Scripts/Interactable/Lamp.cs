@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lamp : MonoBehaviour
 {
-    private AudioSource lampAudioSource;
+    [HideInInspector] public AudioSource lampAudioSource;
 
     // Start is called before the first frame update
     void Start()
