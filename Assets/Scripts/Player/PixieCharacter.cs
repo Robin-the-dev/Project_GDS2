@@ -33,10 +33,13 @@ public class PixieCharacter : AnimatedCharacter {
 
     private int moveX = 0;
     private int moveY = 0;
+    private float distance;
 
     public override void FixedUpdate() {
         base.FixedUpdate();
         GetComponent<SpriteRenderer>().flipX = rigid.velocity.x < 0;
+        distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance > maxDistanceFromPlayer + 5f) WarpHome(FindObjectOfType<PlayerCharacter>());
         if (pixieMode) {
             ManualMovement();
         } else {
@@ -83,7 +86,7 @@ public class PixieCharacter : AnimatedCharacter {
     }
 
     private void ManualMovement() {
-        float distance = Vector3.Distance(transform.position, player.transform.position);
+
         Vector3 directionHome = player.transform.position - transform.position;
         if (distance < maxDistanceFromPlayer) {
             if (moveRight){

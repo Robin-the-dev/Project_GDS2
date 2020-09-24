@@ -10,6 +10,7 @@ public class PlayerControls : MonoBehaviour {
     public PixieCharacter pixieCharacter;
     public Vector3 mousePosition = Vector3.zero;
     private Camera mainCamera;
+    public Canvas pauseMenu;
 
     private Transform target = null;
 
@@ -25,6 +26,7 @@ public class PlayerControls : MonoBehaviour {
     private bool pixieMode = false;
 
     private float pixieHeld = 0;
+    private bool paused = false;
 
     public void Awake() {
         //reset keys when reload.
@@ -36,12 +38,28 @@ public class PlayerControls : MonoBehaviour {
     private void Update() {
         updateMousePos();
         pixieCharacter.UpdatePosition(mousePosition);
+        // handle game pauses
+        HandlePause();
+        if (paused) Time.timeScale = 0;
+        else Time.timeScale = 1;
         if (Time.timeScale > 0) {
             SwitchMode();
             if (pixieMode) {
                 HandlePixieControls();
             } else {
                 HandleControls();
+            }
+        }
+    }
+
+    private void HandlePause() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            paused = !paused;
+            AudioManager.Instance.PlayPauseGame();
+            if (paused) {
+                pauseMenu.enabled = true;
+            } else {
+                pauseMenu.enabled = false;
             }
         }
     }

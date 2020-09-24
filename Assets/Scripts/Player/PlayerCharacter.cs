@@ -73,6 +73,8 @@ public class PlayerCharacter : AnimatedCharacter {
 
     public bool inWater = false;
 
+    public GameObject iceballPrefab;
+
     public override void Start() {
         base.Start();
         rigid = GetComponent<Rigidbody2D>();
@@ -85,7 +87,9 @@ public class PlayerCharacter : AnimatedCharacter {
     /// <param name="active"> if true keyPressed, if false keyReleased </param>
     /// <param name="mousePosition"> current mousePosition </param>
     public void doAttackAction(bool active, Vector3 mousePosition){
-
+        if (!active) return;
+        GameObject ball = Instantiate(iceballPrefab, transform.position, Quaternion.identity);
+        ball.GetComponent<Rigidbody2D>().velocity = new Vector3(-15, -1, 0);
     }
 
     /// <summary>

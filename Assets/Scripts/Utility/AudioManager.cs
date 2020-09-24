@@ -45,10 +45,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip levelSelect;
     [SerializeField] private AudioClip leaveGame;
 
-    /*
+
     [Header("BGM Clips")]
-    // List Background music clips here
-    */
+    [SerializeField] private AudioClip templeMusic;
 
     private float SFXVolume = 1.0f;
     private float BGMVolume = 1.0f;
@@ -112,6 +111,12 @@ public class AudioManager : MonoBehaviour
         BGMSource.Stop();
     }
 
+    #region Music
+    public void PlayTempleMusicLoop() {
+        PlayBGM(templeMusic);
+    }
+    #endregion
+
     private void PlayBGM(AudioClip BGM) {
         BGMSource.clip = BGM;
         BGMSource.loop = true;
@@ -128,6 +133,8 @@ public class AudioManager : MonoBehaviour
         ambienceSource.PlayOneShot(ambience, volume);
     }
     #endregion
+
+
 
     #region Volume Control
     public void setSFXVolume(float volume) {

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class InteractableBox : MonoBehaviour {
 
-    BoxCollider2D boxCollider;
+    BoxCollider2D[] boxColliders;
     Rigidbody2D rigid;
     SpriteRenderer sprite;
 
     [HideInInspector] public Vector3 startPosition;
 
     public void Start() {
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxColliders = GetComponents<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
 
@@ -19,7 +19,9 @@ public class InteractableBox : MonoBehaviour {
     }
 
     public void Interact(bool active) {
-        boxCollider.enabled = !active;
+        foreach (BoxCollider2D boxCollider in boxColliders) {
+            boxCollider.enabled = !active;
+        }
         rigid.isKinematic = active;
         sprite.enabled = !active;
     }

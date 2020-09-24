@@ -8,6 +8,8 @@ TagManager:
   - Water
   - Conversation
   - Pixie
+  - Terrain
+  - Ice
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - Moveable
   - Interactable
   - AntiFairyBox
-  - 
+  - Projectile
   - 
   - 
   - 

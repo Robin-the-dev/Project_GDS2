@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    void Start() {
+        AudioManager.Instance.PlayTempleMusicLoop();
+    }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
+
     public void StartGame() {
         AudioManager.Instance.PlayLevelSelect();
         SceneManager.LoadScene("Level_1");
