@@ -136,18 +136,18 @@ public class ConversationHandler : MonoBehaviour {
                 }
                 if (currentChar == "." || currentChar == "!" || currentChar == "?") {
                     Talking(c, false);
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.2f * c.textSpeed);
                 } else if (currentChar == ",") {
                     Talking(c, false);
-                    yield return new WaitForSeconds(0.15f);
+                    yield return new WaitForSeconds(0.15f * c.textSpeed);
                 }else {
                     Talking(c, true);
-                    yield return new WaitForSeconds(0.075f);
+                    yield return new WaitForSeconds(0.075f * c.textSpeed);
                 }
             }
             // wait then play next
             Talking(c, false);
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(c.endDelay);
         }
         yield return new WaitForSeconds(2f);
         DisableAll();
@@ -186,5 +186,7 @@ public class ConversationHandler : MonoBehaviour {
         public string Text;
         public string Emote;
         public string Sound;
+        public float textSpeed = 1;
+        public float endDelay = 0.75f;
     }
 }

@@ -6,37 +6,110 @@
         {
           "Character" : 1,
           "Text" : "Lori, why are we down here anyway?",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_1"
         },
         {
           "Character" : 0,
           "Text" : "Because of the treasure dummy.",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_2"
         },
         {
           "Character" : 1,
           "Text" : "And the last 5 dead-end caves with nothing in them?",
-          "Emote" : "Neutral_Blink"
+          "Emote" : "Neutral_Blink",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_3"
         },
         {
           "Character" : 1,
           "Text" : "How is this one different?",
-          "Emote" : "Neutral_Right"
+          "Emote" : "Neutral_Right",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_4"
         },
         {
           "Character" : 0,
           "Text" : "It just is Maki.",
-          "Emote" : "Neutral_Blink"
+          "Emote" : "Neutral_Blink",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_5"
         },
         {
           "Character" : 0,
           "Text" : "I can feel it!",
-          "Emote" : "Neutral_Right"
+          "Emote" : "Neutral_Right",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_6"
         },
         {
           "Character" : 1,
           "Text" : "*Sigh*",
-          "Emote" : "Neutral_Blink"
+          "Emote" : "Neutral_Blink",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_7"
+        }
+      ],
+      "IsBlocking" : true
+    },
+    {
+      "Key": "Intro3",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "So, What happens when you finally find some treasure huh?",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "I’m going to become famous!",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_2"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Lorianne the Adventurer",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_3"
+        },
+        {
+          "Character" : 0,
+          "Text" : "I can see it now.",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_4"
+        },
+        {
+          "Character" : 1,
+          "Text" : "This is just going to be another dead end cave, lets head back.",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_5"
+        },
+        {
+          "Character" : 0,
+          "Text" : "OOooooOOO~! What’s that?",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_6"
+        },
+        {
+          "Character" : 0,
+          "Text" : "It looks special",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_7"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Lori no! That looks dangerous",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_8"
+        },
+        {
+          "Character" : 0,
+          "Text" : "AAAAAAAAAAAAAAAAAAAAAAAAAAA!",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_9"
+        },
+        {
+          "Character" : 1,
+          "Text" : "LORIIIIII!",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_10"
         }
       ],
       "IsBlocking" : true
@@ -75,37 +148,92 @@
         {
           "Character" : 0,
           "Text" : "...",
-          "Emote" : "Sad"
+          "Emote" : "Sad",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_1"
         },
         {
           "Character" : 1,
           "Text" : "Lori, are you okay?",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_2"
         },
         {
           "Character" : 0,
           "Text" : "I’m, fine just a little wet.",
-          "Emote" : "Sad_Left"
+          "Emote" : "Sad_Left",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_3"
         },
         {
           "Character" : 1,
           "Text" : "I told you.",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_4"
         },
         {
           "Character" : 0,
           "Text" : "Yeah yeah I got it, You told me so...",
-          "Emote" : "Sad_Blink"
+          "Emote" : "Sad_Blink",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_5"
         },
         {
           "Character" : 0,
           "Text" : "No point sitting around here sulking,",
-          "Emote" : "Neutral_Blink"
+          "Emote" : "Neutral_Blink",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_6"
         },
         {
           "Character" : 0,
           "Text" : "We’ve got an adventure on our hands!",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_7"
+        }
+      ],
+      "IsBlocking" : true
+    },
+    {
+      "Key": "Level_2_Gauntlet",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "SCORE~! I spy with my little eye, something relic-y",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "You sure you should be touching that?",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_2"
+        },
+        {
+          "Character" : 0,
+          "Text" : "If I wasn’t meant to touch it why’d they just leave it here?",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_3"
+        },
+        {
+          "Character" : 1,
+          "Text" : "You’re gonna get cursed...",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_4"
+        },
+        {
+          "Character" : 0,
+          "Text" : "But Shiinny~",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_5"
+        },
+        {
+          "Character" : 0,
+          "Text" : "I feel magic-y",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_6"
+        },
+        {
+          "Character" : 1,
+          "Text" : "We’re doomed...",
+          "Emote" : "Neutral",
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_7"
         }
       ],
       "IsBlocking" : true
