@@ -46,6 +46,7 @@ public class PlayerCharacter : AnimatedCharacter {
     public float minGrappleDistance = 0.5f;
     public float grappleDistance = 3.5f;
     public float maxGrappleDistance = 6f;
+    public float maxVelocity = 20f;
 
     private SpringJoint2D joint;
 
@@ -275,6 +276,7 @@ public class PlayerCharacter : AnimatedCharacter {
         if (active){
             heldBox = foundBox;
             heldBox.Interact(true);
+            boxPosition.GetComponent<SpriteRenderer>().sprite = heldBox.GetComponent<SpriteRenderer>().sprite;
             runMultiplier = 0.75f;
         } else {
             heldBox.Interact(false);
@@ -406,6 +408,7 @@ public class PlayerCharacter : AnimatedCharacter {
         if (currentGrapplePoint != null && hasHitMark) {
             joint.distance = currentGrappleDistance;
             UpdateSwingAngle(currentGrapplePoint.transform.position, handObject.transform.position);
+            rigid.velocity = Vector2.ClampMagnitude(rigid.velocity, maxVelocity);
         }
     }
 
@@ -417,13 +420,16 @@ public class PlayerCharacter : AnimatedCharacter {
             ropeRender.SetPosition(1, mark);
             ropePoint++;
             if (ropePoint == maxRopePoints) hasHitMark = true;
+            // ropeRender.material.SetTextureScale( "_MainTex" , new Vector2 (Vector2.Distance(handObject.transform.position, mark)*2,1));
         } else if (currentGrapplePoint != null && hasHitMark) {
             ropeRender.enabled = true;
             ropeRender.SetPosition(0, handObject.transform.position);
             ropeRender.SetPosition(1, currentGrapplePoint.transform.position);
+            // ropeRender.material.SetTextureScale( "_MainTex" , new Vector2 (Vector2.Distance(handObject.transform.position, currentGrapplePoint.transform.position)*2,1));
         } else {
             ropeRender.enabled = false;
         }
+
     }
 
     private Vector2 GetMarkPosition() {

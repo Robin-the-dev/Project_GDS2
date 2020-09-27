@@ -1051,6 +1051,7 @@ MonoBehaviour:
   minGrappleDistance: 0.9
   grappleDistance: 3
   maxGrappleDistance: 12
+  maxVelocity: 15
   grapplelayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -1061,6 +1062,7 @@ MonoBehaviour:
   ropeTimeLeft: 0
   onLadder: 0
   inWater: 0
+  projectileSpeed: 20
   iceballPrefab: {fileID: 2000762686750031013, guid: 74c84ed689491304eb7cfa89f437d3d5, type: 3}
 --- !u!231 &6983598475852631063
 SpringJoint2D:
@@ -1870,7 +1872,7 @@ Transform:
   m_GameObject: {fileID: 5290335504148737091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 3937966031258418718}
   m_RootOrder: 3
@@ -1894,7 +1896,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: dffc4cbda2d437b42aa2cc70d0e014b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1912,12 +1914,12 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2107174967
+  m_SortingLayer: 2
+  m_SortingOrder: -2
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 1, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1

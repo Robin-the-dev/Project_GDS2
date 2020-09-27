@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6030373071710396831}
   - component: {fileID: 2212191939674212349}
   m_Layer: 10
-  m_Name: Lamp
+  m_Name: Grapple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,8 +143,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1188522699
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bf0d3deac4f8850448a3f7728293aa8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
