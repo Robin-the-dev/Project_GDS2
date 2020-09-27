@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
-{
+public class AudioManager : MonoBehaviour {
     // Singleton
     private static AudioManager _instance;
     public static AudioManager Instance { get { return _instance; } }
@@ -134,6 +133,11 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
+    public void UpdateVolume() {
+        SFXSource.volume = PlayerPrefs.GetFloat("SoundEffectVolume");
+        BGMSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+        ambienceSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
+    }
 
 
     #region Volume Control

@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    public SettingsHandler settings;
+
     void Start() {
+        GetComponent<Canvas>().enabled = true;
         AudioManager.Instance.PlayTempleMusicLoop();
+    }
+
+    public void OpenSettings(){
+        settings.OpenSettings(GetComponent<Canvas>());
     }
 
     public void QuitGame() {

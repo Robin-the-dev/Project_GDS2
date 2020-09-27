@@ -118,6 +118,7 @@ public class ConversationHandler : MonoBehaviour {
             //if has sound, play sound
             if (c.Sound != null) {
                 AudioClip clip = Resources.Load<AudioClip>(c.Sound);
+                audio.volume = PlayerPrefs.GetFloat("VoiceVolume");
                 audio.PlayOneShot(clip);
             }
             // print text
@@ -136,13 +137,13 @@ public class ConversationHandler : MonoBehaviour {
                 }
                 if (currentChar == "." || currentChar == "!" || currentChar == "?") {
                     Talking(c, false);
-                    yield return new WaitForSeconds(0.2f * c.textSpeed);
+                    yield return new WaitForSeconds((0.2f / c.textSpeed) * PlayerPrefs.GetFloat("TextSpeed", 1));
                 } else if (currentChar == ",") {
                     Talking(c, false);
-                    yield return new WaitForSeconds(0.15f * c.textSpeed);
+                    yield return new WaitForSeconds((0.15f / c.textSpeed) * PlayerPrefs.GetFloat("TextSpeed", 1));
                 }else {
                     Talking(c, true);
-                    yield return new WaitForSeconds(0.075f * c.textSpeed);
+                    yield return new WaitForSeconds((0.075f / c.textSpeed) * PlayerPrefs.GetFloat("TextSpeed", 1));
                 }
             }
             // wait then play next
