@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour {
 
 
     [Header("BGM Clips")]
+    [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip templeMusic;
 
     private float SFXVolume = 1.0f;
@@ -113,6 +114,10 @@ public class AudioManager : MonoBehaviour {
     #region Music
     public void PlayTempleMusicLoop() {
         PlayBGM(templeMusic);
+    }
+
+    public void PlayMenuMusicLoop() {
+        PlayBGM(menuMusic);
     }
     #endregion
 

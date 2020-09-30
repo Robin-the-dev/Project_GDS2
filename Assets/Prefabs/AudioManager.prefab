@@ -61,6 +61,7 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: 3b65a0034058a4f4e9d2b8ab6c29bedf, type: 3}
   levelSelect: {fileID: 8300000, guid: 1e8c657e06da18c41a712bba03d7f03a, type: 3}
   leaveGame: {fileID: 8300000, guid: e3f18185ebd50b34fb317e101934e4be, type: 3}
+  menuMusic: {fileID: 8300000, guid: 5706b8a8c59f9f54b9924a0a5a87cafe, type: 3}
   templeMusic: {fileID: 8300000, guid: 8625b04ee34238249994683d69d54b8a, type: 3}
 --- !u!82 &8683267885542910180
 AudioSource:

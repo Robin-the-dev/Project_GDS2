@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour {
 
     void Start() {
         GetComponent<Canvas>().enabled = true;
-        AudioManager.Instance.PlayTempleMusicLoop();
+        AudioManager.Instance.PlayMenuMusicLoop();
     }
 
     public void OpenSettings(){
