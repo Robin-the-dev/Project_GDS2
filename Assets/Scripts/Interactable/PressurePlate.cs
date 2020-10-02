@@ -45,12 +45,14 @@ public class PressurePlate : InteractableObject {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
         pressurePlateCollider.size = new Vector2(1.0f, 0.18f);
+        AudioManager.Instance.PlayMetalLatch();
     }
 
     private void switchOff() {
         obj.Deactivate(key);
         spriteRenderer.sprite = offSprite;
         pressurePlateCollider.size = offSize;
+        AudioManager.Instance.PlayLatchButton();
     }
 
     private void interactPressurePlate(bool active) {

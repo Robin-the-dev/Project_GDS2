@@ -21,7 +21,9 @@ public class AudioManager : MonoBehaviour {
     // List audio sources here
     [SerializeField] private AudioSource BGMSource;
     [SerializeField] private AudioSource SFXSource;
+    [SerializeField] private AudioSource ambienceOneShotSource;
     [SerializeField] private AudioSource ambienceSource;
+    [SerializeField] private AudioSource footStepSource;
 
     [Header("SFX Clips")]
     // List sound effect clips here
@@ -34,8 +36,28 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip rocksFallingInWater;
     [SerializeField] private AudioClip skitteringBugs;
     [SerializeField] private AudioClip waterDrips;
-    [SerializeField] private AudioClip waterDropSingle;
+    [SerializeField] private AudioClip waterDropSingle; // I don't think we need this clip
+    [SerializeField] private AudioClip doorLock;
+    [SerializeField] private AudioClip doorOpen;
+    [SerializeField] private AudioClip droppingBox; // Not implemented yet
+    [SerializeField] private AudioClip explosion; // I don't think we need this clip
+    [SerializeField] private AudioClip gemPickUp;
+    [SerializeField] private AudioClip latchButton;
+    [SerializeField] private AudioClip loriJumpLanding;
+    [SerializeField] private AudioClip underWater;
+    [SerializeField] private AudioClip metalLatch;
+    [SerializeField] private AudioClip metalLever;
+    [SerializeField] private AudioClip switchOnAndOff;
+    [SerializeField] private AudioClip waterDive;
+    [SerializeField] private AudioClip waterSplash; // I don't think we need this clip, sound is simillar with water dive clip
+    [SerializeField] private AudioClip woodenBoxDrop; // Not implemented yet
+    [SerializeField] private AudioClip woodenDoorOpen; // Not implemented yet
 
+    [Header("Foot step Clips")]
+    [SerializeField] private AudioClip caveWalk;
+    [SerializeField] private AudioClip templeRunnning;
+    [SerializeField] private AudioClip templeWalk;
+    [SerializeField] private AudioClip woodFootstep;
 
     [Header("Menu Sounds")]
     [SerializeField] private AudioClip start;
@@ -52,6 +74,28 @@ public class AudioManager : MonoBehaviour {
     private float SFXVolume = 1.0f;
     private float BGMVolume = 1.0f;
     private float ambienceVolume = 1.0f;
+
+    #region FootStep
+    public void PlayCaveWalk() {
+        PlayFootStep(caveWalk);
+    }
+
+    public void PlayTempleRunning() {
+        PlayFootStep(templeRunnning);
+    }
+
+    public void PlayTempleWalk() {
+        PlayFootStep(templeWalk);
+    }
+
+    public void PlayWoodFootStep() {
+        PlayFootStep(woodFootstep);
+    }
+
+    public bool isPlayingFootStep() {
+        return footStepSource.isPlaying;
+    }
+    #endregion
 
     #region BGM
     #endregion
@@ -81,6 +125,50 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayWaterDropSingle() {
         PlayAmbienceOneShot(waterDropSingle);
+    }
+
+    public void PlayWaterDive() {
+        PlayAmbienceOneShot(waterDive);
+    }
+
+    public void PlayLoriJumpLanding() {
+        PlayAmbienceOneShot(loriJumpLanding);
+    }
+
+    public void PlayGemPickUp() {
+        PlayAmbienceOneShot(gemPickUp);
+    }
+
+    public void PlayDoorLock() {
+        PlayAmbienceOneShot(doorLock);
+    }
+
+    public void PlayDoorOpen() {
+        PlayAmbienceOneShot(doorOpen);
+    }
+
+    public void PlayLatchButton() {
+        PlayAmbienceOneShot(latchButton);
+    }
+
+    public void PlayMetalLatch() {
+        PlayAmbienceOneShot(metalLatch);
+    }
+
+    public void PlayMetalLever() {
+        PlayAmbienceOneShot(metalLever);
+    }
+
+    public void PlaySwitchOnAndOff() {
+        PlayAmbienceOneShot(switchOnAndOff);
+    }
+
+    public void PlayUnderWater() {
+        PlayAmbience(underWater);
+    }
+
+    public bool isPlayingAmbience() {
+        return ambienceSource.isPlaying;
     }
     #endregion
 
@@ -134,14 +222,36 @@ public class AudioManager : MonoBehaviour {
 
     private void PlayAmbienceOneShot(AudioClip ambience, float volume = 1.0f) {
         volume *= ambienceVolume;
-        ambienceSource.PlayOneShot(ambience, volume);
+        ambienceOneShotSource.PlayOneShot(ambience, volume);
+    }
+
+    private void PlayAmbience(AudioClip ambience) {
+        ambienceSource.clip = ambience;
+        ambienceSource.loop = true;
+        ambienceSource.Play();
+    }
+
+    public void StopAmbience() {
+        ambienceSource.Stop();
+    }
+
+    private void PlayFootStep(AudioClip footStep) {
+        footStepSource.clip = footStep;
+        footStepSource.loop = true;
+        footStepSource.Play();
+    }
+
+    public void StopFootStep() {
+        footStepSource.Stop();
     }
     #endregion
 
     public void UpdateVolume() {
         SFXSource.volume = PlayerPrefs.GetFloat("SoundEffectVolume");
         BGMSource.volume = PlayerPrefs.GetFloat("MusicVolume");
+        ambienceOneShotSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
         ambienceSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
+        footStepSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
     }
 
 
@@ -158,7 +268,7 @@ public class AudioManager : MonoBehaviour {
 
     public void setAmbienceVolume(float volume) {
         ambienceVolume = volume;
-        ambienceSource.volume = ambienceVolume;
+        ambienceOneShotSource.volume = ambienceVolume;
     }
     #endregion
 }

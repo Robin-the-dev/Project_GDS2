@@ -8083,6 +8083,7 @@ MonoBehaviour:
   - {fileID: 7768399653586800256}
   - {fileID: 7768399655149003222}
   damagedHeartSprite: {fileID: 6741397278737327222, guid: 2e8aca48017074b2082d781002ea142f, type: 3}
+  playerCharacter: {fileID: 3937966031258418691}
   score: 0
 --- !u!1 &8138173390083932463
 GameObject:

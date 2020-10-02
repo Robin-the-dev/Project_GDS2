@@ -43,11 +43,13 @@ public class Button : InteractableObject
     private void switchOn() {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
+        AudioManager.Instance.PlaySwitchOnAndOff();
     }
 
     private void switchOff() {
         obj.Deactivate(key);
         spriteRenderer.sprite = offSprite;
         timeLeft = closingTimeOffset;
+        AudioManager.Instance.PlaySwitchOnAndOff();
     }
 }

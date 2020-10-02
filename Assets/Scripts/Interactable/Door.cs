@@ -33,9 +33,11 @@ public class Door : LinkedObject
 
     private void openDoor() {
         transform.position = Vector3.Lerp(startPosition, startPosition + new Vector3(0.0f, 2.0f, 0.0f), timeFraction);
+        AudioManager.Instance.PlayDoorOpen();
     }
 
     private void closeDoor() {
         transform.position = Vector3.Lerp(transform.position, startPosition, timeFraction);
+        AudioManager.Instance.PlayDoorLock();
     }
 }
