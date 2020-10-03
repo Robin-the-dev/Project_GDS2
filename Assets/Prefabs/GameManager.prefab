@@ -48,3 +48,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   damagedHeartSprite: {fileID: 6741397278737327222, guid: 2e8aca48017074b2082d781002ea142f, type: 3}
+  playerCharacter: {fileID: 6218572705078487336, guid: f98e3b09a5c10f44f828e811b70b5a1a, type: 3}
+  score: 0

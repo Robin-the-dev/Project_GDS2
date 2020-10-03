@@ -29,10 +29,12 @@ public class Lever : InteractableObject
     private void switchOn() {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
+        AudioManager.Instance.PlayMetalLever();
     }
 
     private void switchOff() {
         obj.Deactivate(key);
         spriteRenderer.sprite = offSprite;
+        AudioManager.Instance.PlayMetalLever();
     }
 }

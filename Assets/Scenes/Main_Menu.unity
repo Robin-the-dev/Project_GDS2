@@ -655,10 +655,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8683267885542910180, guid: ff8c89add1a42436eb1574279c34e943, type: 3}
-      propertyPath: m_Volume
-      value: 0.75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff8c89add1a42436eb1574279c34e943, type: 3}
 --- !u!1 &620085263
