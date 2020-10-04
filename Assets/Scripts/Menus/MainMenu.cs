@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     public SettingsHandler settings;
+    public LevelSelect levelSelect;
 
     void Start() {
         GetComponent<Canvas>().enabled = true;
@@ -14,6 +15,10 @@ public class MainMenu : MonoBehaviour {
 
     public void OpenSettings(){
         settings.OpenSettings(GetComponent<Canvas>());
+    }
+
+    public void OpenLevelSelect(){
+        levelSelect.OpenLevelSelect(GetComponent<Canvas>());
     }
 
     public void QuitGame() {

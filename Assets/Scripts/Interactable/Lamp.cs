@@ -13,6 +13,13 @@ public class Lamp : MonoBehaviour
         PlayFireTorch();
     }
 
+    private void Update() {
+        float volume = PlayerPrefs.GetFloat("AmbientVolume");
+        if (lampAudioSource.volume != volume) {
+            lampAudioSource.volume = volume;
+        }
+    }
+
     private void PlayFireTorch() {
         lampAudioSource.loop = true;
         lampAudioSource.clip = AudioManager.Instance.fireTorch;
