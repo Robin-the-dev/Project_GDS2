@@ -9,7 +9,7 @@ public class DoorAnimated : LinkedObject {
     private BoxCollider2D collider;
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<BoxCollider2D>();
@@ -25,11 +25,13 @@ public class DoorAnimated : LinkedObject {
     }
 
     private void openDoor() {
+        if (isOpen) return;
         isOpen = true;
         anim.Play("Open");
     }
 
     private void closeDoor() {
+        if (!isOpen) return;
         anim.Play("Close");
         isOpen = false;
     }

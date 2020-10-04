@@ -13,7 +13,7 @@ public class CodeStone : MonoBehaviour {
         anim.Play("Glyph_" + val);
     }
 
-    void NextGlyph() {
+    public void NextGlyph() {
         val++;
         if (val > 10) val = 1;
         anim.Play("Glyph_" + val);

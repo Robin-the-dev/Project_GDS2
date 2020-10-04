@@ -21,11 +21,11 @@ public class PressurePlate : InteractableObject {
 
     }
 
-    public override void CheckState() {
+    public override void CheckState(bool playSound) {
         if (active)
-            switchOn();
+            switchOn(playSound);
         else
-            switchOff();
+            switchOff(playSound);
 
     }
 
@@ -41,22 +41,22 @@ public class PressurePlate : InteractableObject {
         }
     }
 
-    private void switchOn() {
+    private void switchOn(bool playSound) {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
         pressurePlateCollider.size = new Vector2(1.0f, 0.18f);
-        AudioManager.Instance.PlayMetalLatch();
+        if (playSound) AudioManager.Instance.PlayMetalLatch();
     }
 
-    private void switchOff() {
+    private void switchOff(bool playSound) {
         obj.Deactivate(key);
         spriteRenderer.sprite = offSprite;
         pressurePlateCollider.size = offSize;
-        AudioManager.Instance.PlayLatchButton();
+        if (playSound) AudioManager.Instance.PlayLatchButton();
     }
 
     private void interactPressurePlate(bool active) {
         this.active = active;
-        CheckState();
+        CheckState(true);
     }
 }

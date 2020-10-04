@@ -23,32 +23,32 @@ public class InteractableButton : InteractableObject {
 
         if(timeLeft <= 0.0f) {
             active = !active;
-            switchOff();
+            switchOff(true);
         }
     }
 
     public override void Interact() {
         active = !active;
-        CheckState();
+        CheckState(true);
     }
 
-    public override void CheckState() {
+    public override void CheckState(bool playSound) {
         if (active)
-            switchOn();
+            switchOn(playSound);
         else
-            switchOff();
+            switchOff(playSound);
     }
 
-    private void switchOn() {
+    private void switchOn(bool playSound) {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
-        AudioManager.Instance.PlaySwitchOnAndOff();
+        if (playSound) AudioManager.Instance.PlaySwitchOnAndOff();
     }
 
-    private void switchOff() {
+    private void switchOff(bool playSound) {
         obj.Deactivate(key);
         spriteRenderer.sprite = offSprite;
         timeLeft = closingTimeOffset;
-        AudioManager.Instance.PlaySwitchOnAndOff();
+        if (playSound) AudioManager.Instance.PlaySwitchOnAndOff();
     }
 }

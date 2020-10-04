@@ -9,10 +9,6 @@ public class PauseMenu : MonoBehaviour {
     private bool inSubMenu = false;
     public Canvas canvas;
 
-    public void Quit() {
-        Application.Quit();
-    }
-
     public void Start() {
         canvas = GetComponent<Canvas>();
     }
@@ -37,12 +33,19 @@ public class PauseMenu : MonoBehaviour {
         inSubMenu = Time.timeScale == 0 && !canvas.enabled;
     }
 
+    public void Quit() {
+        if (!canvas.enabled) return;
+        Application.Quit();
+    }
+
     public void MainMenu() {
+        if (!canvas.enabled) return;
         AudioManager.Instance.PlayLeaveGame();
         SceneManager.LoadScene("Main_Menu");
     }
 
     public void OpenSettings() {
+        if (!canvas.enabled) return;
         settings.OpenSettings(GetComponent<Canvas>());
     }
 }

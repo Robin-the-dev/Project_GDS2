@@ -16,16 +16,16 @@ public abstract class InteractableObject : MonoBehaviour {
     public void InitLink(string key, LinkedObject obj) {
         this.obj = obj;
         this.key = key;
-        CheckState();
+        CheckState(false);
     }
 
     public abstract void Interact();
 
-    public abstract void CheckState();
+    public abstract void CheckState(bool playSound);
 
     // Start is called before the first frame update
     public virtual void Start() {
-        CheckState();
+        CheckState(false);
         if (popup != null) popup.SetActive(false);
     }
 

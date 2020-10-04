@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1188522699
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -4454914845596493489, guid: ca8c84863a7e44f439730c0fb419414f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,10 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+  key: 
   popup: {fileID: 0}
   interactable: 0
-  key: 
   active: 0
   interacting: 0
-  door: {fileID: 0}
   onSprite: {fileID: 1694985531360637023, guid: ca8c84863a7e44f439730c0fb419414f, type: 3}
