@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     private float timeCounter;
     private int multiplierForBugSound;
     private int multiplierForWaterDripSound;
-    private int multiplierForRockSound;
     private bool isDived;
     private bool isLanded;
 
@@ -40,7 +39,6 @@ public class GameManager : MonoBehaviour
         timeCounter = 0.0f;
         multiplierForBugSound = 1;
         multiplierForWaterDripSound = 1;
-        multiplierForRockSound = 1;
         isDived = false;
         isLanded = false;
     }
@@ -136,11 +134,6 @@ public class GameManager : MonoBehaviour
         if(timeCounter >= 11.0f * multiplierForBugSound) {
             AudioManager.Instance.PlaySkitteringBugs();
             multiplierForBugSound++;
-        }
-
-        if(timeCounter >= 27.0f * multiplierForRockSound) {
-            AudioManager.Instance.PlayRocksFallingInWater();
-            multiplierForRockSound++;
         }
 
         if(timeCounter >= 54.0f * multiplierForWaterDripSound) {
