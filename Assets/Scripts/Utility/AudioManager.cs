@@ -74,6 +74,7 @@ public class AudioManager : MonoBehaviour {
     private float SFXVolume = 1.0f;
     private float BGMVolume = 1.0f;
     private float ambienceVolume = 1.0f;
+    private float footStepVolume = 1.0f;
 
     #region FootStep
     public void PlayCaveWalk() {
@@ -108,6 +109,14 @@ public class AudioManager : MonoBehaviour {
     public void PlayGauntletDiscovery() {
         PlaySFXOneShot(gauntletDiscovery);
     }
+
+    public void PlayLoriJumpLanding() {
+        PlaySFXOneShot(loriJumpLanding);
+    }
+
+    public void PlayWaterDive() {
+        PlaySFXOneShot(waterDive);
+    }
     #endregion
 
     #region Ambience
@@ -125,14 +134,6 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayWaterDropSingle() {
         PlayAmbienceOneShot(waterDropSingle);
-    }
-
-    public void PlayWaterDive() {
-        PlayAmbienceOneShot(waterDive);
-    }
-
-    public void PlayLoriJumpLanding() {
-        PlayAmbienceOneShot(loriJumpLanding);
     }
 
     public void PlayGemPickUp() {
@@ -251,7 +252,7 @@ public class AudioManager : MonoBehaviour {
         BGMSource.volume = PlayerPrefs.GetFloat("MusicVolume");
         ambienceOneShotSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
         ambienceSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
-        footStepSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
+        footStepSource.volume = PlayerPrefs.GetFloat("SoundEffectVolume");
     }
 
 
@@ -269,6 +270,11 @@ public class AudioManager : MonoBehaviour {
     public void setAmbienceVolume(float volume) {
         ambienceVolume = volume;
         ambienceOneShotSource.volume = ambienceVolume;
+    }
+
+    public void setFootStepVolume(float volume) {
+        footStepVolume = volume;
+        footStepSource.volume = footStepVolume;
     }
     #endregion
 }
