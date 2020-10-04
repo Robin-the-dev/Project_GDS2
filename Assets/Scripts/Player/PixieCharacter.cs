@@ -26,6 +26,8 @@ public class PixieCharacter : AnimatedCharacter {
     public PlayerCharacter player;
     public float maxDistanceFromPlayer = 30f;
 
+    private InteractableObject currentInteraction = null;
+
     private bool moveUp = false;
     private bool moveDown = false;
     private bool moveLeft = false;
@@ -66,7 +68,29 @@ public class PixieCharacter : AnimatedCharacter {
     }
 
     public void Interact() {
+        if (currentInteraction != null) {
+            if (currentInteraction.pixieCanUse) {
+                currentInteraction.Interact();
+            }
+        }
+    }
 
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = interact;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = interact;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col) {
+        if (col.TryGetComponent(out InteractableObject interact)) {
+            currentInteraction = null;
+        }
     }
 
     public void MoveRight(bool active) {

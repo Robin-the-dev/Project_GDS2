@@ -10,6 +10,7 @@ public abstract class InteractableObject : MonoBehaviour {
     public GameObject popup;
     public bool interactable = false;
     public bool active = false;
+    public bool pixieCanUse = false;
     [HideInInspector]
     public int interacting = 0;
 

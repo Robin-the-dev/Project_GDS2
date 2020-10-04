@@ -20,6 +20,7 @@ public class SettingsHandler : MonoBehaviour {
         }
 
         public void OpenTab() {
+            if (!handler.canvas.enabled) return;
             AudioManager.Instance.PlayClickButton();
             handler.CloseAll();
             canvas.enabled = true;
@@ -37,10 +38,12 @@ public class SettingsHandler : MonoBehaviour {
     public HorizontalLayoutGroup tabGroup;
     public Button backButton;
 
+    private Canvas canvas;
     private Canvas lastCanvas;
 
     void Awake() {
-        GetComponent<Canvas>().enabled = false;
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
         selected = tabs[0];
         foreach (Tab t in tabs) {
             t.Init(this);

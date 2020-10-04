@@ -127,5 +127,6 @@ MonoBehaviour:
   popup: {fileID: 0}
   interactable: 0
   active: 0
+  pixieCanUse: 1
   interacting: 0
   onSprite: {fileID: 3417244548145107197, guid: 3b0836fd3e809194883493e4a02b37fc, type: 3}

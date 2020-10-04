@@ -32,7 +32,12 @@ public class PlayerControls : MonoBehaviour {
         //reset keys when reload.
         mainCamera = Camera.main;
         PlayerPrefs.SetInt("keyCount", 0);
+
         // InitAbilityIcons();
+    }
+
+    public void Start() {
+        AudioManager.Instance.PlayTempleMusicLoop();
     }
 
     private void Update() {
@@ -54,7 +59,7 @@ public class PlayerControls : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             paused = Time.timeScale == 0;
             if (paused) {
-                pauseMenu.ClosePause();    
+                pauseMenu.ClosePause();
             } else {
                 pauseMenu.OpenPause();
             }

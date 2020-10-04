@@ -8,26 +8,29 @@ public class InteractableButton : InteractableObject {
     private SpriteRenderer spriteRenderer;
     private Sprite offSprite;
     private float timeLeft;
-    private const float closingTimeOffset = 3.0f; // Change this if you want to change closing time offset
+    public float closingTimeOffset = 3.0f; // Change this if you want to change closing time offset
 
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         offSprite = spriteRenderer.sprite;
-        timeLeft = closingTimeOffset;
+        timeLeft = 0;
     }
 
     private void FixedUpdate() {
         if(active) {
             timeLeft -= Time.deltaTime;
         }
-
-        if(timeLeft <= 0.0f) {
-            active = !active;
+        if (timeLeft <= 0.0f && active) {
+            active = false;
             switchOff(true);
         }
     }
 
     public override void Interact() {
+        if (timeLeft > 0) {
+            timeLeft = closingTimeOffset;
+            return;
+        }
         active = !active;
         CheckState(true);
     }
@@ -42,13 +45,13 @@ public class InteractableButton : InteractableObject {
     private void switchOn(bool playSound) {
         obj.Activate(key);
         spriteRenderer.sprite = onSprite;
+        timeLeft = closingTimeOffset;
         if (playSound) AudioManager.Instance.PlaySwitchOnAndOff();
     }
 
     private void switchOff(bool playSound) {
         obj.Deactivate(key);
         spriteRenderer.sprite = offSprite;
-        timeLeft = closingTimeOffset;
         if (playSound) AudioManager.Instance.PlaySwitchOnAndOff();
     }
 }

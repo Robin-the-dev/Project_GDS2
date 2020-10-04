@@ -117,6 +117,34 @@ public class AudioManager : MonoBehaviour {
     public void PlayWaterDive() {
         PlaySFXOneShot(waterDive);
     }
+
+    public void PlayGemPickUp() {
+        PlaySFXOneShot(gemPickUp);
+    }
+
+    public void PlayDoorLock() {
+        PlaySFXOneShot(doorLock);
+    }
+
+    public void PlayDoorOpen() {
+        PlaySFXOneShot(doorOpen);
+    }
+
+    public void PlayLatchButton() {
+        PlaySFXOneShot(latchButton);
+    }
+
+    public void PlayMetalLatch() {
+        PlaySFXOneShot(metalLatch);
+    }
+
+    public void PlayMetalLever() {
+        PlaySFXOneShot(metalLever);
+    }
+
+    public void PlaySwitchOnAndOff() {
+        PlaySFXOneShot(switchOnAndOff);
+    }
     #endregion
 
     #region Ambience
@@ -134,34 +162,6 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayWaterDropSingle() {
         PlayAmbienceOneShot(waterDropSingle);
-    }
-
-    public void PlayGemPickUp() {
-        PlayAmbienceOneShot(gemPickUp);
-    }
-
-    public void PlayDoorLock() {
-        PlayAmbienceOneShot(doorLock);
-    }
-
-    public void PlayDoorOpen() {
-        PlayAmbienceOneShot(doorOpen);
-    }
-
-    public void PlayLatchButton() {
-        PlayAmbienceOneShot(latchButton);
-    }
-
-    public void PlayMetalLatch() {
-        PlayAmbienceOneShot(metalLatch);
-    }
-
-    public void PlayMetalLever() {
-        PlayAmbienceOneShot(metalLever);
-    }
-
-    public void PlaySwitchOnAndOff() {
-        PlayAmbienceOneShot(switchOnAndOff);
     }
 
     public void PlayUnderWater() {

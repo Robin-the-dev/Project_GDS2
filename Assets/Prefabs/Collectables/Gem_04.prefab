@@ -143,6 +143,7 @@ MonoBehaviour:
   color1: {r: 0, g: 0.99020815, b: 1, a: 0}
   color2: {r: 0.514151, g: 0.91083175, b: 1, a: 0}
   flickerDuration: 0.5
+  id: 
 --- !u!60 &9087457614359459553
 PolygonCollider2D:
   m_ObjectHideFlags: 0
