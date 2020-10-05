@@ -22,7 +22,7 @@ public class ConversationHandler : MonoBehaviour {
     private Image makiImage;
     private Image loriImage;
 
-    Dictionary<Conversation, AudioSource> convoQueue = new Dictionary<Conversation, AudioSource>();
+    List<Conversation> convoQueue = new List<Conversation>();
 
     private bool chatActive = false;
 
@@ -51,18 +51,18 @@ public class ConversationHandler : MonoBehaviour {
         loriImage.enabled = false;
     }
 
-    public void DisplayText(string key, AudioSource audio) {
+    public void DisplayText(string key) {
         Conversation convo = GetEntry(key);
         if (convo == null) return;
-        convoQueue.Add(convo, audio);
+        convoQueue.Add(convo);
     }
 
     void FixedUpdate() {
         if (!chatActive && convoQueue.Count > 0) {
-            KeyValuePair<Conversation,AudioSource> convo = convoQueue.First();
-            convoQueue.Remove(convoQueue.First().Key);
+            Conversation convo = convoQueue.First();
+            convoQueue.Remove(convoQueue.First());
             chatActive = true;
-            StartCoroutine(Print(convo.Key, convo.Value));
+            StartCoroutine(Print(convo));
         }
     }
 
@@ -81,7 +81,7 @@ public class ConversationHandler : MonoBehaviour {
         }
     }
 
-    IEnumerator Print(Conversation convo, AudioSource audio) {
+    IEnumerator Print(Conversation convo) {
         // for each chatline do
         foreach (ChatLine c in convo.Lines) {
             rightText.text = "";
@@ -117,9 +117,7 @@ public class ConversationHandler : MonoBehaviour {
             }
             //if has sound, play sound
             if (c.Sound != null) {
-                AudioClip clip = Resources.Load<AudioClip>(c.Sound);
-                audio.volume = PlayerPrefs.GetFloat("VoiceVolume");
-                audio.PlayOneShot(clip);
+                AudioManager.Instance.PlayClip(c.Sound);
             }
             // print text
             string currentText = "";

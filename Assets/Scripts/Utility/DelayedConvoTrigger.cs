@@ -5,27 +5,24 @@ using UnityEngine;
 public class DelayedConvoTrigger : MonoBehaviour {
 
     public string key;
-    private AudioSource audio;
     private bool colliderActive = false;
-    public int collisions = 0;
-    public float counter = 0;
+    private int collisions = 0;
+    private float counter = 0;
     public float maxCounter = 85;
-
-    void Start() {
-        audio = GetComponent<AudioSource>();
-    }
+    public bool enabled = true;
 
     void FixedUpdate() {
         if (colliderActive) {
             counter+=Time.deltaTime;
         }
         if (counter > maxCounter) {
-            ConversationHandler.Instance.DisplayText(key, audio);
+            ConversationHandler.Instance.DisplayText(key);
             Destroy(this);
         }
     }
 
     void OnTriggerEnter2D(Collider2D col) {
+        if (!enabled) return;
         if (col.tag == "Player") {
             collisions++;
             if (collisions > 0) {

@@ -120,7 +120,8 @@
         {
           "Character" : 1,
           "Text" : "Hey Lori, Looks like there's a Gem hiding up here, If you press 'Q' I can reach it.",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
         }
       ],
       "IsBlocking" : false
@@ -131,7 +132,8 @@
         {
           "Character" : 1,
           "Text" : "That box could help you get up the ledge. Your hook should be able to help you reach it.",
-          "Emote" : "Neutral"
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
         },
         {
           "Character" : 2,
@@ -143,7 +145,7 @@
       "IsBlocking" : false
     },
     {
-      "Key": "Level_1_Fall",
+      "Key": "Level_2_Fall",
       "Lines": [
         {
           "Character" : 0,
@@ -239,75 +241,325 @@
       "IsBlocking" : true
     },
     {
-      "Key": "UnfinishedGame",
+      "Key": "DeadEnd",
       "Lines": [
         {
-          "Character" : 0,
-          "Text" : "Well... That's a big door.",
-          "Emote" : "Neutral",
-          "Sound" : "Sounds/SoundEffects/Gauntlet Discovery"
-        },
-        {
-          "Character" : 1,
-          "Text" : "Yep it is, wonder if it opens?",
-          "Emote" : "Neutral_Right"
-        },
-        {
-          "Character" : 0,
-          "Text" : "Probably... Well, doesn't look like it can right now.",
-          "Emote" : "Neutral_Right"
-        },
-        {
-          "Character" : 1,
-          "Text" : "Why do you think that?",
-          "Emote" : "Neutral"
-        },
-        {
-          "Character" : 0,
-          "Text" : "There's nothing behind it...",
-          "Emote" : "Neutral"
-        },
-        {
-          "Character" : 1,
-          "Text" : "Huh?",
-          "Emote" : "Neutral"
-        },
-        {
-          "Character" : 0,
-          "Text" : "Yep, The level isn't done past there.",
-          "Emote" : "Neutral_Left"
-        },
-        {
-          "Character" : 1,
-          "Text" : "Level... Lori you can't just break the fourth wall like that!",
-          "Emote" : "Neutral_Blink"
-        },
-        {
-          "Character" : 0,
-          "Text" : "I can and I just did.",
-          "Emote" : "Neutral"
-        },
-        {
-          "Character" : 1,
-          "Text" : "*groan*",
-          "Emote" : "Neutral_Blink"
-        },
-        {
           "Character" : 2,
-          "Text" : "Thank you for playing, Sorry there isn't much in the second level, hopefully we'll have something more for you next time - Team Null Pointer",
-          "Emote" : "Help"
+          "Text" : "Thanks for playing our game, still more to come, hope you found everything. - Team Null Pointer",
+          "Emote" : "Help",
+          "Sound" : "Sounds/SoundEffects/Cave Level Opening"
         }
       ],
       "IsBlocking" : false
     },
     {
-      "Key": "DeadEnd",
+      "Key": "WaterTutorial",
       "Lines": [
         {
+          "Character" : 1,
+          "Text" : "Lori, are you scared of a little water? It looks like it's our only way forward.",
+          "Emote" : "Neutral_Left",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
           "Character" : 2,
-          "Text" : "Sorry, This is a dead end for now, enjoy this sound effect in the mean time. - Team Null Pointer",
+          "Text" : "(Holding S will let you swim downwards)",
           "Emote" : "Help",
-          "Sound" : "Sounds/SoundEffects/Cave Level Opening"
+          "Sound": "Sounds/MenuSounds/Leave Game"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "Bridge",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Damn... That's a big gap, looks like there's a button on the other side.",
+          "Emote" : "Neutral_Left",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Maki, Could you please press it for me?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Purr"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Fine...",
+          "Emote" : "Neutral_Blink",
+          "Sound" : "Sounds/VoiceLines/Maki/Sigh"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "DoorFound",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Neato, A door, bet it's hiding something special behind it.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Well... it's locked so unless you find the code we're not getting in.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Sigh"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Allllright... Lets find us some treasure!",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "FirstKey_NoDoor",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Well this looks interesting, Wonder what it's for?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Looks a bit like a code, but half of it's missing.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "OOooo Wonder where the other half is.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "FirstKey_Door",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Oh this looks familiar!",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Yep, looks like the code at the big door.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Sweet, now to find the other half!",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "SecondKey_NoDoor",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "Well there's the other half.",
+          "Emote" : "Neutral_Left",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Yep! now to find where it goes, better look around.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "SecondKey_Door",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Nice, that's it, now to find out what's behind that big door.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Yep, Hey Lori, Do you still remember what the first half looked like?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Toooootally...",
+          "Emote" : "Neutral_Right",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Uh huh...",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "LockedDoor",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "Hmm, This door looks locked... What do you think Maki?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Maybe there's another way around?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "FoundFirstKey",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "A door...",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "What an accurate observation...",
+          "Emote" : "Neutral_Blink",
+          "Sound" : "Sounds/VoiceLines/Maki/Sigh"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Looks like there's something above us.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "I'll have a look.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "FoundSecondKey",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "This door looks like the other one we found.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Bet there's another switch around?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_2"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Only one way to find out.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "KeysFoundDoor",
+      "Lines": [
+        {
+          "Character" : 0,
+          "Text" : "And here we go, now to enter in the code.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_1"
+        },
+        {
+          "Character" : 1,
+          "Text" : "My wings are tingling in anticipation.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "KeysFoundDoorWaited",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "Lori... Did you forget the code?",
+          "Emote" : "Neutral_Blink",
+          "Sound" : "Sounds/VoiceLines/Maki/Sigh"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Noooo~",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_2"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Well, we better go back and check then...",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
+        },
+        {
+          "Character" : 0,
+          "Text" : "*groan*",
+          "Emote" : "Sad_Blink",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_2"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "DoorFoundAfterKeys",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "How did we miss this?",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 0,
+          "Text" : "I know! It's so big.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_2"
+        },
+        {
+          "Character" : 1,
+          "Text" : "Well, good thing we already have the code.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_2"
+        },
+        {
+          "Character" : 0,
+          "Text" : "Yep, no more looking, this is it!",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Lori/Hmm_2"
         }
       ],
       "IsBlocking" : false

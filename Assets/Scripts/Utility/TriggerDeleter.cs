@@ -8,7 +8,7 @@ public class TriggerDeleter : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player") {
-          Destroy(trigger);
+            if (trigger != null) Destroy(trigger);
         }
     }
 }

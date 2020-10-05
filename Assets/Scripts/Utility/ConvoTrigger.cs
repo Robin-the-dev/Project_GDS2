@@ -5,15 +5,12 @@ using UnityEngine;
 public class ConvoTrigger : MonoBehaviour {
 
     public string key;
-    private AudioSource audio;
-
-    void Start() {
-        audio = GetComponent<AudioSource>();
-    }
+    public bool enabled = true;
 
     void OnTriggerEnter2D(Collider2D col) {
+        if (!enabled) return;
         if (col.tag == "Player") {
-            ConversationHandler.Instance.DisplayText(key, audio);
+            ConversationHandler.Instance.DisplayText(key);
             Destroy(this);
         }
     }

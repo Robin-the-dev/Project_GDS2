@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource ambienceOneShotSource;
     [SerializeField] private AudioSource ambienceSource;
     [SerializeField] private AudioSource footStepSource;
+    [SerializeField] private AudioSource voiceSource;
 
     [Header("SFX Clips")]
     // List sound effect clips here
@@ -73,6 +74,7 @@ public class AudioManager : MonoBehaviour {
 
     private float SFXVolume = 1.0f;
     private float BGMVolume = 1.0f;
+    private float voiceVolume = 1.0f;
     private float ambienceVolume = 1.0f;
     private float footStepVolume = 1.0f;
 
@@ -253,6 +255,12 @@ public class AudioManager : MonoBehaviour {
         ambienceOneShotSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
         ambienceSource.volume = PlayerPrefs.GetFloat("AmbientVolume");
         footStepSource.volume = PlayerPrefs.GetFloat("SoundEffectVolume");
+        voiceSource.volume = PlayerPrefs.GetFloat("VoiceVolume");
+    }
+
+    public void PlayClip(string path) {
+        AudioClip clip = Resources.Load<AudioClip>(path);
+        voiceSource.PlayOneShot(clip);
     }
 
 
@@ -260,6 +268,11 @@ public class AudioManager : MonoBehaviour {
     public void setSFXVolume(float volume) {
         SFXVolume = volume;
         SFXSource.volume = SFXVolume;
+    }
+
+    public void setVoiceVolume(float volume) {
+        voiceVolume = volume;
+        voiceSource.volume = voiceVolume;
     }
 
     public void setBGMVolume(float volume) {
