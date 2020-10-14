@@ -98,27 +98,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightSprites:
   - sprites:
-    - {fileID: 21300000, guid: 893995a2b91143c4eb3120525c71e0c2, type: 3}
+    - {fileID: 21300000, guid: 0883c2203e63fba438476502271cc018, type: 3}
     - {fileID: 21300000, guid: f4df076d2736eb14e8dfc1541c2566d4, type: 3}
     - {fileID: 21300000, guid: e337e44c80a8b63409160c6a17f513c6, type: 3}
     color: {r: 0.13203098, g: 0.59470177, b: 0.6509434, a: 0}
   - sprites:
-    - {fileID: 21300000, guid: f7ecae099221a5c44866bace6b398d56, type: 3}
+    - {fileID: 21300000, guid: 893995a2b91143c4eb3120525c71e0c2, type: 3}
     - {fileID: 21300000, guid: 65f9f9b4d77d0ca45955e6fdf129caff, type: 3}
     - {fileID: 21300000, guid: ce74f9f445ed831419ba00259586ca0a, type: 3}
     color: {r: 0.6508621, g: 0.18823424, b: 0.8490566, a: 0}
   - sprites:
-    - {fileID: 21300000, guid: 0883c2203e63fba438476502271cc018, type: 3}
+    - {fileID: 21300000, guid: 945a2c13040139c42a64b64d2dec280a, type: 3}
     - {fileID: 21300000, guid: 33ba5328af237e249848bc61f64302fa, type: 3}
     - {fileID: 21300000, guid: 8117b0ff2115d9942b280213943c7828, type: 3}
     color: {r: 0.19953722, g: 0.7169812, b: 0.2587837, a: 0}
   - sprites:
-    - {fileID: 21300000, guid: 945a2c13040139c42a64b64d2dec280a, type: 3}
+    - {fileID: 21300000, guid: 77755bea66e69d348a1109a21e0d6a98, type: 3}
     - {fileID: 21300000, guid: 0920a46cb1a0b0542a195d7924498921, type: 3}
     - {fileID: 21300000, guid: 068eebd4017233e499cbec2b775d5f3e, type: 3}
     color: {r: 0.7735849, g: 0.70776653, b: 0.23718406, a: 0}
   - sprites:
-    - {fileID: 21300000, guid: 77755bea66e69d348a1109a21e0d6a98, type: 3}
+    - {fileID: 21300000, guid: f7ecae099221a5c44866bace6b398d56, type: 3}
     - {fileID: 21300000, guid: 7dd4f0e8b74f55440ac27c597e3a55d2, type: 3}
     - {fileID: 21300000, guid: 055dfb4eea3749a4992a7465a25d0c36, type: 3}
     color: {r: 0.7830189, g: 0.18098079, b: 0.18098079, a: 0}

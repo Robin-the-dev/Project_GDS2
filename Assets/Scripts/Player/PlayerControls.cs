@@ -47,6 +47,7 @@ public class PlayerControls : MonoBehaviour {
         HandlePause();
         if (Time.timeScale > 0) {
             SwitchMode();
+            ShowMap();
             if (pixieMode) {
                 HandlePixieControls();
             } else {
@@ -63,6 +64,11 @@ public class PlayerControls : MonoBehaviour {
             } else {
                 pauseMenu.OpenPause();
             }
+        }
+    }
+    private void ShowMap() {
+        if (GetKeyDown("Map")) {
+            MapController.Instance.ToggleMap();
         }
     }
 

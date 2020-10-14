@@ -41,7 +41,9 @@ public class ControlSettings : MonoBehaviour{
         defaultKeys.Add("MakiAlt", KeyCode.None);
 
         defaultKeys.Add("SkipText", KeyCode.F);
-        defaultKeys.Add("SkipTextAlt", KeyCode.None);        
+        defaultKeys.Add("SkipTextAlt", KeyCode.None);
+        defaultKeys.Add("Map", KeyCode.Tab);
+        defaultKeys.Add("MapAlt", KeyCode.M);
 
         InitKeys(false);
         AddOverrides();
