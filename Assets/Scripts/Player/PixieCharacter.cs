@@ -37,6 +37,8 @@ public class PixieCharacter : AnimatedCharacter {
     private int moveY = 0;
     private float distance;
 
+    private bool inWater = false;
+
     public override void FixedUpdate() {
         base.FixedUpdate();
         GetComponent<SpriteRenderer>().flipX = rigid.velocity.x < 0;
@@ -79,18 +81,21 @@ public class PixieCharacter : AnimatedCharacter {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = interact;
         }
+        if (col.tag == "Water") inWater = true;
     }
 
     private void OnTriggerStay2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = interact;
         }
+        if (col.tag == "Water") inWater = true;
     }
 
     private void OnTriggerExit2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = null;
         }
+        if (col.tag == "Water") inWater = false;
     }
 
     public void MoveRight(bool active) {
@@ -158,6 +163,7 @@ public class PixieCharacter : AnimatedCharacter {
         if (Vector3.Distance(transform.position, position) < minDistance) path.Pop();
         float newSpeed = maxSpeed;
         if (distance < maxDistance) newSpeed = (distance/maxDistance) * maxSpeed;
+        if (inWater) newSpeed = newSpeed*2f;
         if (distance > minDistance) {
             Vector2 direction = position - transform.position;
             Vector2 targetVelocity = Vector3.ClampMagnitude(newSpeed * direction, maxVelocity);
