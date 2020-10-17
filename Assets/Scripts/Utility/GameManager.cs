@@ -104,10 +104,6 @@ public class GameManager : MonoBehaviour
             if (!AudioManager.Instance.isPlayingAmbience()) {
                 AudioManager.Instance.PlayUnderWater();
             }
-            if(!isDived) {
-                AudioManager.Instance.PlayWaterDive();
-                isDived = true;
-            }
         }
         else {
             if (AudioManager.Instance.isPlayingAmbience()) {

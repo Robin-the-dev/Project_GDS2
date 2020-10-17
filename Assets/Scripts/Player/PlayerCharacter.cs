@@ -177,7 +177,7 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public virtual void Jump() {
-        if (IsGrounded()|| inWater) {
+        if (IsGrounded() || inWater) {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
             anim.SetTrigger("Jump");
         }
@@ -339,21 +339,18 @@ public class PlayerCharacter : AnimatedCharacter {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = interact;
         }
-        if (col.tag == "Water") inWater = true;
     }
 
     private void OnTriggerStay2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = interact;
         }
-        if (col.tag == "Water") inWater = true;
     }
 
     private void OnTriggerExit2D(Collider2D col) {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = null;
         }
-        if (col.tag == "Water") inWater = false;
     }
 
     public bool IsGrounded() {

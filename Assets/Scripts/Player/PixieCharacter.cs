@@ -163,7 +163,7 @@ public class PixieCharacter : AnimatedCharacter {
         if (Vector3.Distance(transform.position, position) < minDistance) path.Pop();
         float newSpeed = maxSpeed;
         if (distance < maxDistance) newSpeed = (distance/maxDistance) * maxSpeed;
-        if (inWater) newSpeed = newSpeed*2f;
+        if (inWater) newSpeed = newSpeed*4f;
         if (distance > minDistance) {
             Vector2 direction = position - transform.position;
             Vector2 targetVelocity = Vector3.ClampMagnitude(newSpeed * direction, maxVelocity);
