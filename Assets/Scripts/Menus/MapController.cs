@@ -22,10 +22,59 @@ public class MapController : MonoBehaviour {
         }
     }
 
-    public List<Image> layers;
-    private Canvas canvas;
+    [System.Serializable]
+    public class Zone {
+        public string key;
+        public Image layer;
+        public Vector2 position;
+        public MapTrigger trigger;
 
-    bool isNotBackground(Image i) {
+        public void Init() {
+            key = layer.name;
+        }
+
+        public void enableZone() {
+            if (trigger != null) trigger.mapEnabled = true;
+            layer.enabled = true;
+        }
+    }
+
+    public List<Zone> zones;
+    public Zone activeZone = null;
+    private Canvas canvas;
+    public Image currentPosition;
+
+    void Start() {
+        // remove me to have map progress saved
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+        string[] keys = PlayerPrefs.GetString("FoundMap" + mapId).Split(',');
+        MapTrigger[] triggers = FindObjectsOfType<MapTrigger>();
+        foreach (Zone z in zones) {
+            z.Init();
+            foreach (MapTrigger t in triggers) {
+                if (t.key == z.key) {
+                    z.trigger = t;
+                }
+            }
+        }
+        foreach (string key in keys) {
+            foreach (Zone z in zones) {
+                if (key == z.key) z.enableZone();
+            }
+        }
+    }
+
+    private void FixedUpdate() {
+        if (activeZone != null) {
+            currentPosition.enabled = true;
+            currentPosition.transform.localPosition = activeZone.position;
+        } else {
+            currentPosition.enabled = false;
+        }
+    }
+
+    private bool isNotBackground(Image i) {
         return i.name != "Image";
     }
 
@@ -41,29 +90,24 @@ public class MapController : MonoBehaviour {
         canvas.enabled = !canvas.enabled;
     }
 
-    void Start() {
-        // remove me to have map progress saved
-        canvas = GetComponent<Canvas>();
-        canvas.enabled = false;
-        PlayerPrefs.SetString("FoundMap" + mapId, "");
-        layers = Array.FindAll(GetComponentsInChildren<Image>(), isNotBackground).ToList();
-        string[] keys = PlayerPrefs.GetString("FoundMap" + mapId).Split(',');
-        foreach (string k in keys) {
-            foreach (Image i in layers) {
-                if (k == i.name) {
-                    i.enabled = true;
-                }
-            }
+    public Zone getZone(string key) {
+        foreach (Zone z in zones) {
+            if (z.key == key) return z;
         }
+        return null;
+    }
+
+    public void UpdateMapPosition(string key) {
+        activeZone = getZone(key);
     }
 
     public void EnableLayer(string layer) {
         List<string> keys = new List<string>(PlayerPrefs.GetString("FoundMap" + mapId).Split(','));
         keys.Add(layer);
         PlayerPrefs.SetString("FoundMap" + mapId, String.Join(",", keys));
-        foreach (Image i in layers) {
-            if (i.name == layer) i.enabled = true;
-        }
+        Zone zone = getZone(layer);
+        activeZone = zone;
+        zone.enableZone();
     }
 
 }

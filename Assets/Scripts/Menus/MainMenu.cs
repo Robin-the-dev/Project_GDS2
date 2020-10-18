@@ -34,5 +34,7 @@ public class MainMenu : MonoBehaviour {
         AudioManager.Instance.PlayStartGame();
         PlayerPrefs.SetString("GemTracker", "");
         PlayerPrefs.SetFloat("Score", 0f);
+        PlayerPrefs.SetString("FoundMapLevel_1", "");
+        PlayerPrefs.SetString("FoundMapLevel_2", "");
     }
 }

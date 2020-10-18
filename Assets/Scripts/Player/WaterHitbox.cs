@@ -11,8 +11,9 @@ public class WaterHitbox : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Water") {
+            if (!player.inWater) AudioManager.Instance.PlayWaterDive();
             player.inWater = true;
-            AudioManager.Instance.PlayWaterDive();
+            player.canWaterJump = true;
         }
     }
 

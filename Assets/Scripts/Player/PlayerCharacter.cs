@@ -71,9 +71,10 @@ public class PlayerCharacter : AnimatedCharacter {
 
     [HideInInspector]
     public bool onLadder = false;
-
+    [HideInInspector]
     public bool inWater = false;
-
+    [HideInInspector]
+    public bool canWaterJump = false;    
     public float projectileSpeed = 20f;
     public GameObject iceballPrefab;
 
@@ -177,7 +178,7 @@ public class PlayerCharacter : AnimatedCharacter {
     }
 
     public virtual void Jump() {
-        if (IsGrounded() || inWater) {
+        if (IsGrounded() || canWaterJump) {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
             anim.SetTrigger("Jump");
         }
@@ -246,7 +247,6 @@ public class PlayerCharacter : AnimatedCharacter {
         anim.SetBool("Moving", Mathf.Abs(rigid.velocity.x) > 0.5);
         anim.SetBool("InWater", inWater);
         if (inWater) {
-
             DoWaterMovement();
         }
 
@@ -351,6 +351,7 @@ public class PlayerCharacter : AnimatedCharacter {
         if (col.TryGetComponent(out InteractableObject interact)) {
             currentInteraction = null;
         }
+        if (col.tag == "Water") canWaterJump = false;
     }
 
     public bool IsGrounded() {
