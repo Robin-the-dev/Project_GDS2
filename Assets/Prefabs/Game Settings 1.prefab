@@ -1386,7 +1386,7 @@ GameObject:
   - component: {fileID: 6334173513695343260}
   - component: {fileID: 2903362076049794840}
   - component: {fileID: 6439429892314406556}
-  m_Layer: 19
+  m_Layer: 11
   m_Name: WaterHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
