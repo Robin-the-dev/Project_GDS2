@@ -53,6 +53,8 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip waterSplash; // I don't think we need this clip, sound is simillar with water dive clip
     [SerializeField] private AudioClip woodenBoxDrop; // Not implemented yet
     [SerializeField] private AudioClip woodenDoorOpen; // Not implemented yet
+    [SerializeField] private AudioClip pixieFlutter; // Just added
+    [SerializeField] private AudioClip ropeSwing;
 
     [Header("Foot step Clips")]
     [SerializeField] private AudioClip caveWalk;
@@ -116,6 +118,10 @@ public class AudioManager : MonoBehaviour {
         PlaySFXOneShot(loriJumpLanding);
     }
 
+    public void PlayRopeSwing() {
+        PlaySFXOneShot(ropeSwing);
+    }
+
     public void PlayWaterDive() {
         PlaySFXOneShot(waterDive);
     }
@@ -168,6 +174,10 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayUnderWater() {
         PlayAmbience(underWater);
+    }
+
+    public void PlayPixieFlutter() {
+        PlayAmbienceOneShot(pixieFlutter);
     }
 
     public bool isPlayingAmbience() {
