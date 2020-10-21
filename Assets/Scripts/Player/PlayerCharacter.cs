@@ -136,6 +136,7 @@ public class PlayerCharacter : AnimatedCharacter {
         ropeTimeLeft = ropeCooldown;
         currentGrappleDistance = grappleDistance;
         joint.distance = currentGrappleDistance;
+        AudioManager.Instance.PlayRopeSwing();
     }
 
     private void SetNearestGrapple(Vector3 target) {
