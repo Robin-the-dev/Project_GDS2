@@ -8877,8 +8877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67faf7604b7fcb40b3eb7d9eda3d4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 5482317346389394296}
   sliderUIScale: {fileID: 2925948016428855561}
-  sliderValue: {fileID: 0}
+  sliderValue: {fileID: 6812152007529845711}
   dropdownMenu: {fileID: 594552819148724447}
   toggleFullScreen: {fileID: 2497358448379437413}
 --- !u!1 &5482317346403459994
