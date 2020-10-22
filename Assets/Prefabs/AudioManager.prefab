@@ -68,15 +68,17 @@ MonoBehaviour:
   explosion: {fileID: 8300000, guid: 05659556ad9924abf80fbd82a49c34f0, type: 3}
   gemPickUp: {fileID: 8300000, guid: c470b4d2208d4402ba68513bfdee8155, type: 3}
   latchButton: {fileID: 8300000, guid: b2dd3bd0b65b54cf699837a597e9734f, type: 3}
-  loriJumpLanding: {fileID: 8300000, guid: 3ef6cf35198e3490d9d27cb9c9316520, type: 3}
-  underWater: {fileID: 8300000, guid: aae46b91dfa1240598662a4f43ffcf19, type: 3}
+  loriJumpLanding: {fileID: 8300000, guid: edf8d34087a0f43dab6ccd12a73fbedd, type: 3}
+  underWater: {fileID: 8300000, guid: fbcfe61fff7014b9188863874333c75e, type: 3}
   metalLatch: {fileID: 8300000, guid: 42c78a6e416454b1592c5b08db8aee4e, type: 3}
   metalLever: {fileID: 8300000, guid: 6c501b32c33914a36b3d06d4d2692a41, type: 3}
   switchOnAndOff: {fileID: 8300000, guid: 73af9047804e84baebaa94a1ec4f9b60, type: 3}
-  waterDive: {fileID: 8300000, guid: 8d85165bed02e464084b8a5794115e5b, type: 3}
+  waterDive: {fileID: 8300000, guid: 7a8ac421f014d42328a12b0a39e25495, type: 3}
   waterSplash: {fileID: 8300000, guid: 2079cf9ddecf543d18c3d1f8fd656a23, type: 3}
   woodenBoxDrop: {fileID: 8300000, guid: 85bfd18c7e23d4f4091bf7a502fa3523, type: 3}
   woodenDoorOpen: {fileID: 8300000, guid: 9fc3c4c27470f44249793a02e30931e8, type: 3}
+  pixieFlutter: {fileID: 8300000, guid: c0c5d39f3e9fa4af7b2cf5a125cc9430, type: 3}
+  ropeSwing: {fileID: 8300000, guid: 597e7ae6b2852464a94f3238a592cab7, type: 3}
   caveWalk: {fileID: 8300000, guid: e9f582d30f569423d9b244d1072bf2de, type: 3}
   templeRunnning: {fileID: 8300000, guid: 2b295e41718d7454c862c07ee00b1a59, type: 3}
   templeWalk: {fileID: 8300000, guid: 9d7596fc3808c4809b1780ecda787e9d, type: 3}
