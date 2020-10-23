@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class LevelSelect : MonoBehaviour {
 
     private Canvas lastCanvas;
+    public Button level2;
+
+    void Start() {
+        level2.interactable = PlayerPrefs.GetInt("EnableLevel2", 0) == 1;
+    }
 
     void Awake() {
         GetComponent<Canvas>().enabled = false;

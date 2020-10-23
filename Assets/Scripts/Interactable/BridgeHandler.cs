@@ -4,41 +4,50 @@ using UnityEngine;
 
 public class BridgeHandler : LinkedObject {
 
-    private float startPosX;
-    public float endPosX;
-    public float lerpSpeed = 0.5f;
-    private Vector3 startPosition;
-    private Vector3 endPosition;
     private bool activated = false;
     private bool opening = true;
+    private Animator anim;
+    private AudioSource source;
+
+    private AudioClip scrape;
+    private AudioClip bang;
+
+    private bool playSound = false;
+
+    float wait = 0.5f;
+
+    public void Start() {
+        anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
+        scrape = Resources.Load<AudioClip>("Sounds/SoundEffects/Scrape Stone");
+        bang = Resources.Load<AudioClip>("Sounds/SoundEffects/Rumble");
+    }
 
     public override void Activate(string msg) {
-        activated = true;
-        StartCoroutine(Transition());
+        if (activated) {
+            anim.Play("Close_Bridge");
+        } else {
+            anim.Play("Open_Bridge");
+        }
+        source.volume = PlayerPrefs.GetFloat("SoundEffectVolume");
+        if (playSound) source.PlayOneShot(scrape);
+
     }
 
     public override void Deactivate(string msg) {
-        activated = false;
-        opening = !opening;
+        activated = !activated;
     }
 
-    void Start() {
-        startPosX = transform.position.x;
-        startPosition = new Vector3(startPosX, transform.position.y, transform.position.z);
-        endPosition = new Vector3(endPosX, transform.position.y, transform.position.z);
+    public void PlayBang() {
+        source.volume = PlayerPrefs.GetFloat("SoundEffectVolume");
+        if (playSound) source.PlayOneShot(bang);
     }
 
-    IEnumerator Transition() {
-        float t = 0.0f;
-        Vector3 startingPos = transform.position;
-        while (t < 1.0f) {
-            t += Time.deltaTime * (Time.timeScale/lerpSpeed);
-            if (opening) {
-                transform.position = Vector3.Lerp(startingPos, endPosition, t);
-            } else {
-                transform.position = Vector3.Lerp(startingPos, startPosition, t);
-            }
-            yield return 0;
+    public void Update(){
+        if (wait > 0) {
+            wait-= Time.deltaTime;
+        } else {
+            playSound = true;
         }
     }
 }

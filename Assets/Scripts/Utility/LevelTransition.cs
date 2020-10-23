@@ -9,6 +9,7 @@ public class LevelTransition : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player") {
+            PlayerPrefs.SetInt("EnableLevel2", 1);
             SceneManager.LoadScene(levelName);
         }
     }
