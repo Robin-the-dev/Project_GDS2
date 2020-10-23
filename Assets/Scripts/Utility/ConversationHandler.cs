@@ -143,6 +143,11 @@ public class ConversationHandler : MonoBehaviour {
             if (c.Sound != null) {
                 AudioManager.Instance.StopClip();
                 AudioManager.Instance.PlayClip(c.Sound);
+                if (c.muteMusic) {
+                    AudioManager.Instance.MuteMusic();
+                } else {
+                    AudioManager.Instance.UnMuteMusic();
+                }
             }
             // print text
             for (int i = 0; i <= updatedText.Length; i++) {
@@ -242,5 +247,6 @@ public class ConversationHandler : MonoBehaviour {
         public string Sound;
         public float textSpeed = 1;
         public float endDelay = 0.75f;
+        public bool muteMusic = false;
     }
 }

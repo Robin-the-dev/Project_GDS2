@@ -13,6 +13,6 @@ public class UIScaler : MonoBehaviour {
 
     // Update is called once per frame
     public void UpdateUIScale() {
-        canvasScaler.scaleFactor = PlayerPrefs.GetFloat("UIScale") / 2;
+        canvasScaler.scaleFactor = PlayerPrefs.GetFloat("UIScale", 1) / 2;
     }
 }

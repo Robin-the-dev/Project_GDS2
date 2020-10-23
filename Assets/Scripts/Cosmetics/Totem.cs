@@ -16,4 +16,10 @@ public class Totem : MonoBehaviour{
             source.volume = volume;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.tag == "Player") {
+            PlayerPrefs.SetInt("AllowMagic", 1);
+        }
+    }
 }

@@ -39,9 +39,12 @@ public class PixieCharacter : AnimatedCharacter {
 
     private bool inWater = false;
 
+    private AudioSource source;
+
     public override void FixedUpdate() {
         base.FixedUpdate();
         GetComponent<SpriteRenderer>().flipX = rigid.velocity.x < 0;
+        source = GetComponent<AudioSource>();
         distance = Vector3.Distance(transform.position, player.transform.position);
         if (distance > maxDistanceFromPlayer + 5f) WarpHome(FindObjectOfType<PlayerCharacter>());
         if (pixieMode) {
@@ -55,6 +58,13 @@ public class PixieCharacter : AnimatedCharacter {
         this.pixieMode = pixieMode;
         if (pixieMode) {
             rigid.velocity = Vector3.zero;
+        }
+    }
+
+    private void Update() {
+        float volume = PlayerPrefs.GetFloat("SoundEffectVolume");
+        if (source.volume != volume) {
+            source.volume = volume;
         }
     }
 

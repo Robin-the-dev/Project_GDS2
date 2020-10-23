@@ -36,5 +36,6 @@ public class MainMenu : MonoBehaviour {
         PlayerPrefs.SetFloat("Score", 0f);
         PlayerPrefs.SetString("FoundMapLevel_1", "");
         PlayerPrefs.SetString("FoundMapLevel_2", "");
+        PlayerPrefs.SetInt("AllowMagic", 0);
     }
 }

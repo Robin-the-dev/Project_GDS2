@@ -74,9 +74,12 @@ public class PlayerCharacter : AnimatedCharacter {
     [HideInInspector]
     public bool inWater = false;
     [HideInInspector]
-    public bool canWaterJump = false;    
+    public bool canWaterJump = false;
     public float projectileSpeed = 20f;
     public GameObject iceballPrefab;
+
+    private float shotCooldown = 0.5f;
+    private float shotRemaining = 1;
 
     public override void Start() {
         base.Start();
@@ -90,7 +93,10 @@ public class PlayerCharacter : AnimatedCharacter {
     /// <param name="active"> if true keyPressed, if false keyReleased </param>
     /// <param name="mousePosition"> current mousePosition </param>
     public void doAttackAction(bool active, Vector3 mousePosition){
+        if (PlayerPrefs.GetInt("AllowMagic", 0) == 0) return;
+        if (shotRemaining > 0) return;
         if (!active || inWater) return;
+        shotRemaining = shotCooldown;
         Vector3 direction = mousePosition - transform.position;
         direction = direction/direction.magnitude;
         GameObject ball = Instantiate(iceballPrefab, transform.position, Quaternion.identity);
@@ -323,6 +329,9 @@ public class PlayerCharacter : AnimatedCharacter {
         HandleGrapple();
         UpdateBoxPos();
         RenderGrapple();
+        if (shotRemaining > 0) {
+            shotRemaining -= Time.deltaTime;
+        }
         // CheckLocks();
     }
 

@@ -231,7 +231,8 @@
           "Text" : ". . .",
           "Emote" : "Help",
           "Sound": "Sounds/SoundEffects/Gauntlet Discovery",
-          "endDelay" : 15
+          "endDelay" : 15,
+          "muteMusic" : true
         },
         {
           "Character" : 2,
@@ -259,7 +260,7 @@
       "Lines": [
         {
           "Character" : 2,
-          "Text" : "Thanks for playing our game, still more to come, hope you found everything. - Team Null Pointer",
+          "Text" : "Thanks for playing our game, hope you found everything. - Team Null Pointer",
           "Emote" : "Help",
           "Sound" : "Sounds/SoundEffects/Cave Level Opening"
         }
@@ -304,6 +305,17 @@
           "Text" : "Fine...",
           "Emote" : "Neutral_Blink",
           "Sound" : "Sounds/VoiceLines/Maki/Sigh"
+        },
+        {
+          "Character" : 2,
+          "Text" : "(Lori and Maki can interact with buttons and levers when they get close by pressing '<<Interact>>'.)",
+          "Emote" : "Help",
+          "Sound" : "Sounds/MenuSounds/Leave Game"
+        },
+        {
+          "Character" : 2,
+          "Text" : "(However some objects are to big for Maki to move and will need Lori's help.)",
+          "Emote" : "Help"
         }
       ],
       "IsBlocking" : false

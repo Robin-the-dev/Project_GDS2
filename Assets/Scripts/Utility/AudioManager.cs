@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip switchOnAndOff;
     [SerializeField] private AudioClip waterDive;
     [SerializeField] private AudioClip waterSplash; // I don't think we need this clip, sound is simillar with water dive clip
+    private AudioClip iceShot;
     [SerializeField] private AudioClip woodenBoxDrop; // Not implemented yet
     [SerializeField] private AudioClip woodenDoorOpen; // Not implemented yet
     [SerializeField] private AudioClip pixieFlutter; // Can't implement, doesn't work!
@@ -79,6 +80,10 @@ public class AudioManager : MonoBehaviour {
     private float voiceVolume = 1.0f;
     private float ambienceVolume = 1.0f;
     private float footStepVolume = 1.0f;
+
+    public void Start() {
+        iceShot = Resources.Load<AudioClip>("Sounds/SoundEffects/Ice shot");
+    }
 
     #region FootStep
     public void PlayCaveWalk() {
@@ -152,6 +157,10 @@ public class AudioManager : MonoBehaviour {
 
     public void PlaySwitchOnAndOff() {
         PlaySFXOneShot(switchOnAndOff);
+    }
+
+    public void PlayIceShot() {
+        PlaySFXOneShot(iceShot);
     }
     #endregion
 
@@ -275,6 +284,14 @@ public class AudioManager : MonoBehaviour {
 
     public void StopClip() {
         voiceSource.Stop();
+    }
+
+    public void MuteMusic() {
+        BGMSource.volume = 0;
+    }
+
+    public void UnMuteMusic() {
+        BGMSource.volume = PlayerPrefs.GetFloat("MusicVolume");
     }
 
 

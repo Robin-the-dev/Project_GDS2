@@ -39,6 +39,7 @@ public class IceBall : MonoBehaviour {
     }
 
     private void GenerateIce() {
+        AudioManager.Instance.PlayIceShot();
         Vector3Int startPos = grid.WorldToCell(transform.position);
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {

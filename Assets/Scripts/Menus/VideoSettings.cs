@@ -20,7 +20,7 @@ public class VideoSettings : MonoBehaviour {
 
         canvas = GetComponent<Canvas>();
         sliderUIScale.value = PlayerPrefs.GetFloat("UIScalePosition", 3);
-        sliderValue.text = PlayerPrefs.GetFloat("UIScale") + "x";
+        sliderValue.text = PlayerPrefs.GetFloat("UIScale", 1) + "x";
         UpdateSlider();
     }
 
