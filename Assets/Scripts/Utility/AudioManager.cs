@@ -273,6 +273,10 @@ public class AudioManager : MonoBehaviour {
         voiceSource.PlayOneShot(clip);
     }
 
+    public void StopClip() {
+        voiceSource.Stop();
+    }
+
 
     #region Volume Control
     public void setSFXVolume(float volume) {

@@ -1840,7 +1840,6 @@ MonoBehaviour:
   secondaryAbilityIcon: {fileID: 0}
   primaryCoolDownText: {fileID: 0}
   secondaryCoolDownText: {fileID: 0}
-  pixieMode: 0
 --- !u!114 &6983598476957878799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9925,7 +9924,6 @@ MonoBehaviour:
   - {fileID: 7768399655149003222}
   damagedHeartSprite: {fileID: 6741397278737327222, guid: 2e8aca48017074b2082d781002ea142f, type: 3}
   playerCharacter: {fileID: 3937966031258418691}
-  playerControls: {fileID: 3051815963442627539}
   score: 0
 --- !u!1 &8138173390083932463
 GameObject:

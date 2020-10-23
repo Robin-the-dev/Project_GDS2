@@ -119,7 +119,7 @@
       "Lines": [
         {
           "Character" : 1,
-          "Text" : "Hey Lori, Looks like there's a Gem hiding up here, If you press 'Q' I can reach it.",
+          "Text" : "Hey Lori, Looks like there's a Gem hiding up here, If you press '<<Maki>>' I can reach it.",
           "Emote" : "Neutral",
           "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
         }
@@ -137,7 +137,7 @@
         },
         {
           "Character" : 2,
-          "Text" : "(Holding Right Click will let you use your grapple hook, it will also let you pick up boxes)",
+          "Text" : "(Holding <<Ability1>> will let you use your grapple hook, it will also let you pick up boxes)",
           "Emote" : "Help",
           "Sound": "Sounds/MenuSounds/Leave Game"
         }
@@ -223,7 +223,21 @@
           "Character" : 0,
           "Text" : "But Shiinny~",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_5"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_5",
+          "endDelay" : 2
+        },
+        {
+          "Character" : 2,
+          "Text" : ". . .",
+          "Emote" : "Help",
+          "Sound": "Sounds/SoundEffects/Gauntlet Discovery",
+          "endDelay" : 15
+        },
+        {
+          "Character" : 2,
+          "Text" : "You have obtained magic gauntlets, they allow you to cast magic with <<Attack>>.",
+          "Emote" : "Gauntlets",
+          "Sound" : "Sounds/MenuSounds/Leave Game"
         },
         {
           "Character" : 0,
