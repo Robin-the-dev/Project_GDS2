@@ -1373,7 +1373,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.41960785, g: 0.3372549, b: 0.37254903, a: 1}
     m_PressedColor: {r: 0.2901961, g: 0.1882353, b: 0.23137255, a: 1}
     m_SelectedColor: {r: 0.41960785, g: 0.3372549, b: 0.37254903, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1587,7 +1587,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916420079}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -4202,7 +4202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482317346389394296, guid: 36c9bcd9c12ded34c9da63faaa01c9b9, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5482317346389394296, guid: 36c9bcd9c12ded34c9da63faaa01c9b9, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
