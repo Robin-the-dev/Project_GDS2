@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MapController : MonoBehaviour {
     // Start is called before the first frame update
@@ -28,12 +29,14 @@ public class MapController : MonoBehaviour {
         public Image layer;
         public Vector2 position;
         public MapTrigger trigger;
+        public String level;
 
         public void Init() {
             key = layer.name;
         }
 
         public void enableZone() {
+            if (level != SceneManager.GetActiveScene().name) return;
             if (trigger != null) trigger.mapEnabled = true;
             layer.enabled = true;
         }

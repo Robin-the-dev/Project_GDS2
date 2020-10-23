@@ -6,7 +6,7 @@ using TMPro;
 
 public class VideoSettings : MonoBehaviour {
 
-    private Canvas canvas;
+    public Canvas canvas;
     public Slider sliderUIScale;
     public TextMeshProUGUI sliderValue;
     public TMP_Dropdown dropdownMenu;
@@ -19,7 +19,6 @@ public class VideoSettings : MonoBehaviour {
         InitDropdown();
 
         canvas = GetComponent<Canvas>();
-        sliderValue = sliderUIScale.GetComponentInChildren<TextMeshProUGUI>();
         sliderUIScale.value = PlayerPrefs.GetFloat("UIScalePosition", 3);
         sliderValue.text = PlayerPrefs.GetFloat("UIScale") + "x";
         UpdateSlider();

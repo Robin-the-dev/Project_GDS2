@@ -26,6 +26,7 @@ public class PlayerControls : MonoBehaviour {
     private bool pixieMode = false;
 
     private float pixieHeld = 0;
+    private float skipTextCounter = 0;
     private bool paused = false;
 
     public void Awake() {
@@ -48,11 +49,25 @@ public class PlayerControls : MonoBehaviour {
         if (Time.timeScale > 0) {
             SwitchMode();
             ShowMap();
+            SkipText();
             if (pixieMode) {
                 HandlePixieControls();
             } else {
                 HandleControls();
             }
+        }
+    }
+
+    private void SkipText() {
+        if (GetKey("SkipText")) {
+            skipTextCounter += Time.deltaTime;
+        } else if (GetKeyUp("SkipText")) {
+            if (skipTextCounter >= 0.3) {
+                ConversationHandler.Instance.SkipAllLines();
+            } else {
+                ConversationHandler.Instance.SkipLine();
+            }
+            skipTextCounter = 0;
         }
     }
 

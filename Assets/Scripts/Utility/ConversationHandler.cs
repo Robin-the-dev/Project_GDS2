@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
+using System.Text.RegularExpressions;
+
 public class ConversationHandler : MonoBehaviour {
 
     public static ConversationHandler Instance { get; private set; }
@@ -24,7 +26,12 @@ public class ConversationHandler : MonoBehaviour {
 
     List<Conversation> convoQueue = new List<Conversation>();
 
+    private List<string> keys = new List<string>();
+
     private bool chatActive = false;
+
+    private bool skipLine = false;
+    private bool skipAllLines = false;
 
     public Entries entries;
 
@@ -57,6 +64,15 @@ public class ConversationHandler : MonoBehaviour {
         convoQueue.Add(convo);
     }
 
+    public void SkipLine() {
+        skipLine = true;
+    }
+
+    public void SkipAllLines() {
+        skipLine = true;
+        skipAllLines = true;
+    }
+
     void FixedUpdate() {
         if (!chatActive && convoQueue.Count > 0) {
             Conversation convo = convoQueue.First();
@@ -84,6 +100,7 @@ public class ConversationHandler : MonoBehaviour {
     IEnumerator Print(Conversation convo) {
         // for each chatline do
         foreach (ChatLine c in convo.Lines) {
+
             rightText.text = "";
             leftText.text = "";
             bool leftSide = false;
@@ -115,14 +132,30 @@ public class ConversationHandler : MonoBehaviour {
                 makiAnim.Play(c.Emote);
                 leftSide = true;
             }
+
+            string currentText = "";
+            string updatedText = UpdateKeys(c.Text);
+            if (skipAllLines) {
+                SkipAll();
+                break;
+            }
             //if has sound, play sound
             if (c.Sound != null) {
+                AudioManager.Instance.StopClip();
                 AudioManager.Instance.PlayClip(c.Sound);
             }
             // print text
-            string currentText = "";
-            for (int i = 0; i <= c.Text.Length; i++) {
-                currentText = c.Text.Substring(0, i);
+            for (int i = 0; i <= updatedText.Length; i++) {
+                if (skipAllLines) {
+                    SkipAll();
+                    break;
+                } else if (skipLine) {
+                    skipLine = false;
+                    if (leftSide) leftText.text = updatedText;
+                    else rightText.text = updatedText;
+                    break;
+                }
+                currentText = updatedText.Substring(0, i);
                 //update display text
                 if (leftSide) leftText.text = currentText;
                 else rightText.text = currentText;
@@ -143,6 +176,7 @@ public class ConversationHandler : MonoBehaviour {
                     Talking(c, true);
                     yield return new WaitForSeconds((0.075f / c.textSpeed) * PlayerPrefs.GetFloat("TextSpeed", 1));
                 }
+
             }
             // wait then play next
             Talking(c, false);
@@ -150,7 +184,28 @@ public class ConversationHandler : MonoBehaviour {
         }
         yield return new WaitForSeconds(2f);
         DisableAll();
+        skipAllLines = false;
         chatActive = false;
+    }
+
+    private void SkipAll(){
+        skipLine = false;
+        AudioManager.Instance.StopClip();
+        DisableAll();
+    }
+
+    private string UpdateKeys(string oldText) {
+        string updatedText = oldText;
+        Regex compare = new Regex(".*\\<\\<.*\\>\\>.*");
+        while(compare.IsMatch(updatedText)) {
+            int start = updatedText.IndexOf("<<") + 2;
+            int end = updatedText.IndexOf(">>");
+            string key = updatedText.Substring(start, end - start);
+            string keyText = ControlSettings.Instance.getString(key);
+            keys.Add(key);
+            updatedText = updatedText.Replace("<<" + key + ">>", keyText);
+        }
+        return updatedText;
     }
 
     private void Talking(ChatLine c, bool isTalking) {
