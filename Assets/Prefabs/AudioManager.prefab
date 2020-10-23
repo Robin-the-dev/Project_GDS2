@@ -78,7 +78,7 @@ MonoBehaviour:
   woodenBoxDrop: {fileID: 8300000, guid: 85bfd18c7e23d4f4091bf7a502fa3523, type: 3}
   woodenDoorOpen: {fileID: 8300000, guid: 9fc3c4c27470f44249793a02e30931e8, type: 3}
   pixieFlutter: {fileID: 8300000, guid: c0c5d39f3e9fa4af7b2cf5a125cc9430, type: 3}
-  ropeSwing: {fileID: 8300000, guid: 597e7ae6b2852464a94f3238a592cab7, type: 3}
+  ropeSwing: {fileID: 8300000, guid: 318d567cf4fe8466ab26cd6e285a41f8, type: 3}
   caveWalk: {fileID: 8300000, guid: e9f582d30f569423d9b244d1072bf2de, type: 3}
   templeRunnning: {fileID: 8300000, guid: 2b295e41718d7454c862c07ee00b1a59, type: 3}
   templeWalk: {fileID: 8300000, guid: 9d7596fc3808c4809b1780ecda787e9d, type: 3}
