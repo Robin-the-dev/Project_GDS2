@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lamp : MonoBehaviour
-{
+public class Lamp : MonoBehaviour {
     [HideInInspector] public AudioSource lampAudioSource;
 
     // Start is called before the first frame update
