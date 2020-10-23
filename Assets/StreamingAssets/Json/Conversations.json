@@ -277,7 +277,7 @@
         },
         {
           "Character" : 2,
-          "Text" : "(Holding S will let you swim downwards)",
+          "Text" : "(Holding <<MoveDown>> will let you swim downwards)",
           "Emote" : "Help",
           "Sound": "Sounds/MenuSounds/Leave Game"
         }
@@ -574,6 +574,24 @@
           "Text" : "Yep, no more looking, this is it!",
           "Emote" : "Neutral",
           "Sound" : "Sounds/VoiceLines/Lori/Hmm_2"
+        }
+      ],
+      "IsBlocking" : false
+    },
+    {
+      "Key": "Level_2_Map",
+      "Lines": [
+        {
+          "Character" : 1,
+          "Text" : "Lori, this place looks pretty big, don't forget your map.",
+          "Emote" : "Neutral",
+          "Sound" : "Sounds/VoiceLines/Maki/Hmm_1"
+        },
+        {
+          "Character" : 2,
+          "Text" : "(Tapping <<Map>> will open your map, press <<Map>> again to close it.)",
+          "Emote" : "Help",
+          "Sound" : "Sounds/MenuSounds/Leave Game"
         }
       ],
       "IsBlocking" : false
