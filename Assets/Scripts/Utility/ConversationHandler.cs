@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using System.Linq;
 using UnityEngine.UI;
 using System.IO;
@@ -33,6 +34,8 @@ public class ConversationHandler : MonoBehaviour {
     private bool skipLine = false;
     private bool skipAllLines = false;
 
+    private bool preventSkip = false;
+
     public Entries entries;
 
     public void Start(){
@@ -61,14 +64,23 @@ public class ConversationHandler : MonoBehaviour {
     public void DisplayText(string key) {
         Conversation convo = GetEntry(key);
         if (convo == null) return;
+        if (convo.IsBlocking) {
+            convoQueue.Clear();
+            skipAllLines = true;
+            preventSkip = true;
+            FindObjectOfType<PlayerControls>().cutsceneMode = true;
+        }
         convoQueue.Add(convo);
     }
 
     public void SkipLine() {
+        if (preventSkip) return;
         skipLine = true;
     }
 
     public void SkipAllLines() {
+        PlayableDirector director = FindObjectOfType<PlayableDirector>();
+        if (director != null) director.Stop();
         skipLine = true;
         skipAllLines = true;
     }
@@ -99,6 +111,8 @@ public class ConversationHandler : MonoBehaviour {
 
     IEnumerator Print(Conversation convo) {
         // for each chatline do
+        skipAllLines = false;
+        skipLine = false;
         foreach (ChatLine c in convo.Lines) {
 
             rightText.text = "";
@@ -177,7 +191,7 @@ public class ConversationHandler : MonoBehaviour {
                 } else if (currentChar == ",") {
                     Talking(c, false);
                     yield return new WaitForSeconds((0.15f / c.textSpeed) * PlayerPrefs.GetFloat("TextSpeed", 1));
-                }else {
+                } else {
                     Talking(c, true);
                     yield return new WaitForSeconds((0.075f / c.textSpeed) * PlayerPrefs.GetFloat("TextSpeed", 1));
                 }
@@ -187,10 +201,20 @@ public class ConversationHandler : MonoBehaviour {
             Talking(c, false);
             yield return new WaitForSeconds(c.endDelay);
         }
-        yield return new WaitForSeconds(2f);
-        DisableAll();
-        skipAllLines = false;
-        chatActive = false;
+        FindObjectOfType<PlayerControls>().cutsceneMode = false;
+        preventSkip = false;
+        if (skipAllLines) {
+            DisableAll();
+            skipAllLines = false;
+            skipLine = false;
+            chatActive = false;
+        }else {
+            yield return new WaitForSeconds(2f);
+            DisableAll();
+            skipAllLines = false;
+            skipLine = false;
+            chatActive = false;
+        }
     }
 
     private void SkipAll(){

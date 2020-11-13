@@ -62,9 +62,15 @@ public class PixieCharacter : AnimatedCharacter {
     }
 
     private void Update() {
+        if (source == null) return;
         float volume = PlayerPrefs.GetFloat("SoundEffectVolume");
         if (source.volume != volume) {
             source.volume = volume;
+        }
+        if (AudioManager.Instance.isPaused) {
+            source.Pause();
+        } else {
+            source.UnPause();
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour {
@@ -28,6 +29,7 @@ public class PlayerControls : MonoBehaviour {
     private float pixieHeld = 0;
     private float skipTextCounter = 0;
     private bool paused = false;
+    public bool cutsceneMode = false;
 
     public void Awake() {
         //reset keys when reload.
@@ -47,9 +49,13 @@ public class PlayerControls : MonoBehaviour {
         // handle game pauses
         HandlePause();
         if (Time.timeScale > 0) {
+            SkipText();
+            if (cutsceneMode) {
+                CancelControls();
+                return;
+            }
             SwitchMode();
             ShowMap();
-            SkipText();
             if (pixieMode) {
                 HandlePixieControls();
             } else {
@@ -76,8 +82,10 @@ public class PlayerControls : MonoBehaviour {
             paused = Time.timeScale == 0;
             if (paused) {
                 pauseMenu.ClosePause();
+                AudioManager.Instance.UnPauseSounds();
             } else {
                 pauseMenu.OpenPause();
+                AudioManager.Instance.PauseSounds();
             }
         }
     }

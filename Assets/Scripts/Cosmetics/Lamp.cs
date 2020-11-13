@@ -17,6 +17,11 @@ public class Lamp : MonoBehaviour {
         if (lampAudioSource.volume != volume) {
             lampAudioSource.volume = volume;
         }
+        if (AudioManager.Instance.isPaused) {
+            lampAudioSource.Pause();
+        } else {
+            lampAudioSource.UnPause();
+        }
     }
 
     private void PlayFireTorch() {

@@ -25,28 +25,44 @@ public class GameManager : MonoBehaviour
     private int multiplierForWaterDripSound;
     private bool isDived;
     private bool isLanded;
+    private float bugSoundTimeLeft;
+    private float dripSoundTimeLeft;
+    private float windSoundTimeLeft;
 
     private void Awake() {
         instance = this; // Singleton
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         state = State.Idle;
         playerLife = 3;
         score = 0.0f;
-        timeCounter = 0.0f;
         multiplierForBugSound = 1;
         multiplierForWaterDripSound = 1;
         isDived = false;
         isLanded = false;
+        bugSoundTimeLeft = Random.Range(14, 65);
+        dripSoundTimeLeft = Random.Range(0.5f, 5);
+    }
+
+    private void PlayAmbience() {
+        bugSoundTimeLeft -= Time.deltaTime;
+        dripSoundTimeLeft -= Time.deltaTime;
+
+        if (bugSoundTimeLeft <= 0) {
+            bugSoundTimeLeft = Random.Range(14, 65);
+            AudioManager.Instance.PlaySkitteringBugs();
+        }
+        if (dripSoundTimeLeft <= 0) {
+            dripSoundTimeLeft = Random.Range(1, 10);
+            AudioManager.Instance.PlayWaterDrip();
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        timeCounter += Time.deltaTime;
+    void Update() {
+        PlayAmbience();
 
         if (playerLife == 0) {
             state = State.Dead; // Player dies when life is zero
@@ -72,7 +88,7 @@ public class GameManager : MonoBehaviour
             state = State.Swim;
         }
 
-        PlayAmbience();
+
 
         if (state == State.Idle) {
             if(!isLanded) {
@@ -121,20 +137,9 @@ public class GameManager : MonoBehaviour
         hearts[playerLife].sprite = damagedHeartSprite;
     }
 
-    public void AddScore(float score)
-    {
+    public void AddScore(float score) {
         this.score += score;
     }
 
-    private void PlayAmbience() {
-        if(timeCounter >= 11.0f * multiplierForBugSound) {
-            AudioManager.Instance.PlaySkitteringBugs();
-            multiplierForBugSound++;
-        }
 
-        if(timeCounter >= 54.0f * multiplierForWaterDripSound) {
-            AudioManager.Instance.PlayWaterDrips();
-            multiplierForWaterDripSound++;
-        }
-    }
 }

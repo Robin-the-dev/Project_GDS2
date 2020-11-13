@@ -15,6 +15,11 @@ public class Totem : MonoBehaviour{
         if (source.volume != volume) {
             source.volume = volume;
         }
+        if (AudioManager.Instance.isPaused) {
+            source.Pause();
+        } else {
+            source.UnPause();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

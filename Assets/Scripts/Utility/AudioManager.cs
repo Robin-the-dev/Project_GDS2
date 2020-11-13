@@ -52,6 +52,9 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip waterDive;
     [SerializeField] private AudioClip waterSplash; // I don't think we need this clip, sound is simillar with water dive clip
     private AudioClip iceShot;
+    private AudioClip windSound;
+
+    private List<AudioClip> drips = new List<AudioClip>();
     [SerializeField] private AudioClip woodenBoxDrop; // Not implemented yet
     [SerializeField] private AudioClip woodenDoorOpen; // Not implemented yet
     [SerializeField] private AudioClip pixieFlutter; // Can't implement, doesn't work!
@@ -81,8 +84,14 @@ public class AudioManager : MonoBehaviour {
     private float ambienceVolume = 1.0f;
     private float footStepVolume = 1.0f;
 
+    public bool isPaused = false;
+
     public void Start() {
         iceShot = Resources.Load<AudioClip>("Sounds/SoundEffects/Ice shot");
+        windSound = Resources.Load<AudioClip>("Sounds/AmbientEffects/Gust of wind");
+        for(int i = 1; i < 16; i++) {
+            drips.Add(Resources.Load<AudioClip>("Sounds/AmbientEffects/WaterDrips/Drip_" + i));
+        }
     }
 
     #region FootStep
@@ -173,12 +182,17 @@ public class AudioManager : MonoBehaviour {
         PlayAmbienceOneShot(skitteringBugs);
     }
 
+    public void PlayWindSound() {
+        PlayAmbienceOneShot(windSound);
+    }
+
     public void PlayWaterDrips() {
         PlayAmbienceOneShot(waterDrips);
     }
 
-    public void PlayWaterDropSingle() {
-        PlayAmbienceOneShot(waterDropSingle);
+    public void PlayWaterDrip() {
+        int i = Random.Range(1, 15);
+        PlayAmbienceOneShot(drips[i]);
     }
 
     public void PlayUnderWater() {
@@ -267,6 +281,24 @@ public class AudioManager : MonoBehaviour {
         footStepSource.Stop();
     }
     #endregion
+
+    public void PauseSounds() {
+        voiceSource.Pause();
+        ambienceSource.Pause();
+        footStepSource.Pause();
+        SFXSource.Pause();
+        ambienceOneShotSource.Pause();
+        isPaused = true;
+    }
+
+    public void UnPauseSounds() {
+        voiceSource.UnPause();
+        ambienceSource.UnPause();
+        footStepSource.UnPause();
+        SFXSource.UnPause();
+        ambienceOneShotSource.UnPause();
+        isPaused = false;
+    }
 
     public void UpdateVolume() {
         SFXSource.volume = PlayerPrefs.GetFloat("SoundEffectVolume");

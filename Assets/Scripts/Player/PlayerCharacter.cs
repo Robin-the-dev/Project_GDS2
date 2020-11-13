@@ -85,6 +85,7 @@ public class PlayerCharacter : AnimatedCharacter {
         base.Start();
         rigid = GetComponent<Rigidbody2D>();
         joint = GetComponent<SpringJoint2D>();
+        ropeRender.useWorldSpace = true;
     }
 
     /// <summary>

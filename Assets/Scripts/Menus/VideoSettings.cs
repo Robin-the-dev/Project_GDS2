@@ -37,6 +37,7 @@ public class VideoSettings : MonoBehaviour {
     }
 
     public void UpdateResolution() {
+        if (Screen.currentResolution.width == resolutions[dropdownMenu.value].width && Screen.currentResolution.height == resolutions[dropdownMenu.value].height) return;
         Screen.SetResolution(resolutions[dropdownMenu.value].width, resolutions[dropdownMenu.value].height, Screen.fullScreen);
         PlayerPrefs.SetInt("ResolutionValue", dropdownMenu.value);
     }

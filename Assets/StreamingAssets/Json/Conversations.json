@@ -46,7 +46,7 @@
           "Sound": "Sounds/VoiceLines/Dialogue/Conversation_1/Line_7"
         }
       ],
-      "IsBlocking" : true
+      "IsBlocking" : false
     },
     {
       "Key": "Intro3",
@@ -95,7 +95,7 @@
         },
         {
           "Character" : 1,
-          "Text" : "Lori no! That looks dangerous",
+          "Text" : "Lori no!",
           "Emote" : "Neutral",
           "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_8"
         },
@@ -104,12 +104,6 @@
           "Text" : "AAAAAAAAAAAAAAAAAAAAAAAAAAA!",
           "Emote" : "Neutral",
           "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_9"
-        },
-        {
-          "Character" : 1,
-          "Text" : "LORIIIIII!",
-          "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_2/Line_10"
         }
       ],
       "IsBlocking" : true
@@ -190,7 +184,7 @@
           "Sound": "Sounds/VoiceLines/Dialogue/Conversation_3/Line_7"
         }
       ],
-      "IsBlocking" : true
+      "IsBlocking" : false
     },
     {
       "Key": "Level_2_Gauntlet",
@@ -199,32 +193,40 @@
           "Character" : 0,
           "Text" : "SCORE~! I spy with my little eye, something relic-y",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_1"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_1",
+          "muteMusic" : true
         },
         {
           "Character" : 1,
           "Text" : "You sure you should be touching that?",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_2"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_2",
+          "textSpeed" : 1.5,
+          "muteMusic" : true
         },
         {
           "Character" : 0,
           "Text" : "If I wasn’t meant to touch it why’d they just leave it here?",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_3"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_3",
+          "textSpeed" : 1.5,
+          "muteMusic" : true
         },
         {
           "Character" : 1,
           "Text" : "You’re gonna get cursed...",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_4"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_4",
+          "textSpeed" : 1.5,
+          "muteMusic" : true
         },
         {
           "Character" : 0,
           "Text" : "But Shiinny~",
           "Emote" : "Neutral",
           "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_5",
-          "endDelay" : 2
+          "endDelay" : 2,
+          "muteMusic" : true
         },
         {
           "Character" : 2,
@@ -238,19 +240,23 @@
           "Character" : 2,
           "Text" : "You have obtained magic gauntlets, they allow you to cast magic with '<<Attack>>.",
           "Emote" : "Gauntlets",
-          "Sound" : "Sounds/MenuSounds/Leave Game"
+          "Sound" : "Sounds/MenuSounds/Leave Game",
+          "textSpeed" : 2,
+          "muteMusic" : true
         },
         {
           "Character" : 0,
           "Text" : "I feel magic-y",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_6"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_6",
+          "muteMusic" : true
         },
         {
           "Character" : 1,
           "Text" : "We’re doomed...",
           "Emote" : "Neutral",
-          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_7"
+          "Sound": "Sounds/VoiceLines/Dialogue/Conversation_4/Line_7",
+          "muteMusic" : true
         }
       ],
       "IsBlocking" : true
